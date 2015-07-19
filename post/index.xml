@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Posts on Blog </title>
+    <link>http://localhost:1313/post/</link>
+    <language>en-US</language>
+    <author>Enthusiastic Hugo User</author>
+    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
+    <updated>Thu, 30 Apr 2015 13:55:17 CEST</updated>
+    
+    <item>
+      <title>concours facebook</title>
+      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
+      <pubDate>Thu, 30 Apr 2015 13:55:17 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
+      <description>
+
+&lt;p&gt;La page facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
+
+&lt;p&gt;Pourquoi avoir fait ce mini hack ? Tout simplement pour prouver que sur ce genre de concours il est idiot de proposer un système de participation de ce type sachant que des solutions commerciales permettant de tricher existent. je me suis donc lancé dans la réalisation d&amp;rsquo;un outil avec pour objectif de remporter ce concours.&lt;/p&gt;
+
+&lt;p&gt;Dès le début le but est d&amp;rsquo;automatiser tout le système afin de ne pas avoir à rafraichir sa page toutes les 10 secondes et faire l&amp;rsquo;action de commenter. Pendant ce temps je peux vacquer sereinnement à mes occupations quotidiennes. L&amp;rsquo;autre raison de l&amp;rsquo;automatisation est que dans ce genre de concours en 10 secondes tu peux déjà être 15eme.&lt;/p&gt;
+
+&lt;p&gt;Avant de débuter il faut découper le problème en deux parties afin de travailler efficacement sur ces deux parties indépendantes :
++ détection du nouveau contenu
++ soumission du commentaire.&lt;/p&gt;
+
+&lt;p&gt;A moins d&amp;rsquo;utiliser une base de mots clés ou un dictionnaire il est impossible d&amp;rsquo;identifier à l&amp;rsquo;avance le post à commenter. J&amp;rsquo;ai donc décidé de commenter automatiquement tous les nouveaux postes publiés dans le créneau défini (13h - 17h): une unique fois lors de la détection.&lt;/p&gt;
+
+&lt;p&gt;Tout est lié à Facebook : je vais donc utiliser leur SDK et leur API qui bien qu&amp;rsquo;elle soit mal documentée restera plus efficace sans devoir ré-inventer la roue.&lt;/p&gt;
+
+&lt;p&gt;Afin de pouvoir utiliser ce SDK I il faut au préalable avoir un compte &amp;ldquo;déveloper&amp;rdquo; puis déclarer son application (nom, urls autorisées à appeler l&amp;rsquo;API , droits nécessaires..). Dans un premier temps l&amp;rsquo;application n&amp;rsquo;est visible que par vous, afin de la rendre publique il faut la soumettre aux reviewers de Facebook. Dans mon cas il n&amp;rsquo;était pas certain que l&amp;rsquo;application soit autorisée de plus il fallait un temps certain que je n&amp;rsquo;avais pas.&lt;/p&gt;
+
+&lt;h2 id=&#34;détection-de-nouveau-contenu:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Détection de nouveau contenu&lt;/h2&gt;
+
+&lt;p&gt;Le principe de la détection de nouveau contenu est assez simple : récupérer le flux des posts, puis voir si le plus récent a changé. L&amp;rsquo;API facebook retourne cela sous forme d&amp;rsquo;un tableau d&amp;rsquo;objet qui est déjà trié. Il suffit de stocker cet identifiant du contenu le plus récent en base de données ou fichier texte. Ensuite toutes les X secondes, dans mon cas paramètré à 4 secondes je requêtais l&amp;rsquo;API Facebook grâce au SDK pour avoir les contenus de la page de la radio. J&amp;rsquo;extrayais l&amp;rsquo;identifiant du dernier post et le comparais avec celui enregistré dans mon fichier texte. Si celui-ci avait changé alors bingo je dois déclencher la publication du commentaire.&lt;/p&gt;
+
+&lt;h2 id=&#34;publication-du-commentaire:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Publication du commentaire:&lt;/h2&gt;
+
+&lt;p&gt;Pendant plusieurs heures j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le SDK Facebook afin de publier le commentaire et tout garder en PHP dans un objectif d&amp;rsquo;économie de temps.
+ Il s&amp;rsquo;est avéré que cela était très compliqué probablement causé par la non-approbation de l&amp;rsquo;application. En effet hormis pour le compte developper et certains droits chaque application doit être approuvée ce qui prend du temps.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;ai donc abandonné la solution PHP pour publier le commentaire à travers l&amp;rsquo;API Facebook.
+ Dans un second temps comme la détection fonctionnait très bien l&amp;rsquo;application affichait directement la publication il n&amp;rsquo;y avait plus qu&amp;rsquo;à commenter. J&amp;rsquo;estimais toutefois que cela fut une perte de temps.&lt;/p&gt;
+
+&lt;p&gt;Enfin en désespoir de cause j&amp;rsquo;ai observé la requête Ajax jouée dans le navigateur, n&amp;rsquo;y croyant pas j&amp;rsquo;ai fait rejouer cette requête. Quelle ne fut pas ma surprise quand j&amp;rsquo;ai vu que ce replay avait permis de poster un nouveau commentaire.  Cette requête Ajax prenait en paramètre l&amp;rsquo;id de la la publication à commenter, le commentaire, la date et un autre paramètre. Il y a un token qui est valide 24h dedans.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;ai donc décidé d&amp;rsquo;utiliser cette requête ajax pour publier le commentaire.&lt;/p&gt;
+
+&lt;p&gt;Voici ce que j&amp;rsquo;ai décidé (qui va être l&amp;rsquo;architecture finale) :
+Une extension chrome créée pour l&amp;rsquo;occasion va appeller le script PHP de détection de nouveaux contenus. Si ce script retourne qu&amp;rsquo;il a détecté un nouveau contenu alors l&amp;rsquo;extension chrome va déclencher la requête AJAX.&lt;/p&gt;
+
+&lt;p&gt;Je parle ici pour la premiere fois d&amp;rsquo;extension Chrome, c&amp;rsquo;est quelque chose de très simple à utiliser qui permet d&amp;rsquo;injecter du Javascript sur une page.
+En terme de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifest et des scripts.&lt;/p&gt;
+
+&lt;p&gt;En quelques lignes de JavaScript j&amp;rsquo;ai implémenté et mis en oeuvre la détection de nouveau contenu et la publication du commentaire.&lt;/p&gt;
+
+&lt;p&gt;Coté serveur : un petit script en local était chargé de détecter le nouveau contenu. Ce script PHP était appellé toutes les 4 secondes par l&amp;rsquo;extension Chrome.&lt;/p&gt;
+
+&lt;p&gt;Autre remarque : j&amp;rsquo;ai dû paramètrer tout le projet local en HTTPS afin de pouvoir communiquer avec l&amp;rsquo;API Facebook et notamment poster un commentaire.&lt;/p&gt;
+
+&lt;h2 id=&#34;résultats:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Résultats&lt;/h2&gt;
+
+&lt;p&gt;Ce projet n&amp;rsquo;a été opérationnel qu&amp;rsquo;à partir du jeudi, en effet les jours précèdents je me suis heurté à des soucis propres à la page Facebook : le contenu du jeu était créé chaque matin puis dépublié, le script n&amp;rsquo;avait alors pas détecté la publication.
+Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
+
+&lt;p&gt;Un des premiers essais (non concluant)
+&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</title>
+      <link>http://localhost:1313/post/hors-sujets/stadedefrance/</link>
+      <pubDate>Wed, 15 Apr 2015 13:56:46 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/hors-sujets/stadedefrance/</guid>
+      <description>&lt;p&gt;Non, ce titre n&amp;rsquo;est pas un canular : j&amp;rsquo;ai bel et bien couru au Stade de France. Bien qu&amp;rsquo;ancien, depuis cet évènement je souhaitais le relater afin de partager mon expérience.&lt;/p&gt;
+
+&lt;p&gt;Tout a commencé le 22 juin 2013 quand le &lt;a href=&#34;https://twitter.com/StadeFrance/status/348423820064997377&#34;&gt;compte Twitter du Stade de France&lt;/a&gt; annonce un concours pour courir un 100m au Stade de France pendant le Meeting Areva le 6 juillet 2013. Ce meeting Areva fait partie d&amp;rsquo;une série d&amp;rsquo;évènements internationaux accueillant des épreuves internationales d&amp;rsquo;athlétisme. En préambule du meeting avait lieu une compétition régionale. En parallèle le Stade de France lance un concours permettant d&amp;rsquo;assister au meeting dans la loge réservée (et d&amp;rsquo;autres surprises). Les conditions sont simples tweeter un message avec le hastag &amp;ldquo;#Jeveuxcourirle100maustadedefranceparceque&amp;rdquo;. Cela prend pas mal de place dans un tweet limité à 140 caractères il va falloir être original.&lt;/p&gt;
+
+&lt;p&gt;Ayant peu de temps à y consacrer, le 24 juin je fais un tweet avec une photo où ma mère court sur la piste du stade olympique de Berlin et où elle fini par faire quelques heures en cellule.
+&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;fr&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/Jeveuxcourirle100mauStadedeFranceparceque?src=hash&#34;&gt;#Jeveuxcourirle100mauStadedeFranceparceque&lt;/a&gt; ma mère a fait mm chose au Stade Olympique de Berlin et a fini au poste &lt;a href=&#34;http://t.co/XFd85tG2OW&#34;&gt;pic.twitter.com/XFd85tG2OW&lt;/a&gt;&lt;/p&gt;&amp;mdash; $!m0n (@sim51100) &lt;a href=&#34;https://twitter.com/sim51100/status/349098758258188288&#34;&gt;24 Juin 2013&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;observais les tweets et me suis dit que le mien avait peu de chances face à la concurrence. Puis je me suis rappellé qu&amp;rsquo;Instagram avait sorti le 20 juin sa fonction de capture de vidéo.  L&amp;rsquo;idée m&amp;rsquo;est alors venue de faire une vidéo originale et de la proposer, de plus faire ça la veille de la fin du concours limite les risques de reprise de l&amp;rsquo;idée. J&amp;rsquo;ai ressorti un vieux maillot d&amp;rsquo;athlé puis je me suis donc fait prendre en vidéo façon &amp;ldquo;Instagram&amp;rdquo; en train de simuler un départ starting-blocks dans ma rue. Oui courir au Stade De France nécessite de faire ce genre de choses ;-).&lt;/p&gt;
+
+&lt;p&gt;Voilà ce que ça donne :
+&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;fr&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://twitter.com/hashtag/Jeveuxcourirle100mauStadedeFranceparceque?src=hash&#34;&gt;#Jeveuxcourirle100mauStadedeFranceparceque&lt;/a&gt; j&amp;#39;en ai marre de courir dans la rue ! Cc stadefrance &lt;a href=&#34;http://t.co/7sWp9T4ycE&#34;&gt;http://t.co/7sWp9T4ycE&lt;/a&gt;&lt;/p&gt;&amp;mdash; $!m0n (@sim51100) &lt;a href=&#34;https://twitter.com/sim51100/status/351370026659495936&#34;&gt;30 Juin 2013&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Et bingo ! le 1er juillet le jury donne le résultat
+&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;fr&#34;&gt;&lt;p&gt;Toutes nos félicitations à &lt;a href=&#34;https://twitter.com/sim51100&#34;&gt;@sim51100&lt;/a&gt; et à sa vidéo qui a convaincu notre jury ! &lt;a href=&#34;https://twitter.com/hashtag/GagnantdeJeveuxcourirle100mauStadedeFranceparceque?src=hash&#34;&gt;#GagnantdeJeveuxcourirle100mauStadedeFranceparceque&lt;/a&gt;&lt;/p&gt;&amp;mdash; Stade de France (@StadeFrance) &lt;a href=&#34;https://twitter.com/StadeFrance/status/351682125432487936&#34;&gt;1 Juillet 2013&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Je gagne donc le droit de courir le 100m et d&amp;rsquo;être en loge avant et après pour assister à tout le meeting.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.lunion.com/region/il-gagne-le-droit-de-courir-au-stade-de-france-ia3b24n86651&#34;&gt;Après un petit moment de célébrité&lt;/a&gt; je me suis innocement dit qu&amp;rsquo;il fallait que je prépare ce 100m je me suis remis à faire quelques entrainements de fractionné .. juste histoire de se rassurer.&lt;/p&gt;
+
+&lt;p&gt;Puis vain le Jour J , celui que j&amp;rsquo;attends avec impatience et un peu d&amp;rsquo;appréhension. Je n&amp;rsquo;arrive pas à imaginer ce moment où tu cours sur une piste d&amp;rsquo;athlétisme avec 50 000 spectateurs. Je vais aussi pouvoir en savoir plus sur les conditions du 100m tout seul ? avec qui ? comment ?&lt;/p&gt;
+
+&lt;p&gt;On se retrouve donc en fin d&amp;rsquo;après-midi (vers 16h), sachant que le meeting ne débute pas de suite le Stade de France et ses CM nous ont réservé quelques surprises ! La 1ere de ces surprises fut la visite du Stade  (après avoir franchi la sécurité et laissé du déodorant, gels douche et eau qui ne passaient pas les controles&amp;hellip;) ! Le groupe fut aussi composé des gagnants de l&amp;rsquo;autre concours Twitter (Visite + loge pendant le Meeting Areva) avec 2 équipes : la Team Jamaique et la Team France (en lien avec les stars du Meeting : Usain Bolt et les &amp;ldquo;locaux&amp;rdquo; Christophe Lemaitre &amp;amp; Renaud Lavillenie ).&lt;/p&gt;
+
+&lt;p&gt;Pendant un peu plus d&amp;rsquo;une heure nous avons fait le tour du Stade : les vestiaires, les longs couloirs (avec notamment des voies de circulations pour véhicules), la piste annexe permettant de s&amp;rsquo;échauffer mais aussi la piste ! Pendant cette visite on apprend pas mal de choses : que l&amp;rsquo;équipe de France de foot en 98 était dans le vestiaire &amp;ldquo;visiteur&amp;rdquo; ou le jaccuzi rempli de champagne. Certes ce n&amp;rsquo;est pas la visite complète puis que nous n&amp;rsquo;avons pas fait la tribune présidentielle mais nous avons pu passer un peu de temps sur la piste. A ce moment bien que le stade est vide je ressens un peu plus de pression, je marche sur la piste où je vais faire mon sprint quelques heures plus tard !&lt;/p&gt;
+
+&lt;p&gt;A la fin de cette visite nous rejoignons la loge qui nous est réservée pour l&amp;rsquo;évènement : composée d&amp;rsquo;une partie intérieur avec hôte servant boissons et petits fours ainsi qu&amp;rsquo;une confortable &amp;ldquo;section&amp;rdquo; extérieure. Nous allons passer un agréable moment !
+A peine arrivés que les teams Jamaique et France se &amp;ldquo;chauffent&amp;rdquo; déjà, la soirée va être sympa !&lt;/p&gt;
+
+&lt;p&gt;Je profite un peu de la loge avec ses petits-fours et le meeting régional en cours, intérieurement la pression monte de plus en plus !
+Puis vient le moment tant attendu : on m&amp;rsquo;emmène dans des bureaux où je retrouve ceux avec qui je vais faire le 100 m ! Ils ont gagné un concours Facebook incluant 100M et place en tribune officielle ensuite. On nous donne aussi une paire de baskets toutes neuves ainsi qu&amp;rsquo;un maillot sans oublier le dossard comportant notre prénom : comme des pros ! Une fois prêts nous rentrons dans le parcours officiels des athèltes participants au meeting et notamment la chambre d&amp;rsquo;appel. Après un échauffement en intérieur (dans les fameux couloirs &amp;ldquo;routes&amp;rdquo;) nous rentrons officiellement sur le Stade suite à l&amp;rsquo;annonce du speaker. Et là c&amp;rsquo;est l&amp;rsquo;effet &amp;ldquo;Wouah !&amp;rdquo; ! C&amp;rsquo;était le cas auparavant mais à ce moment là on se dit qu&amp;rsquo;il faut en profiter un maximum ! On marche direction la ligne de départ, les starting-blocks sont prêts à nous accueillir. Pour l&amp;rsquo;instant on va continuer de s&amp;rsquo;échauffer dans un coin du stade, comme n&amp;rsquo;importe quel autre meeting tout est calé à la seconde il faut attendre encore un peu. Pendant notre échauffement on assiste à la parade des stars du meeting : Usain Bolt, Christophe Lemaitre et compagnie font le tour du Stade à bord de 2CV et saluent les spectateurs.  Un souvenir restera gravé dans mon esprit un bout de temps : avant de partir me préparer ceux qui sont restés dans la loge m&amp;rsquo;avaient demandé de leur faire signe. une fois en bas je me suis executé en leur demandant des encouragements. A ma grande surprise j&amp;rsquo;ai déclenché des applaudissements et encouragements de plusieurs milliers de personnes qui pensaient que je m&amp;rsquo;adressais à eux, un souvenir top !&lt;/p&gt;
+
+&lt;p&gt;Dernieres minutes d&amp;rsquo;échauffement (depuis mon arrivée au stade, les CMs soulignaient de bien s&amp;rsquo;échauffer : l&amp;rsquo;an passé le représentant la loge s&amp;rsquo;était fait un claquage au départ&amp;hellip;) et c&amp;rsquo;est notre tour ! Une dernière inspiration et l&amp;rsquo;on se dirige vers les stating-blocks. Quand l&amp;rsquo;on se voit en gros plan sur les grands écrans du stade on se dit une nouvelle fois que ce n&amp;rsquo;est pas tous les jours, il faut savourer et en profiter. Le coeur battant à fond, prêt à tout envoyer au &amp;ldquo;coup de pistolet&amp;rdquo;Et c&amp;rsquo;est parti, tout léger, je donne tout ce que je peux. Hop, au final je me fais battre par d&amp;rsquo;autres adversaires (certains étaient même déguisés).&lt;/p&gt;
+
+&lt;p&gt;Voilà ce que ça donne :
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7YSFJi08c6g&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais quel moment, même à l&amp;rsquo;arrivée tu profites, tu récupères, tous ses gens qui sont comme toi t&amp;rsquo;applaudisses. Bref un super moment !
+Une fois le sprint effectué, on discute de nos impressions puis je remonte continuer la soirée dans la loge. Plus de stress je savoure le spectacle offert par les vrais athlètes avec boissons et buffet à volonté. Bien sur passage obligé par une petite interview (très à chaud!) réalisée par l&amp;rsquo;équipe du Stade de France.&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/WkCKNJs8d2c&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;La soirée se terminera tranquillement à regarder et encourager les athlètes du meeting tout en repensant à ce que je viens de vivre.
+Enfin je repars avec pas mal de goodies offerts par le Stade de France et le Meeting Areva : le maillot &amp;amp; la paire de baskets offerts par le sponsor du meeting, un dossard officiel avec mon prénom, un tour du cou etc etc :)&lt;/p&gt;
+
+&lt;p&gt;Un grand merci au Stade de France et notamment ses CMs pour l&amp;rsquo;organisation de ce super évènement qui restera longtemps gravé dans ma mémoire.&lt;/p&gt;
+
+&lt;p&gt;Désormais le Stade De France ne semble plus réaliser ce genre d&amp;rsquo;évènements où étaient invités des fans à travers les Réseaux Sociaux.
+Je ne suis pas dans le secret des dieux et cela semblait être un échange plutôt win-win pour le Stade car les twittos faisaient un live-tweet de l&amp;rsquo;évènement tout en étant invités. Cela pouvait toutefois avoir un coût assez conséquent pour le Stade : présences des CMs, utilisation d&amp;rsquo;une loge avec hôte/hôtesse et de quoi se restaurer. Dommage, mais peut-être que ça reviendra ?! Et cela ne m&amp;rsquo;a pas empêché de retourner au Meeting lors de l&amp;rsquo;édition 2014 !&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>boostadopt</title>
+      <link>http://localhost:1313/post/retourdexperience/boostadopt/</link>
+      <pubDate>Wed, 01 Apr 2015 13:57:26 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/retourdexperience/boostadopt/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
+
+Tout ce projet est visible sur &lt;a href=&#34;https://github.com/guizmo51/boostadopt&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pendant de nombreuses années et depuis l&amp;rsquo;ouverture du site j&amp;rsquo;ai été un utilisateur du site de rencontre &lt;a href=&#34;http://www.adopteunmec.com&#34;&gt;AdopteUnMec.com&lt;/a&gt; (ce n&amp;rsquo;est plus le cas maintenant ;-) ). Ce site a un concept assez particulier lui ayant permis de se démarquer : les hommes possèdent un nombre de charmes limité (un charme est semblable à un poke sur Facebook), la personne ayant reçu ce charme est notifiée de ce charme. Ensuite elle peut autoriser, si le profil émetteur du charme lui plait, à lui écrire des messages. Suite à ça la conversation peut enfin s&amp;rsquo;engager.&lt;/p&gt;
+
+&lt;p&gt;AdopteUnMec a eu un business model assez mouvant depuis sa création puisqu&amp;rsquo;à l&amp;rsquo;origine gratuit il est devenu de plus en plus payant.&lt;/p&gt;
+
+&lt;p&gt;Je n&amp;rsquo;ai jamais voulu payer pour avoir accès à ce genre de site et j&amp;rsquo;avais la chance d&amp;rsquo;avoir un compte crée au début du site et ayant donc un accès gratuit à certaines fonctionnalités.&lt;/p&gt;
+
+&lt;p&gt;Un jour  (en 2010) je me suis rendu compte par un test tout simple (création d&amp;rsquo;un profil &amp;ldquo;femmes&amp;rdquo;) que les profils d&amp;rsquo;hommes ayant un compte gratuit remontaient beaucoup moins dans les résultats de recherches. Je n&amp;rsquo;ai toutefois pas réussi à déterminer l&amp;rsquo;algorithme en place derrière. Afin d&amp;rsquo;optmiser mes chances sur ce site je suis parti dans une autre théorie : si je visite 100 profils et que ma fiche est intéressante alors un pourcentage (15% - ) va venir la lire, et parmis ces 15% une faible proportion va m&amp;rsquo;autoriser à lui écrire. Au final sur 100 filles, 3 ou 4 vont m&amp;rsquo;autoriser à leur écrire. Très intéressé par les études et stats je souhaitais mettre un système d&amp;rsquo;analyse et de remontée de ses stats mais je n&amp;rsquo;en ai pas eu le temps.&lt;/p&gt;
+
+&lt;p&gt;L&amp;rsquo;autre idée qui m&amp;rsquo;est venue en tête : au lieu de visiter manuellement ces profils ce qui est une tâche rébarbative et longue et si je faisais un programme faisant le travail à ma place ? Je me suis donc lancé dans la réalisation d&amp;rsquo;un script visitant automatiquement en peu de temps des profils définis selon plusieurs paramètres.&lt;/p&gt;
+
+&lt;p&gt;Initialement mon script faisait un travail classique : il simulait une connexion via le formulaire HTMl puis visitait les profils en chargant les pages HTML des profils. Après un temps d&amp;rsquo;utilisation je me suis rendu compte de plusieurs choses :
+*les profils HTML étaient longs à charger, normal c&amp;rsquo;est une page HTML donc plusieurs centaines de KiloOctet à chaque fois.
+*l&amp;rsquo;accès au site AdopteUnMec à travers la version &amp;ldquo;desktop&amp;rdquo; était restreinte entre 18h et 1h du matin, cela réduisait le temps d&amp;rsquo;utilisation potentiel du script.&lt;/p&gt;
+
+&lt;p&gt;Suite à ça je me suis rendu compte que l&amp;rsquo;application Android d&amp;rsquo;AdopteUnMec ne subissait pas de blocage entre 18h et 1H du matin (toujours pour un même compte qui lui est bloqué sur la version &amp;ldquo;desktop&amp;rdquo; du site). La conclusion est simple si l&amp;rsquo;application Android arrive à visiter cela alors mon script pourra le faire.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;ai alors ouvert Wireshark qui est un utilitaire qui permet de capturer les packets passant sur le réseau. Pour vulgariser : ce logiciel permet de voir en partie les données transitant entre les ordinateurs du réseau observé. Pendant ce temps j&amp;rsquo;ai utilisé l&amp;rsquo;application Android sur tous les cas possibles : connexion, déconnexion, recherches, visites, charmes, envois de messages. Le but était d&amp;rsquo;obtenir toutes les urls appellées et les paramètres (les données que l&amp;rsquo;on donne à ces urls afin d&amp;rsquo;obtenir ce que l&amp;rsquo;on souhaite : l&amp;rsquo;identifiant du profil, les paramètres de recherches , etc).&lt;/p&gt;
+
+&lt;p&gt;Une fois toutes ces informations récupérées j&amp;rsquo;ai pris le temps de reconstruire tout mon script autour de cette API : au final les requêtes sont devenues plus rapides. En effet l&amp;rsquo;API retourne du JSON qui est donc rapidement exploitable par le serveur PHP alors qu&amp;rsquo;auparavant il fallait parser du HTML.&lt;/p&gt;
+
+&lt;p&gt;Une fois cela effectué tout était presque règlé : il y avait seulement des améliorations visant à ne pas être blacklisté par AdopteUnMec. Initialement cela était basé sur la fréquence des visites (si le temps était inférieur à 2 ou 3 secondes le compte pouvait être bloqué).&lt;/p&gt;
+
+&lt;p&gt;Puis vint un jour où j&amp;rsquo;ai voulu réaliser et monétiser une webapp à destination de tous les utilisateurs d&amp;rsquo;AdopteunMec. Le but de cette application est d&amp;rsquo;avoir une interface propre et épurée permettant de lancer automatiquement des visites sur un type de profil déterminé par la recherche. J&amp;rsquo;ai nommé le fait de visiter rapidement plusieurs dizaines de profils déterminées &amp;ldquo;Booster&amp;rdquo;. Suite à cela j&amp;rsquo;ai appelé mon application &amp;ldquo;BoostAdopt.com&amp;rdquo;. Ma recherche de nom de domaine a été très rapide mais une fois effectuée je me suis aperçu qu&amp;rsquo;existait déja le nom de domaine &amp;ldquo;boostAdopte.com&amp;rdquo;. Ce dernier était désactivé avant d&amp;rsquo;acheter le nom que j&amp;rsquo;avais choisis.&lt;/p&gt;
+
+&lt;h2 id=&#34;architecture-du-projet:5d89a49772d283f3ee4fbc1839d2b90e&#34;&gt;Architecture du projet&lt;/h2&gt;
+
+&lt;p&gt;Avant de foncer tête baissée j&amp;rsquo;ai réfléchi à toutes les problématiques que j&amp;rsquo;aurai à affronter sur ce projet.&lt;/p&gt;
+
+&lt;p&gt;Le premier problème fut le suivant : alors que j&amp;rsquo;enregistrais automatiquement les profils visités au bout de 100 000 hits (visites) l&amp;rsquo;IP du serveur appellant a été blacklistée. En clair mon serveur n&amp;rsquo;avait plus accès aux serveurs d&amp;rsquo;AdopteUnMec. même si un utilisateur ne va pas faire 100 000 d&amp;rsquo;un coup , admettons que 1000 utilisateurs fassent 100 visites chacun et le service devient bloqué.
+ Sur le papier il devint donc dur de proposer un service qui pourrait s&amp;rsquo;arrêter du jour au lendemain. Une solution aurait pu être de changer d&amp;rsquo;IP une fois chacune d&amp;rsquo;entre elle blacklistée mais cela aurait été coûteux et aurait rendu le site peu fiable qualitativement parlant. L&amp;rsquo;expérience utilisateur pour celui qui ceux qui se retrouvent bloqués le temps du changement d&amp;rsquo;IP auraient peu apprécié. Imaginez qu&amp;rsquo;un utilisateur paie, lance le booster et se retrouve bloqué car le serveur vient d&amp;rsquo;être blacklisté : ça ne le fait pas.&lt;/p&gt;
+
+&lt;p&gt;Pour schématiser l&amp;rsquo;architecture précèdemment citée : les utilisateurs exécutaient du PHP sur mon serveur, ce dernier appellait les serveurs d&amp;rsquo;AdopteUnMec. C&amp;rsquo;est une seule IP, celle du serveur (ou à la rigueur quelques IPs si plusieurs serveurs).&lt;/p&gt;
+
+&lt;p&gt;Quelques jours plus tard me vint une idée un peu plus folle: que ça soit l&amp;rsquo;IP propre à chaque utilisateur qui appelle le serveur AdopteUnMec. Cela a beaucoup d&amp;rsquo;avantages : je n&amp;rsquo;ai pas de changement d&amp;rsquo;IP à faire et le service reste fiable.
+ L&amp;rsquo;inconvénient majeur est qu&amp;rsquo;il faut donner le code &amp;ldquo;métier&amp;rdquo; du côté du navigateur donc facilement imitable et donc le business deviendrait réduit ou inopérant. En effet n&amp;rsquo;importe qui pourrait rréutiliser le code, le mettre à disposition gratuitement d&amp;rsquo;autres utilisateurs.&lt;/p&gt;
+
+&lt;p&gt;L&amp;rsquo;idée finale concernant l&amp;rsquo;architecture de boostAdopt fut donc de créer une extension Chrome, une application côté serveur et un client Front. Ici l&amp;rsquo;extension Chrome est utilisée car elle permet au navigateur de contacter directement les serveurs d&amp;rsquo;AdopteUnMec sans passer par un serveur intermédiaire. Normalement faire cela à travers le navigateur provoquerait une erreur de type &amp;ldquo;Cross-Origin&amp;rdquo; (le serveur xxx.com ne peut pas être appellé par la page yyy.com, il faut qu&amp;rsquo;xxx.com autorise cela spécifiquement). Il suffit de spécifier les bons attributs dans le manifest de l&amp;rsquo;extension afin de permettre cela. Le point négatif de cette architecture est la restriction sur le navigateur (utilisation obligatoire de Chrome), ainsi que l&amp;rsquo;installation de l&amp;rsquo;extension. Ce sont autant d&amp;rsquo;actions qui peuvent rebuter le futur utilisateur.&lt;/p&gt;
+
+&lt;p&gt;La propriété &amp;ldquo;Permissions&amp;rdquo; qui permet à l&amp;rsquo;extension de contacter les serveurs d&amp;rsquo;AdopteUnMec sans générer d&amp;rsquo;erreur &amp;ldquo;Cross-Origin&amp;rdquo; :
+&lt;script src=&#34;https://gist.github.com/guizmo51/bcbe01212c5b78ced84d.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Afin de minimiser les actions &amp;ldquo;utilisateur&amp;rdquo; j&amp;rsquo;ai crée un compte développeur &amp;ldquo;Chrome&amp;rdquo;  (et en payant) afin de publier l&amp;rsquo;extension officiellement  dans le catalogue officiel Chrome. En quelques clics l&amp;rsquo;extension pouvait désormais être opérationelle dans le navigateur de l&amp;rsquo;utilisateur.&lt;/p&gt;
+
+&lt;h2 id=&#34;business-model:5d89a49772d283f3ee4fbc1839d2b90e&#34;&gt;Business model&lt;/h2&gt;
+
+&lt;p&gt;Le business model de boostAdopt est assez simple : l&amp;rsquo;application utilisait un système de crédits. Un crédit = une visite d&amp;rsquo;un profil.
+ Lors de l&amp;rsquo;inscription de l&amp;rsquo;utilisateur son compte était crédité de 500 unités. Cela permet à l&amp;rsquo;utilisateur de tester le service le temps nécessaire afin de se faire son opinion. Ensuite plusieurs forfaits de crédits étaient proposés avec des prixs dégressifs. J&amp;rsquo;utilisais payPal et son API afin de gérer les transactions.&lt;/p&gt;
+
+&lt;h2 id=&#34;communication:5d89a49772d283f3ee4fbc1839d2b90e&#34;&gt;Communication&lt;/h2&gt;
+
+&lt;p&gt;Ca ne sert à rien de développer un projet si personne ne l&amp;rsquo;utilise faute de communication il fallait donc communiquer sur le projet. Contrairement à de gros projets, ici le budget &amp;ldquo;communication&amp;rdquo; était très faible.
+La communication autour du projet se fait grâce à plusieurs leviers :
+- l&amp;rsquo;utilisateur avait la possibilité de parrainer des contacts en leur fournissant un code de parrainage, à chaque contact inscrit il recevait une centaine de crédits. C&amp;rsquo;est un moyen peu onéreux de communiquer sur le projet, une sorte de bouche à oreille monétisé.
+- un compte Twitter et une page Facebook afin de parler du projet.
+- la réalisation de robots automatiques qui se connectaient à AdopteUnMec avec un profil féminin puis envoyait un message simulant un être humain en proposant de se connecter à boostAdopt.&lt;/p&gt;
+
+&lt;p&gt;Ce dernier point avait toutefois quelques points noir vis à vis de l&amp;rsquo;expérience utilisateur.
+- la messagerie d&amp;rsquo;AdopteUnMec à ce moment ne permettait pas de publier des liens cliquables, c&amp;rsquo;était donc un frein à l&amp;rsquo;action puisque l&amp;rsquo;utilisateur devait faire un copier/coller de l&amp;rsquo;URL.
+- même avec quelques adaptations un robot ne remplace pas l&amp;rsquo;Homme, mes comptes étaient blacklistés au bout de quelques messages. Il fallait donc en recréer.&lt;/p&gt;
+
+&lt;p&gt;Concernant la messagerie : AdopteUnMec propose une messagerie classique mais aussi une messagerie instantannée.
+En décembre 2013 après quelques tests rapides je me suis aperçu que les liens cliquables étaient autorisés dans cette messagerie instantannée. Pire : il y avait même une belle faille XSS permettant d&amp;rsquo;injecter du Javascript. Pour mon usage cela m&amp;rsquo;aurait permis de rediriger automatiquement les utilisateurs vers boostAdopt. Pour des esprits malveillants ça aurait pu permettre de propager du code dangereux qui auraient pu récupèrer les identifiants bancaires puisque ceux-ci apparaissaient sur le site. Lors du lancement de boostAdopt ce gros problème de sécurité était résolu.&lt;/p&gt;
+
+&lt;p&gt;Après discussion avec d&amp;rsquo;éventuels utilisateurs ces derniers m&amp;rsquo;ont fait part de craintes vis à vis de l&amp;rsquo;application BoostAdopt.com. En effet, mon application aurait pu être un simple phishing ayant pour but de voler les identifiants.
+Afin de diminuer ces craintes j&amp;rsquo;ai réalisé une vidéo expliquant le fonctionnant de boostAdopt.com&lt;/p&gt;
+
+&lt;p&gt;PS : sorry pour l&amp;rsquo;effet &amp;ldquo;ressort&amp;rdquo; dans la vidéo, le logiciel n&amp;rsquo;était pas des plus puissants.
+&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/6ph7K1Y9UZE&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;internationalisation:5d89a49772d283f3ee4fbc1839d2b90e&#34;&gt;Internationalisation&lt;/h2&gt;
+
+&lt;p&gt;Après des recherches un peu plus poussées je me suis rendu compte que le site AdopteUnMec était ou allait être disponible dans de nombreux pays (Angleterre, Allemagne, Italie, Espagne, Mexique, etc etc). Quitte à faire une application autant maximiser les cibles. Après quelques tests je me suis aperçu que tout mon code était fonctionnel sur ces versions étrangères, seules les URLs étaient différentes. J&amp;rsquo;ai donc pris quelques heures afin d&amp;rsquo;adapter et d&amp;rsquo;ouvrir l&amp;rsquo;application à tous les pays où se trouve AdopteUnMec.&lt;/p&gt;
+
+&lt;h2 id=&#34;post-mortem-fin-du-projet:5d89a49772d283f3ee4fbc1839d2b90e&#34;&gt;Post Mortem - Fin du projet.&lt;/h2&gt;
+
+&lt;p&gt;AdopteUnMec a amélioré énormément son protocole de sécurité en blacklistant les comptes &amp;ldquo;spammeurs&amp;rdquo; mais aussi en bloquant les IPs de connexion. Si mon compte X se retrouve bloqué, son IP &amp;ldquo;X&amp;rdquo; l&amp;rsquo;est aussi. Si je tente de me connecter ou bien même de m&amp;rsquo;inscrire avec un nouveau compte ce dernier se retrouvait automatiquement blacklisté. Cette mesure m&amp;rsquo;a obligé à réduire la communication à travers ces robots &amp;ldquo;spammeurs&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Enfin j&amp;rsquo;ai reçu une lettre de mise en demeure du service juridique d&amp;rsquo;AdopteUnMec. Bien que j&amp;rsquo;estimais que très peu de points étaient fondés, diverses raisons associées à la lourdeur administrative m&amp;rsquo;ont fait arrêter ce projet.&lt;/p&gt;
+
+&lt;p&gt;Si vous avez bien lu vous avez dû voir qu&amp;rsquo;à un moment j&amp;rsquo;enregistrais automatiquement les profils. Ceci est un autre projets &amp;ldquo;map.boostadopt.com&amp;rdquo; qui fera l&amp;rsquo;objet d&amp;rsquo;un autre billet. Au programme : de la cartographie et des &amp;ldquo;datas&amp;rdquo; (sans parler de &amp;ldquo;big data&amp;rdquo;).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pourquoi ce blog ?</title>
+      <link>http://localhost:1313/post/pourquoi-ce-blog/</link>
+      <pubDate>Sun, 15 Mar 2015 13:56:46 &#43;0200</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/pourquoi-ce-blog/</guid>
+      <description>&lt;p&gt;Je ne suis expert en rien du tout, je suis simplement passionné par le Web et souhaite partager mes expériences. Pourquoi cela ?  Dur d&amp;rsquo;expliquer comment cela m&amp;rsquo;est venu : mon expérience avec FirefoxOS et le partage des connaissances a peut-être joué un rôle. Je pense aussi que certains blogs techniques sur des langages comme PHP ou NodeJS m&amp;rsquo;ont débloqué lors de problèmes sur des applications. A travers ce blog je souhaite partager mes expériences et mes projets web.&lt;/p&gt;
+
+&lt;p&gt;Sur ce blog vous trouverez donc plusieurs sections :
+&lt;ul class=&#34;collection&#34;&gt;
+    &lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;hacks &lt;/h5&gt; attention il ne s&amp;rsquo;agit pas de hacks au sens premier mais plus d&amp;rsquo;expériences où le code permet de simplifier la vie ou une simple tâche !&lt;/li&gt;
+&lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;retour d&amp;rsquo;exéperience &lt;/h5&gt; j&amp;rsquo;y partage des retours d&amp;rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &amp;ldquo;comm&amp;rsquo;&amp;rdquo; ou de divers autres thèmes.&lt;/li&gt;
+&lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;hors-sujet &lt;/h5&gt; pour y mettre ce qui ne rentre pas dans les autres rubriques : du sport, des découvertes, ..&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce blog est propulsé par Hugo qui est un outil assez puissant écrit en Go. Il permet de générer des fichiers statiques afin d&amp;rsquo;alimenter un site ou un blog. Bien sûr il compte pas mal de fonctionnalités que je détaillerai dans un billet plus tard.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quis suis-je ?</title>
+      <link>http://localhost:1313/post/qui-suis-je/</link>
+      <pubDate>Sun, 15 Feb 2015 13:56:46 &#43;0200</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/qui-suis-je/</guid>
+      <description>&lt;p&gt;Je m&amp;rsquo;appelle Simon j&amp;rsquo;ai 27 ans et j&amp;rsquo;habite à Paris et suis originaire de Reims (51). Je suis passionné de développement Web et j&amp;rsquo;en ai fais ma profession.
+J&amp;rsquo;utilise surtout PHP (avec ou sans framework) et NodeJS. Je peux très bien bricoler sur mes RasperryPi (j&amp;rsquo;en ferai un billet aussi). J&amp;rsquo;aime aussi tout ce qui parle d&amp;rsquo;infrastructure Web ou de big data.&lt;/p&gt;
+
+&lt;p&gt;Je suis de nature curieuse sur plein de sujets que ça soit lié à l&amp;rsquo;informatique ou non (la communication, la politique, le marketing, la géopolitique, la défense, etc). Je suis aussi plutôt sportif !&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/cv/&#34;&gt;Mon CV&lt;/a&gt; résume mon parcours étudiant et professionnel. N&amp;rsquo;hésitez pas à me contacter si vous avez des questions !&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

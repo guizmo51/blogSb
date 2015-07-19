@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <title>boostadopt - http://localhost:1313/</title>
+      
+             
+      <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
+
+      <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Simon Blum</a>
+    
+     	<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+	
+	 <li><a href="http://localhost:1313//post/qui-suis-je/">Qui suis-je ?</a></li>
+       <li><a href="http://localhost:1313//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
+                    <li><a href="http://localhost:1313//categories/retour-dexperience/">Retour d'expérience</a></li>
+                    <li><a href="http://localhost:1313//categories/hacks/">Hacks</a></li>
+                    <li><a href="http://localhost:1313//categories/hors-sujet/">Hors-sujet..</a></li>
+                    <li><a href="http://localhost:1313//cv">mon CV</a></li>
+</ul>
+
+    
+    </div>
+  </nav>
+       
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm">
+                    <h3>boostadopt<br> <small></small></h3>
+                    <hr>
+                     April 1, 2015  - <a href="/categories/retour-dexperience ">retour d&#39;experience</a> <br>
+                    <hr>
+                    
+
+<p><img src="/images/logo-adopte-un-mec.jpg" alt="logo AdopteUnMec" />
+
+Tout ce projet est visible sur <a href="https://github.com/guizmo51/boostadopt">GitHub</a></p>
+
+<p>Pendant de nombreuses années et depuis l&rsquo;ouverture du site j&rsquo;ai été un utilisateur du site de rencontre <a href="http://www.adopteunmec.com">AdopteUnMec.com</a> (ce n&rsquo;est plus le cas maintenant ;-) ). Ce site a un concept assez particulier lui ayant permis de se démarquer : les hommes possèdent un nombre de charmes limité (un charme est semblable à un poke sur Facebook), la personne ayant reçu ce charme est notifiée de ce charme. Ensuite elle peut autoriser, si le profil émetteur du charme lui plait, à lui écrire des messages. Suite à ça la conversation peut enfin s&rsquo;engager.</p>
+
+<p>AdopteUnMec a eu un business model assez mouvant depuis sa création puisqu&rsquo;à l&rsquo;origine gratuit il est devenu de plus en plus payant.</p>
+
+<p>Je n&rsquo;ai jamais voulu payer pour avoir accès à ce genre de site et j&rsquo;avais la chance d&rsquo;avoir un compte crée au début du site et ayant donc un accès gratuit à certaines fonctionnalités.</p>
+
+<p>Un jour  (en 2010) je me suis rendu compte par un test tout simple (création d&rsquo;un profil &ldquo;femmes&rdquo;) que les profils d&rsquo;hommes ayant un compte gratuit remontaient beaucoup moins dans les résultats de recherches. Je n&rsquo;ai toutefois pas réussi à déterminer l&rsquo;algorithme en place derrière. Afin d&rsquo;optmiser mes chances sur ce site je suis parti dans une autre théorie : si je visite 100 profils et que ma fiche est intéressante alors un pourcentage (15% - ) va venir la lire, et parmis ces 15% une faible proportion va m&rsquo;autoriser à lui écrire. Au final sur 100 filles, 3 ou 4 vont m&rsquo;autoriser à leur écrire. Très intéressé par les études et stats je souhaitais mettre un système d&rsquo;analyse et de remontée de ses stats mais je n&rsquo;en ai pas eu le temps.</p>
+
+<p>L&rsquo;autre idée qui m&rsquo;est venue en tête : au lieu de visiter manuellement ces profils ce qui est une tâche rébarbative et longue et si je faisais un programme faisant le travail à ma place ? Je me suis donc lancé dans la réalisation d&rsquo;un script visitant automatiquement en peu de temps des profils définis selon plusieurs paramètres.</p>
+
+<p>Initialement mon script faisait un travail classique : il simulait une connexion via le formulaire HTMl puis visitait les profils en chargant les pages HTML des profils. Après un temps d&rsquo;utilisation je me suis rendu compte de plusieurs choses :
+*les profils HTML étaient longs à charger, normal c&rsquo;est une page HTML donc plusieurs centaines de KiloOctet à chaque fois.
+*l&rsquo;accès au site AdopteUnMec à travers la version &ldquo;desktop&rdquo; était restreinte entre 18h et 1h du matin, cela réduisait le temps d&rsquo;utilisation potentiel du script.</p>
+
+<p>Suite à ça je me suis rendu compte que l&rsquo;application Android d&rsquo;AdopteUnMec ne subissait pas de blocage entre 18h et 1H du matin (toujours pour un même compte qui lui est bloqué sur la version &ldquo;desktop&rdquo; du site). La conclusion est simple si l&rsquo;application Android arrive à visiter cela alors mon script pourra le faire.</p>
+
+<p>J&rsquo;ai alors ouvert Wireshark qui est un utilitaire qui permet de capturer les packets passant sur le réseau. Pour vulgariser : ce logiciel permet de voir en partie les données transitant entre les ordinateurs du réseau observé. Pendant ce temps j&rsquo;ai utilisé l&rsquo;application Android sur tous les cas possibles : connexion, déconnexion, recherches, visites, charmes, envois de messages. Le but était d&rsquo;obtenir toutes les urls appellées et les paramètres (les données que l&rsquo;on donne à ces urls afin d&rsquo;obtenir ce que l&rsquo;on souhaite : l&rsquo;identifiant du profil, les paramètres de recherches , etc).</p>
+
+<p>Une fois toutes ces informations récupérées j&rsquo;ai pris le temps de reconstruire tout mon script autour de cette API : au final les requêtes sont devenues plus rapides. En effet l&rsquo;API retourne du JSON qui est donc rapidement exploitable par le serveur PHP alors qu&rsquo;auparavant il fallait parser du HTML.</p>
+
+<p>Une fois cela effectué tout était presque règlé : il y avait seulement des améliorations visant à ne pas être blacklisté par AdopteUnMec. Initialement cela était basé sur la fréquence des visites (si le temps était inférieur à 2 ou 3 secondes le compte pouvait être bloqué).</p>
+
+<p>Puis vint un jour où j&rsquo;ai voulu réaliser et monétiser une webapp à destination de tous les utilisateurs d&rsquo;AdopteunMec. Le but de cette application est d&rsquo;avoir une interface propre et épurée permettant de lancer automatiquement des visites sur un type de profil déterminé par la recherche. J&rsquo;ai nommé le fait de visiter rapidement plusieurs dizaines de profils déterminées &ldquo;Booster&rdquo;. Suite à cela j&rsquo;ai appelé mon application &ldquo;BoostAdopt.com&rdquo;. Ma recherche de nom de domaine a été très rapide mais une fois effectuée je me suis aperçu qu&rsquo;existait déja le nom de domaine &ldquo;boostAdopte.com&rdquo;. Ce dernier était désactivé avant d&rsquo;acheter le nom que j&rsquo;avais choisis.</p>
+
+<h2 id="architecture-du-projet:5d89a49772d283f3ee4fbc1839d2b90e">Architecture du projet</h2>
+
+<p>Avant de foncer tête baissée j&rsquo;ai réfléchi à toutes les problématiques que j&rsquo;aurai à affronter sur ce projet.</p>
+
+<p>Le premier problème fut le suivant : alors que j&rsquo;enregistrais automatiquement les profils visités au bout de 100 000 hits (visites) l&rsquo;IP du serveur appellant a été blacklistée. En clair mon serveur n&rsquo;avait plus accès aux serveurs d&rsquo;AdopteUnMec. même si un utilisateur ne va pas faire 100 000 d&rsquo;un coup , admettons que 1000 utilisateurs fassent 100 visites chacun et le service devient bloqué.
+ Sur le papier il devint donc dur de proposer un service qui pourrait s&rsquo;arrêter du jour au lendemain. Une solution aurait pu être de changer d&rsquo;IP une fois chacune d&rsquo;entre elle blacklistée mais cela aurait été coûteux et aurait rendu le site peu fiable qualitativement parlant. L&rsquo;expérience utilisateur pour celui qui ceux qui se retrouvent bloqués le temps du changement d&rsquo;IP auraient peu apprécié. Imaginez qu&rsquo;un utilisateur paie, lance le booster et se retrouve bloqué car le serveur vient d&rsquo;être blacklisté : ça ne le fait pas.</p>
+
+<p>Pour schématiser l&rsquo;architecture précèdemment citée : les utilisateurs exécutaient du PHP sur mon serveur, ce dernier appellait les serveurs d&rsquo;AdopteUnMec. C&rsquo;est une seule IP, celle du serveur (ou à la rigueur quelques IPs si plusieurs serveurs).</p>
+
+<p>Quelques jours plus tard me vint une idée un peu plus folle: que ça soit l&rsquo;IP propre à chaque utilisateur qui appelle le serveur AdopteUnMec. Cela a beaucoup d&rsquo;avantages : je n&rsquo;ai pas de changement d&rsquo;IP à faire et le service reste fiable.
+ L&rsquo;inconvénient majeur est qu&rsquo;il faut donner le code &ldquo;métier&rdquo; du côté du navigateur donc facilement imitable et donc le business deviendrait réduit ou inopérant. En effet n&rsquo;importe qui pourrait rréutiliser le code, le mettre à disposition gratuitement d&rsquo;autres utilisateurs.</p>
+
+<p>L&rsquo;idée finale concernant l&rsquo;architecture de boostAdopt fut donc de créer une extension Chrome, une application côté serveur et un client Front. Ici l&rsquo;extension Chrome est utilisée car elle permet au navigateur de contacter directement les serveurs d&rsquo;AdopteUnMec sans passer par un serveur intermédiaire. Normalement faire cela à travers le navigateur provoquerait une erreur de type &ldquo;Cross-Origin&rdquo; (le serveur xxx.com ne peut pas être appellé par la page yyy.com, il faut qu&rsquo;xxx.com autorise cela spécifiquement). Il suffit de spécifier les bons attributs dans le manifest de l&rsquo;extension afin de permettre cela. Le point négatif de cette architecture est la restriction sur le navigateur (utilisation obligatoire de Chrome), ainsi que l&rsquo;installation de l&rsquo;extension. Ce sont autant d&rsquo;actions qui peuvent rebuter le futur utilisateur.</p>
+
+<p>La propriété &ldquo;Permissions&rdquo; qui permet à l&rsquo;extension de contacter les serveurs d&rsquo;AdopteUnMec sans générer d&rsquo;erreur &ldquo;Cross-Origin&rdquo; :
+<script src="https://gist.github.com/guizmo51/bcbe01212c5b78ced84d.js"></script></p>
+
+<p>Afin de minimiser les actions &ldquo;utilisateur&rdquo; j&rsquo;ai crée un compte développeur &ldquo;Chrome&rdquo;  (et en payant) afin de publier l&rsquo;extension officiellement  dans le catalogue officiel Chrome. En quelques clics l&rsquo;extension pouvait désormais être opérationelle dans le navigateur de l&rsquo;utilisateur.</p>
+
+<h2 id="business-model:5d89a49772d283f3ee4fbc1839d2b90e">Business model</h2>
+
+<p>Le business model de boostAdopt est assez simple : l&rsquo;application utilisait un système de crédits. Un crédit = une visite d&rsquo;un profil.
+ Lors de l&rsquo;inscription de l&rsquo;utilisateur son compte était crédité de 500 unités. Cela permet à l&rsquo;utilisateur de tester le service le temps nécessaire afin de se faire son opinion. Ensuite plusieurs forfaits de crédits étaient proposés avec des prixs dégressifs. J&rsquo;utilisais payPal et son API afin de gérer les transactions.</p>
+
+<h2 id="communication:5d89a49772d283f3ee4fbc1839d2b90e">Communication</h2>
+
+<p>Ca ne sert à rien de développer un projet si personne ne l&rsquo;utilise faute de communication il fallait donc communiquer sur le projet. Contrairement à de gros projets, ici le budget &ldquo;communication&rdquo; était très faible.
+La communication autour du projet se fait grâce à plusieurs leviers :
+- l&rsquo;utilisateur avait la possibilité de parrainer des contacts en leur fournissant un code de parrainage, à chaque contact inscrit il recevait une centaine de crédits. C&rsquo;est un moyen peu onéreux de communiquer sur le projet, une sorte de bouche à oreille monétisé.
+- un compte Twitter et une page Facebook afin de parler du projet.
+- la réalisation de robots automatiques qui se connectaient à AdopteUnMec avec un profil féminin puis envoyait un message simulant un être humain en proposant de se connecter à boostAdopt.</p>
+
+<p>Ce dernier point avait toutefois quelques points noir vis à vis de l&rsquo;expérience utilisateur.
+- la messagerie d&rsquo;AdopteUnMec à ce moment ne permettait pas de publier des liens cliquables, c&rsquo;était donc un frein à l&rsquo;action puisque l&rsquo;utilisateur devait faire un copier/coller de l&rsquo;URL.
+- même avec quelques adaptations un robot ne remplace pas l&rsquo;Homme, mes comptes étaient blacklistés au bout de quelques messages. Il fallait donc en recréer.</p>
+
+<p>Concernant la messagerie : AdopteUnMec propose une messagerie classique mais aussi une messagerie instantannée.
+En décembre 2013 après quelques tests rapides je me suis aperçu que les liens cliquables étaient autorisés dans cette messagerie instantannée. Pire : il y avait même une belle faille XSS permettant d&rsquo;injecter du Javascript. Pour mon usage cela m&rsquo;aurait permis de rediriger automatiquement les utilisateurs vers boostAdopt. Pour des esprits malveillants ça aurait pu permettre de propager du code dangereux qui auraient pu récupèrer les identifiants bancaires puisque ceux-ci apparaissaient sur le site. Lors du lancement de boostAdopt ce gros problème de sécurité était résolu.</p>
+
+<p>Après discussion avec d&rsquo;éventuels utilisateurs ces derniers m&rsquo;ont fait part de craintes vis à vis de l&rsquo;application BoostAdopt.com. En effet, mon application aurait pu être un simple phishing ayant pour but de voler les identifiants.
+Afin de diminuer ces craintes j&rsquo;ai réalisé une vidéo expliquant le fonctionnant de boostAdopt.com</p>
+
+<p>PS : sorry pour l&rsquo;effet &ldquo;ressort&rdquo; dans la vidéo, le logiciel n&rsquo;était pas des plus puissants.
+<iframe width="420" height="315" src="https://www.youtube.com/embed/6ph7K1Y9UZE" frameborder="0" allowfullscreen></iframe></p>
+
+<h2 id="internationalisation:5d89a49772d283f3ee4fbc1839d2b90e">Internationalisation</h2>
+
+<p>Après des recherches un peu plus poussées je me suis rendu compte que le site AdopteUnMec était ou allait être disponible dans de nombreux pays (Angleterre, Allemagne, Italie, Espagne, Mexique, etc etc). Quitte à faire une application autant maximiser les cibles. Après quelques tests je me suis aperçu que tout mon code était fonctionnel sur ces versions étrangères, seules les URLs étaient différentes. J&rsquo;ai donc pris quelques heures afin d&rsquo;adapter et d&rsquo;ouvrir l&rsquo;application à tous les pays où se trouve AdopteUnMec.</p>
+
+<h2 id="post-mortem-fin-du-projet:5d89a49772d283f3ee4fbc1839d2b90e">Post Mortem - Fin du projet.</h2>
+
+<p>AdopteUnMec a amélioré énormément son protocole de sécurité en blacklistant les comptes &ldquo;spammeurs&rdquo; mais aussi en bloquant les IPs de connexion. Si mon compte X se retrouve bloqué, son IP &ldquo;X&rdquo; l&rsquo;est aussi. Si je tente de me connecter ou bien même de m&rsquo;inscrire avec un nouveau compte ce dernier se retrouvait automatiquement blacklisté. Cette mesure m&rsquo;a obligé à réduire la communication à travers ces robots &ldquo;spammeurs&rdquo;.</p>
+
+<p>Enfin j&rsquo;ai reçu une lettre de mise en demeure du service juridique d&rsquo;AdopteUnMec. Bien que j&rsquo;estimais que très peu de points étaient fondés, diverses raisons associées à la lourdeur administrative m&rsquo;ont fait arrêter ce projet.</p>
+
+<p>Si vous avez bien lu vous avez dû voir qu&rsquo;à un moment j&rsquo;enregistrais automatiquement les profils. Ceci est un autre projets &ldquo;map.boostadopt.com&rdquo; qui fera l&rsquo;objet d&rsquo;un autre billet. Au programme : de la cartographie et des &ldquo;datas&rdquo; (sans parler de &ldquo;big data&rdquo;).</p>
+
+            </div>
+        </div>
+    </div>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        <footer>
+            <div class="row">
+                <hr>
+                <div class="col-sm-12">
+                    <p>&copy; Simon Blum 2015<br>
+                    Built with <a href="https://github.com/spf13/hugo">Hugo</a></p>
+                </div>
+            </div>
+        </footer>
+</div>
+       <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">SimonBlum.me</h5>
+                <p class="grey-text text-lighten-4"></p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Derniers contenus</h5>
+                <ul>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/concours-facebook/"><i class="mdi-navigation-chevron-right"></i>concours facebook</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/hors-sujets/stadedefrance/"><i class="mdi-navigation-chevron-right"></i>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/boostadopt/"><i class="mdi-navigation-chevron-right"></i>boostadopt</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/pourquoi-ce-blog/"><i class="mdi-navigation-chevron-right"></i>Pourquoi ce blog ?</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/qui-suis-je/"><i class="mdi-navigation-chevron-right"></i>Quis suis-je ?</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Simon Blum
+            <a class="grey-text text-lighten-4 right" href="http://www.twitter.com/sim51100">Twitter</a>
+            </div>
+          </div>
+        </footer>
+            
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+       <script type="text/javascript" src="/js/init.js"></script>
+    </body>
+  </html>
+
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Hacks on Blog </title>
+    <link>http://localhost:1313/categories/hacks/</link>
+    <language>en-US</language>
+    <author>Enthusiastic Hugo User</author>
+    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
+    <updated>Thu, 30 Apr 2015 13:55:17 CEST</updated>
+    
+    <item>
+      <title>concours facebook</title>
+      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
+      <pubDate>Thu, 30 Apr 2015 13:55:17 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
+      <description>
+
+&lt;p&gt;La page facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
+
+&lt;p&gt;Pourquoi avoir fait ce mini hack ? Tout simplement pour prouver que sur ce genre de concours il est idiot de proposer un système de participation de ce type sachant que des solutions commerciales permettant de tricher existent. je me suis donc lancé dans la réalisation d&amp;rsquo;un outil avec pour objectif de remporter ce concours.&lt;/p&gt;
+
+&lt;p&gt;Dès le début le but est d&amp;rsquo;automatiser tout le système afin de ne pas avoir à rafraichir sa page toutes les 10 secondes et faire l&amp;rsquo;action de commenter. Pendant ce temps je peux vacquer sereinnement à mes occupations quotidiennes. L&amp;rsquo;autre raison de l&amp;rsquo;automatisation est que dans ce genre de concours en 10 secondes tu peux déjà être 15eme.&lt;/p&gt;
+
+&lt;p&gt;Avant de débuter il faut découper le problème en deux parties afin de travailler efficacement sur ces deux parties indépendantes :
++ détection du nouveau contenu
++ soumission du commentaire.&lt;/p&gt;
+
+&lt;p&gt;A moins d&amp;rsquo;utiliser une base de mots clés ou un dictionnaire il est impossible d&amp;rsquo;identifier à l&amp;rsquo;avance le post à commenter. J&amp;rsquo;ai donc décidé de commenter automatiquement tous les nouveaux postes publiés dans le créneau défini (13h - 17h): une unique fois lors de la détection.&lt;/p&gt;
+
+&lt;p&gt;Tout est lié à Facebook : je vais donc utiliser leur SDK et leur API qui bien qu&amp;rsquo;elle soit mal documentée restera plus efficace sans devoir ré-inventer la roue.&lt;/p&gt;
+
+&lt;p&gt;Afin de pouvoir utiliser ce SDK I il faut au préalable avoir un compte &amp;ldquo;déveloper&amp;rdquo; puis déclarer son application (nom, urls autorisées à appeler l&amp;rsquo;API , droits nécessaires..). Dans un premier temps l&amp;rsquo;application n&amp;rsquo;est visible que par vous, afin de la rendre publique il faut la soumettre aux reviewers de Facebook. Dans mon cas il n&amp;rsquo;était pas certain que l&amp;rsquo;application soit autorisée de plus il fallait un temps certain que je n&amp;rsquo;avais pas.&lt;/p&gt;
+
+&lt;h2 id=&#34;détection-de-nouveau-contenu:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Détection de nouveau contenu&lt;/h2&gt;
+
+&lt;p&gt;Le principe de la détection de nouveau contenu est assez simple : récupérer le flux des posts, puis voir si le plus récent a changé. L&amp;rsquo;API facebook retourne cela sous forme d&amp;rsquo;un tableau d&amp;rsquo;objet qui est déjà trié. Il suffit de stocker cet identifiant du contenu le plus récent en base de données ou fichier texte. Ensuite toutes les X secondes, dans mon cas paramètré à 4 secondes je requêtais l&amp;rsquo;API Facebook grâce au SDK pour avoir les contenus de la page de la radio. J&amp;rsquo;extrayais l&amp;rsquo;identifiant du dernier post et le comparais avec celui enregistré dans mon fichier texte. Si celui-ci avait changé alors bingo je dois déclencher la publication du commentaire.&lt;/p&gt;
+
+&lt;h2 id=&#34;publication-du-commentaire:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Publication du commentaire:&lt;/h2&gt;
+
+&lt;p&gt;Pendant plusieurs heures j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le SDK Facebook afin de publier le commentaire et tout garder en PHP dans un objectif d&amp;rsquo;économie de temps.
+ Il s&amp;rsquo;est avéré que cela était très compliqué probablement causé par la non-approbation de l&amp;rsquo;application. En effet hormis pour le compte developper et certains droits chaque application doit être approuvée ce qui prend du temps.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;ai donc abandonné la solution PHP pour publier le commentaire à travers l&amp;rsquo;API Facebook.
+ Dans un second temps comme la détection fonctionnait très bien l&amp;rsquo;application affichait directement la publication il n&amp;rsquo;y avait plus qu&amp;rsquo;à commenter. J&amp;rsquo;estimais toutefois que cela fut une perte de temps.&lt;/p&gt;
+
+&lt;p&gt;Enfin en désespoir de cause j&amp;rsquo;ai observé la requête Ajax jouée dans le navigateur, n&amp;rsquo;y croyant pas j&amp;rsquo;ai fait rejouer cette requête. Quelle ne fut pas ma surprise quand j&amp;rsquo;ai vu que ce replay avait permis de poster un nouveau commentaire.  Cette requête Ajax prenait en paramètre l&amp;rsquo;id de la la publication à commenter, le commentaire, la date et un autre paramètre. Il y a un token qui est valide 24h dedans.&lt;/p&gt;
+
+&lt;p&gt;J&amp;rsquo;ai donc décidé d&amp;rsquo;utiliser cette requête ajax pour publier le commentaire.&lt;/p&gt;
+
+&lt;p&gt;Voici ce que j&amp;rsquo;ai décidé (qui va être l&amp;rsquo;architecture finale) :
+Une extension chrome créée pour l&amp;rsquo;occasion va appeller le script PHP de détection de nouveaux contenus. Si ce script retourne qu&amp;rsquo;il a détecté un nouveau contenu alors l&amp;rsquo;extension chrome va déclencher la requête AJAX.&lt;/p&gt;
+
+&lt;p&gt;Je parle ici pour la premiere fois d&amp;rsquo;extension Chrome, c&amp;rsquo;est quelque chose de très simple à utiliser qui permet d&amp;rsquo;injecter du Javascript sur une page.
+En terme de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifest et des scripts.&lt;/p&gt;
+
+&lt;p&gt;En quelques lignes de JavaScript j&amp;rsquo;ai implémenté et mis en oeuvre la détection de nouveau contenu et la publication du commentaire.&lt;/p&gt;
+
+&lt;p&gt;Coté serveur : un petit script en local était chargé de détecter le nouveau contenu. Ce script PHP était appellé toutes les 4 secondes par l&amp;rsquo;extension Chrome.&lt;/p&gt;
+
+&lt;p&gt;Autre remarque : j&amp;rsquo;ai dû paramètrer tout le projet local en HTTPS afin de pouvoir communiquer avec l&amp;rsquo;API Facebook et notamment poster un commentaire.&lt;/p&gt;
+
+&lt;h2 id=&#34;résultats:fb0b9121ebebb531d16fe01d8c71c3b0&#34;&gt;Résultats&lt;/h2&gt;
+
+&lt;p&gt;Ce projet n&amp;rsquo;a été opérationnel qu&amp;rsquo;à partir du jeudi, en effet les jours précèdents je me suis heurté à des soucis propres à la page Facebook : le contenu du jeu était créé chaque matin puis dépublié, le script n&amp;rsquo;avait alors pas détecté la publication.
+Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
+
+&lt;p&gt;Un des premiers essais (non concluant)
+&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
