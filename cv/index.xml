@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Cvs on Blog </title>
-    <link>http://localhost:1313/cv/</link>
+    <link>http://www.simonblum.me/cv/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,50 +10,50 @@
     
     <item>
       <title>Expériences professionelles</title>
-      <link>http://localhost:1313/cv/slider/experiencespro/</link>
+      <link>http://www.simonblum.me/cv/slider/experiencespro/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/slider/experiencespro/</guid>
+      <guid>http://www.simonblum.me/cv/slider/experiencespro/</guid>
       <description>&lt;p&gt;Convaincu que l&amp;rsquo;expérience est essentielle j&amp;rsquo;ai décidé de suivre ma formation en apprentissage. J&amp;rsquo;ai été en alternance pendant 3 ans jusqu&amp;rsquo;en septembre 2013.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Formation et diplomes</title>
-      <link>http://localhost:1313/cv/slider/formationsdiplomes/</link>
+      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/slider/formationsdiplomes/</guid>
+      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
       <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Simon Blum</title>
-      <link>http://localhost:1313/cv/slider/simonblum/</link>
+      <link>http://www.simonblum.me/cv/slider/simonblum/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/slider/simonblum/</guid>
+      <guid>http://www.simonblum.me/cv/slider/simonblum/</guid>
       <description>&lt;p&gt;Diplômé d&amp;rsquo;un Master MIAGE je suis actuellement partner chez Link-Value &amp;amp; en mission de développement back-end PHP pour un grand groupe de communication.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>projets</title>
-      <link>http://localhost:1313/cv/slider/projets/</link>
+      <link>http://www.simonblum.me/cv/slider/projets/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/slider/projets/</guid>
+      <guid>http://www.simonblum.me/cv/slider/projets/</guid>
       <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Another Hugo Post</title>
-      <link>http://localhost:1313/cv/another-post/</link>
+      <link>http://www.simonblum.me/cv/another-post/</link>
       <pubDate>Tue, 02 Sep 2014 00:00:00 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/another-post/</guid>
+      <guid>http://www.simonblum.me/cv/another-post/</guid>
       <description>
 
 &lt;h2 id=&#34;toml-yaml-json-oh-my:fa77c077e3fbd48e440da594382c44fa&#34;&gt;TOML, YAML, JSON &amp;mdash; Oh my!&lt;/h2&gt;
@@ -62,10 +62,10 @@
     
     <item>
       <title>Projet BetterCallUber</title>
-      <link>http://localhost:1313/cv/projets/bettercalluber/</link>
+      <link>http://www.simonblum.me/cv/projets/bettercalluber/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/projets/bettercalluber/</guid>
+      <guid>http://www.simonblum.me/cv/projets/bettercalluber/</guid>
       <description>&lt;p&gt;BetterCallUber est le résultat de ma participation à un hackathon organisé par le service de VTC Uber.
 Ce projet est une application web permettant de réserver instantanément ou de manière programmée un VTC.
 D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le déclenchemnt d&amp;rsquo;une course à l&amp;rsquo;aterrisage d&amp;rsquo;un avion ou train.&lt;/p&gt;
@@ -78,10 +78,10 @@ D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le dé
     
     <item>
       <title>Travail de mémoire sur les BIG DATA</title>
-      <link>http://localhost:1313/cv/projets/bigdata/</link>
+      <link>http://www.simonblum.me/cv/projets/bigdata/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/projets/bigdata/</guid>
+      <guid>http://www.simonblum.me/cv/projets/bigdata/</guid>
       <description>&lt;p&gt;Ce mémoire s&amp;rsquo;intitule &amp;ldquo;Les instituts de sondages sont-ils parés à l&amp;rsquo;utilisation des Big Data ?&amp;rdquo;.
 Dans le cadre de ce travail j&amp;rsquo;ai participé plusieurs conférences ou meet-ups sur le sujet.&lt;/p&gt;
 
@@ -99,10 +99,10 @@ Dans le cadre de ce travail j&amp;rsquo;ai participé plusieurs conférences ou 
     
     <item>
       <title>Master MIAGE en apprentissage</title>
-      <link>http://localhost:1313/cv/formation/m2miage/</link>
+      <link>http://www.simonblum.me/cv/formation/m2miage/</link>
       <pubDate>Thu, 09 Apr 2015 13:46:53 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/formation/m2miage/</guid>
+      <guid>http://www.simonblum.me/cv/formation/m2miage/</guid>
       <description>&lt;p&gt;Spécialité Ingénierie Logicielle pour le Web
 De septembre 2011 à septembre 2013 à l&amp;rsquo;Université d&amp;rsquo;Evry - Val d&amp;rsquo;Essonne (91)&lt;/p&gt;
 </description>
@@ -110,10 +110,10 @@ De septembre 2011 à septembre 2013 à l&amp;rsquo;Université d&amp;rsquo;Evry 
     
     <item>
       <title>Link-Value</title>
-      <link>http://localhost:1313/cv/experiences/linkvalue/</link>
+      <link>http://www.simonblum.me/cv/experiences/linkvalue/</link>
       <pubDate>Thu, 09 Apr 2015 13:17:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/experiences/linkvalue/</guid>
+      <guid>http://www.simonblum.me/cv/experiences/linkvalue/</guid>
       <description>&lt;p&gt;De Septembre 2014 à Juin 2015 j&amp;rsquo;étais &amp;ldquo;partner&amp;rdquo; (consultant) développeur PHP chez &lt;a href=&#34;http://link-value.fr/&#34; target=&#34;_blank&#34;&gt;Link-Value&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;ul class=&#34;collapsible popout&#34; data-collapsible=&#34;accordion&#34;&gt;
@@ -139,10 +139,10 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>Projet RunRunRun</title>
-      <link>http://localhost:1313/cv/projets/runrunrun/</link>
+      <link>http://www.simonblum.me/cv/projets/runrunrun/</link>
       <pubDate>Thu, 09 Apr 2015 14:08:05 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/projets/runrunrun/</guid>
+      <guid>http://www.simonblum.me/cv/projets/runrunrun/</guid>
       <description>&lt;p&gt;Il s&amp;rsquo;agit d&amp;rsquo;une application pour Firefox OS, le nouvel OS mobile de Mozilla. RunRunRun vous permet d&amp;rsquo;enregistrer votre parcours lorsque vous sortez faire un footing ou du vélo. Les technologies employées sont HTML5, JavaScript et CSS. Cette application utilise IndexedDB et la géolocalisation avec les API HTML5.&lt;/p&gt;
 
 &lt;p&gt;Voir le dépôt GitHub de ce projet&lt;/p&gt;
@@ -153,20 +153,20 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>Licence MIAGE en apprentissage</title>
-      <link>http://localhost:1313/cv/formation/l3miage/</link>
+      <link>http://www.simonblum.me/cv/formation/l3miage/</link>
       <pubDate>Thu, 09 Apr 2015 13:55:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/formation/l3miage/</guid>
+      <guid>http://www.simonblum.me/cv/formation/l3miage/</guid>
       <description>&lt;p&gt;De septembre 2010 à septembre 2011 à l&amp;rsquo;Université d&amp;rsquo;Evry - Val d&amp;rsquo;Essonne (91)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Ipsos France</title>
-      <link>http://localhost:1313/cv/experiences/ipsos/</link>
+      <link>http://www.simonblum.me/cv/experiences/ipsos/</link>
       <pubDate>Wed, 08 Apr 2015 15:07:09 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/experiences/ipsos/</guid>
+      <guid>http://www.simonblum.me/cv/experiences/ipsos/</guid>
       <description>&lt;p&gt;Au sein du service des Nouvelles Technologies rattaché à la DSI d&amp;rsquo;Ipsos (Paris XIIIe) de Septembre 2010 à Septembre 2013 j&amp;rsquo;y ai réalisé des projets intéressants et variés.
 &lt;ul class=&#34;collapsible popout&#34; data-collapsible=&#34;accordion&#34;&gt;
     &lt;li&gt;
@@ -195,10 +195,10 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>Projet Boostadopt</title>
-      <link>http://localhost:1313/cv/projets/boostadopt/</link>
+      <link>http://www.simonblum.me/cv/projets/boostadopt/</link>
       <pubDate>Thu, 09 Apr 2015 14:09:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/projets/boostadopt/</guid>
+      <guid>http://www.simonblum.me/cv/projets/boostadopt/</guid>
       <description>&lt;p&gt;BoostAdopt est un projet permettant d&amp;rsquo;améliorer sa visibilité sur un site de rencontre français. Il permet aux utilisateurs de visiter automatiquement un grand nombre de profils définis grâce à un moteur de recherche.&lt;/p&gt;
 
 &lt;p&gt;Suite à une mise en demeure ce projet est désactivé.&lt;/p&gt;
@@ -209,20 +209,20 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>DUT Informatique</title>
-      <link>http://localhost:1313/cv/formation/dutinfo/</link>
+      <link>http://www.simonblum.me/cv/formation/dutinfo/</link>
       <pubDate>Thu, 09 Apr 2015 13:59:33 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/formation/dutinfo/</guid>
+      <guid>http://www.simonblum.me/cv/formation/dutinfo/</guid>
       <description>&lt;p&gt;De septembre 2007 à juin 2010 à l&amp;rsquo;IUT de Fontainebleau - UPEC (77)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Projet MapBoostadopt</title>
-      <link>http://localhost:1313/cv/projets/mapboostadopt/</link>
+      <link>http://www.simonblum.me/cv/projets/mapboostadopt/</link>
       <pubDate>Thu, 09 Apr 2015 14:12:22 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/cv/projets/mapboostadopt/</guid>
+      <guid>http://www.simonblum.me/cv/projets/mapboostadopt/</guid>
       <description>&lt;p&gt;Le projet BoostAdopt a permis d&amp;rsquo;agréger plusieurs dizaines de milliers de profils d&amp;rsquo;utilisateurs européens d&amp;rsquo;un site de rencontre.&lt;/p&gt;
 
 &lt;p&gt;Cette application affichait tous ces profils sur un système cartographique. Ce projet a été désactivé suite à une mise en demeure.&lt;/p&gt;
