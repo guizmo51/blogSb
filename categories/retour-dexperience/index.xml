@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Retour Dexperience on Blog </title>
-    <link>http://www.simonblum.me/categories/retour-dexperience/</link>
+    <link>http://localhost:1313/categories/retour-dexperience/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,13 +10,13 @@
     
     <item>
       <title>boostadopt</title>
-      <link>http://www.simonblum.me/post/retourdexperience/boostadopt/</link>
+      <link>http://localhost:1313/post/retourdexperience/boostadopt/</link>
       <pubDate>Wed, 01 Apr 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/retourdexperience/boostadopt/</guid>
+      <guid>http://localhost:1313/post/retourdexperience/boostadopt/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://www.simonblum.me/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
 
 Tout ce projet est visible sur &lt;a href=&#34;https://github.com/guizmo51/boostadopt&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 

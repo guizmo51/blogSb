@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Hacks on Blog </title>
-    <link>http://www.simonblum.me/categories/hacks/</link>
+    <link>http://localhost:1313/categories/hacks/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>concours facebook</title>
-      <link>http://www.simonblum.me/post/hacks/concours-facebook/</link>
+      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
       <pubDate>Thu, 30 Apr 2015 13:55:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/hacks/concours-facebook/</guid>
+      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
       <description>
 
 &lt;p&gt;La page facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
@@ -66,7 +66,7 @@ En terme de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifest
 Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
 
 &lt;p&gt;Un des premiers essais (non concluant)
-&lt;img src=&#34;http://www.simonblum.me/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
