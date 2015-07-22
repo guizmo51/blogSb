@@ -49,18 +49,6 @@
     </item>
     
     <item>
-      <title>Another Hugo Post</title>
-      <link>http://www.simonblum.me/cv/another-post/</link>
-      <pubDate>Tue, 02 Sep 2014 00:00:00 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/another-post/</guid>
-      <description>
-
-&lt;h2 id=&#34;toml-yaml-json-oh-my:fa77c077e3fbd48e440da594382c44fa&#34;&gt;TOML, YAML, JSON &amp;mdash; Oh my!&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Projet BetterCallUber</title>
       <link>http://www.simonblum.me/cv/projets/bettercalluber/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
@@ -228,6 +216,16 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
 &lt;p&gt;Cette application affichait tous ces profils sur un système cartographique. Ce projet a été désactivé suite à une mise en demeure.&lt;/p&gt;
 
 &lt;p&gt;Technologies : Bootstrap, NodeJS, ExpressJS, MongoDB, MapQuest (OpenStreetMap, Google Maps), Leaflet, API de données géographiques.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Baccalauréat Scientifique</title>
+      <link>http://www.simonblum.me/cv/formation/bac/</link>
+      <pubDate>Thu, 09 Apr 2015 14:01:02 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/cv/formation/bac/</guid>
+      <description>&lt;p&gt;Obtenu en juin 2007 - Lycée Uruguay France d&amp;rsquo;Avon (77)&lt;/p&gt;
 </description>
     </item>
     
