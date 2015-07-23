@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Pourquoi ce blog ? - http://www.simonblum.me/</title>
+    <title>Pourquoi ce blog ? - http://localhost:1313/</title>
       
              
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -17,6 +17,14 @@
       <meta name="description" content="Simon BLUM, 27 ans, ingénieur Web utilisant les technologies PHP et NodeJS. " />
     </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <nav>
     <div class="nav-wrapper">
       <a href="http://www.simonblum.me" class="brand-logo">Simon Blum</a>
@@ -25,22 +33,22 @@
      	<ul id="nav-mobile" class="right hide-on-med-and-down">
 
 	
-	 <li><a href="http://www.simonblum.me//post/qui-suis-je/">Qui suis-je ?</a></li>
-       <li><a href="http://www.simonblum.me//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
-                    <li><a href="http://www.simonblum.me//categories/retour-dexperience/">Retour d'expérience</a></li>
-                    <li><a href="http://www.simonblum.me//categories/hacks/">Hacks</a></li>
-                    <li><a href="http://www.simonblum.me//categories/hors-sujet/">Hors-sujet..</a></li>
+	 <li><a href="http://localhost:1313//post/qui-suis-je/">Qui suis-je ?</a></li>
+       <li><a href="http://localhost:1313//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
+                    <li><a href="http://localhost:1313//categories/retour-dexperience/">Retour d'expérience</a></li>
+                    <li><a href="http://localhost:1313//categories/hacks/">Hacks</a></li>
+                    <li><a href="http://localhost:1313//categories/hors-sujet/">Hors-sujet..</a></li>
                      <li><a href="#contact">Contact</a></li>
-                    <li><a href="http://www.simonblum.me//cv">mon CV</a></li>
+                    <li><a href="http://localhost:1313//cv">mon CV</a></li>
 </ul>
 <ul class="side-nav" id="mobile-demo">
-      <li><a href="http://www.simonblum.me//post/qui-suis-je/">Qui suis-je ?</a></li>
-       <li><a href="http://www.simonblum.me//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
-                    <li><a href="http://www.simonblum.me//categories/retour-dexperience/">Retour d'expérience</a></li>
-                    <li><a href="http://www.simonblum.me//categories/hacks/">Hacks</a></li>
-                    <li><a href="http://www.simonblum.me//categories/hors-sujet/">Hors-sujet..</a></li>
+      <li><a href="http://localhost:1313//post/qui-suis-je/">Qui suis-je ?</a></li>
+       <li><a href="http://localhost:1313//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
+                    <li><a href="http://localhost:1313//categories/retour-dexperience/">Retour d'expérience</a></li>
+                    <li><a href="http://localhost:1313//categories/hacks/">Hacks</a></li>
+                    <li><a href="http://localhost:1313//categories/hors-sujet/">Hors-sujet..</a></li>
                      <li><a href="#contact">Contact</a></li>
-                    <li><a href="http://www.simonblum.me//cv">mon CV</a></li>
+                    <li><a href="http://localhost:1313//cv">mon CV</a></li>
 		</ul>
     
     </div>
@@ -53,14 +61,19 @@
             <div class="well well-sm">
                     <h3>Pourquoi ce blog ?<br> <small></small></h3>
                     <hr>
-                     March 15, 2015  <br>
+                     March 15, 2015
+                      
+
+
+
+                     <br>
                     <hr>
                     <p>Je ne suis expert en rien du tout, je suis simplement passionné par le Web et souhaite partager mes expériences. Pourquoi cela ?  Dur d&rsquo;expliquer comment cela m&rsquo;est venu : mon expérience avec FirefoxOS et le partage des connaissances a peut-être joué un rôle. Je pense aussi que certains blogs techniques sur des langages comme PHP ou NodeJS m&rsquo;ont débloqué lors de problèmes sur des applications. A travers ce blog je souhaite partager mes expériences et mes projets web.</p>
 
 <p>Sur ce blog vous trouverez donc plusieurs sections :
 <ul class="collection">
     <li class="collection-item"><h5>hacks </h5> attention il ne s&rsquo;agit pas de hacks au sens premier mais plus d&rsquo;expériences où le code permet de simplifier la vie ou une simple tâche !</li>
-<li class="collection-item"><h5>retour d&rsquo;exéperience </h5> j&rsquo;y partage des retours d&rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &ldquo;comm&rsquo;&rdquo; ou de divers autres thèmes.</li>
+<li class="collection-item"><h5>retour d&rsquo;experience </h5> j&rsquo;y partage des retours d&rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &ldquo;comm&rsquo;&rdquo; ou de divers autres thèmes.</li>
 <li class="collection-item"><h5>hors-sujet </h5> pour y mettre ce qui ne rentre pas dans les autres rubriques : du sport, des découvertes, ..</li>
 </ul></p>
 
@@ -141,7 +154,10 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="/js/materialize.min.js"></script>
        <script type="text/javascript" src="/js/init.js"></script>
-    </body>
+    <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
   </html>
 
 

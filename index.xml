@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title> on Blog </title>
-    <link>http://www.simonblum.me/</link>
+    <link>http://localhost:1313/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>concours facebook</title>
-      <link>http://www.simonblum.me/post/hacks/concours-facebook/</link>
+      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
       <pubDate>Wed, 15 Jul 2015 13:55:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/hacks/concours-facebook/</guid>
+      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
       <description>
 
 &lt;p&gt;La page facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
@@ -66,20 +66,20 @@ En terme de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifest
 Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
 
 &lt;p&gt;Un des premiers essais (non concluant)
-&lt;img src=&#34;http://www.simonblum.me/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>boostadopt</title>
-      <link>http://www.simonblum.me/post/retourdexperience/boostadopt/</link>
+      <link>http://localhost:1313/post/retourdexperience/boostadopt/</link>
       <pubDate>Sun, 05 Jul 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/retourdexperience/boostadopt/</guid>
+      <guid>http://localhost:1313/post/retourdexperience/boostadopt/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://www.simonblum.me/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
 
 Tout ce projet est visible sur &lt;a href=&#34;https://github.com/guizmo51/boostadopt&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 
@@ -168,10 +168,10 @@ Afin de diminuer ces craintes j&amp;rsquo;ai réalisé une vidéo expliquant le 
     
     <item>
       <title>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</title>
-      <link>http://www.simonblum.me/post/hors-sujets/stadedefrance/</link>
+      <link>http://localhost:1313/post/hors-sujets/stadedefrance/</link>
       <pubDate>Wed, 01 Jul 2015 13:56:46 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/hors-sujets/stadedefrance/</guid>
+      <guid>http://localhost:1313/post/hors-sujets/stadedefrance/</guid>
       <description>&lt;p&gt;Non, ce titre n&amp;rsquo;est pas un canular : j&amp;rsquo;ai bel et bien couru au Stade de France. Bien qu&amp;rsquo;ancien, depuis cet évènement je souhaitais le relater afin de partager mon expérience.&lt;/p&gt;
 
 &lt;p&gt;Tout a commencé le 22 juin 2013 quand le &lt;a href=&#34;https://twitter.com/StadeFrance/status/348423820064997377&#34;&gt;compte Twitter du Stade de France&lt;/a&gt; annonce un concours pour courir un 100m au Stade de France pendant le Meeting Areva le 6 juillet 2013. Ce meeting Areva fait partie d&amp;rsquo;une série d&amp;rsquo;évènements internationaux accueillant des épreuves internationales d&amp;rsquo;athlétisme. En préambule du meeting avait lieu une compétition régionale. En parallèle le Stade de France lance un concours permettant d&amp;rsquo;assister au meeting dans la loge réservée (et d&amp;rsquo;autres surprises). Les conditions sont simples tweeter un message avec le hastag &amp;ldquo;#Jeveuxcourirle100maustadedefranceparceque&amp;rdquo;. Cela prend pas mal de place dans un tweet limité à 140 caractères il va falloir être original.&lt;/p&gt;
@@ -227,57 +227,57 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     </item>
     
     <item>
-      <title>Formation et diplomes</title>
-      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
-      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>projets</title>
-      <link>http://www.simonblum.me/cv/slider/projets/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/projets/</guid>
-      <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Simon Blum</title>
-      <link>http://www.simonblum.me/cv/slider/simonblum/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/simonblum/</guid>
-      <description>&lt;p&gt;Diplômé d&amp;rsquo;un Master MIAGE je suis actuellement partner chez Link-Value &amp;amp; en mission de développement back-end PHP pour un grand groupe de communication.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Expériences professionelles</title>
-      <link>http://www.simonblum.me/cv/slider/experiencespro/</link>
+      <link>http://localhost:1313/cv/slider/experiencespro/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/experiencespro/</guid>
+      <guid>http://localhost:1313/cv/slider/experiencespro/</guid>
       <description>&lt;p&gt;Convaincu que l&amp;rsquo;expérience est essentielle j&amp;rsquo;ai décidé de suivre ma formation en apprentissage. J&amp;rsquo;ai été en alternance pendant 3 ans jusqu&amp;rsquo;en septembre 2013.&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>projets</title>
+      <link>http://localhost:1313/cv/slider/projets/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/cv/slider/projets/</guid>
+      <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Formation et diplomes</title>
+      <link>http://localhost:1313/cv/slider/formationsdiplomes/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/cv/slider/formationsdiplomes/</guid>
+      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simon Blum</title>
+      <link>http://localhost:1313/cv/slider/simonblum/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/cv/slider/simonblum/</guid>
+      <description>&lt;p&gt;Diplômé d&amp;rsquo;un Master MIAGE je suis actuellement partner chez Link-Value &amp;amp; en mission de développement back-end PHP pour un grand groupe de communication.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pourquoi ce blog ?</title>
-      <link>http://www.simonblum.me/post/pourquoi-ce-blog/</link>
+      <link>http://localhost:1313/post/pourquoi-ce-blog/</link>
       <pubDate>Sun, 15 Mar 2015 13:56:46 &#43;0200</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/pourquoi-ce-blog/</guid>
+      <guid>http://localhost:1313/post/pourquoi-ce-blog/</guid>
       <description>&lt;p&gt;Je ne suis expert en rien du tout, je suis simplement passionné par le Web et souhaite partager mes expériences. Pourquoi cela ?  Dur d&amp;rsquo;expliquer comment cela m&amp;rsquo;est venu : mon expérience avec FirefoxOS et le partage des connaissances a peut-être joué un rôle. Je pense aussi que certains blogs techniques sur des langages comme PHP ou NodeJS m&amp;rsquo;ont débloqué lors de problèmes sur des applications. A travers ce blog je souhaite partager mes expériences et mes projets web.&lt;/p&gt;
 
 &lt;p&gt;Sur ce blog vous trouverez donc plusieurs sections :
 &lt;ul class=&#34;collection&#34;&gt;
     &lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;hacks &lt;/h5&gt; attention il ne s&amp;rsquo;agit pas de hacks au sens premier mais plus d&amp;rsquo;expériences où le code permet de simplifier la vie ou une simple tâche !&lt;/li&gt;
-&lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;retour d&amp;rsquo;exéperience &lt;/h5&gt; j&amp;rsquo;y partage des retours d&amp;rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &amp;ldquo;comm&amp;rsquo;&amp;rdquo; ou de divers autres thèmes.&lt;/li&gt;
+&lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;retour d&amp;rsquo;experience &lt;/h5&gt; j&amp;rsquo;y partage des retours d&amp;rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &amp;ldquo;comm&amp;rsquo;&amp;rdquo; ou de divers autres thèmes.&lt;/li&gt;
 &lt;li class=&#34;collection-item&#34;&gt;&lt;h5&gt;hors-sujet &lt;/h5&gt; pour y mettre ce qui ne rentre pas dans les autres rubriques : du sport, des découvertes, ..&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 
@@ -287,25 +287,25 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     
     <item>
       <title>Qui suis-je ?</title>
-      <link>http://www.simonblum.me/post/qui-suis-je/</link>
+      <link>http://localhost:1313/post/qui-suis-je/</link>
       <pubDate>Sun, 15 Feb 2015 13:56:46 &#43;0200</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/qui-suis-je/</guid>
+      <guid>http://localhost:1313/post/qui-suis-je/</guid>
       <description>&lt;p&gt;Je m&amp;rsquo;appelle Simon j&amp;rsquo;ai 27 ans, j&amp;rsquo;habite à Paris et suis originaire de Reims (51). Je suis passionné de développement Web et j&amp;rsquo;en ai fait ma profession.
 J&amp;rsquo;utilise surtout PHP (avec ou sans framework) et NodeJS. Je peux très bien bricoler sur mes RasperryPi (j&amp;rsquo;en ferai un billet aussi). J&amp;rsquo;aime aussi tout ce qui parle d&amp;rsquo;infrastructure Web ou de big data.&lt;/p&gt;
 
 &lt;p&gt;Je suis de nature curieuse sur plein de sujets que ça soit lié à l&amp;rsquo;informatique ou non (la communication, la politique, le marketing, la géopolitique, la défense, etc). Je suis aussi plutôt sportif !&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.simonblum.me/cv/&#34;&gt;Mon CV&lt;/a&gt; résume mon parcours étudiant et professionnel. N&amp;rsquo;hésitez pas à me contacter si vous avez des questions !&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/cv/&#34;&gt;Mon CV&lt;/a&gt; résume mon parcours étudiant et professionnel. N&amp;rsquo;hésitez pas à me contacter si vous avez des questions !&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Projet BetterCallUber</title>
-      <link>http://www.simonblum.me/cv/projets/bettercalluber/</link>
+      <link>http://localhost:1313/cv/projets/bettercalluber/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/projets/bettercalluber/</guid>
+      <guid>http://localhost:1313/cv/projets/bettercalluber/</guid>
       <description>&lt;p&gt;BetterCallUber est le résultat de ma participation à un hackathon organisé par le service de VTC Uber.
 Ce projet est une application web permettant de réserver instantanément ou de manière programmée un VTC.
 D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le déclenchemnt d&amp;rsquo;une course à l&amp;rsquo;aterrisage d&amp;rsquo;un avion ou train.&lt;/p&gt;
@@ -318,10 +318,10 @@ D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le dé
     
     <item>
       <title>Travail de mémoire sur les BIG DATA</title>
-      <link>http://www.simonblum.me/cv/projets/bigdata/</link>
+      <link>http://localhost:1313/cv/projets/bigdata/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/projets/bigdata/</guid>
+      <guid>http://localhost:1313/cv/projets/bigdata/</guid>
       <description>&lt;p&gt;Ce mémoire s&amp;rsquo;intitule &amp;ldquo;Les instituts de sondages sont-ils parés à l&amp;rsquo;utilisation des Big Data ?&amp;rdquo;.
 Dans le cadre de ce travail j&amp;rsquo;ai participé plusieurs conférences ou meet-ups sur le sujet.&lt;/p&gt;
 
@@ -339,10 +339,10 @@ Dans le cadre de ce travail j&amp;rsquo;ai participé plusieurs conférences ou 
     
     <item>
       <title>Master MIAGE en apprentissage</title>
-      <link>http://www.simonblum.me/cv/formation/m2miage/</link>
+      <link>http://localhost:1313/cv/formation/m2miage/</link>
       <pubDate>Thu, 09 Apr 2015 13:46:53 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/formation/m2miage/</guid>
+      <guid>http://localhost:1313/cv/formation/m2miage/</guid>
       <description>&lt;p&gt;Spécialité Ingénierie Logicielle pour le Web
 De septembre 2011 à septembre 2013 à l&amp;rsquo;Université d&amp;rsquo;Evry - Val d&amp;rsquo;Essonne (91)&lt;/p&gt;
 </description>
@@ -350,10 +350,10 @@ De septembre 2011 à septembre 2013 à l&amp;rsquo;Université d&amp;rsquo;Evry 
     
     <item>
       <title>Link-Value</title>
-      <link>http://www.simonblum.me/cv/experiences/linkvalue/</link>
+      <link>http://localhost:1313/cv/experiences/linkvalue/</link>
       <pubDate>Thu, 09 Apr 2015 13:17:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/experiences/linkvalue/</guid>
+      <guid>http://localhost:1313/cv/experiences/linkvalue/</guid>
       <description>&lt;p&gt;De Septembre 2014 à Juin 2015 j&amp;rsquo;étais &amp;ldquo;partner&amp;rdquo; (consultant) développeur PHP chez &lt;a href=&#34;http://link-value.fr/&#34; target=&#34;_blank&#34;&gt;Link-Value&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;ul class=&#34;collapsible popout&#34; data-collapsible=&#34;accordion&#34;&gt;
@@ -379,10 +379,10 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>Projet RunRunRun</title>
-      <link>http://www.simonblum.me/cv/projets/runrunrun/</link>
+      <link>http://localhost:1313/cv/projets/runrunrun/</link>
       <pubDate>Thu, 09 Apr 2015 14:08:05 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/projets/runrunrun/</guid>
+      <guid>http://localhost:1313/cv/projets/runrunrun/</guid>
       <description>&lt;p&gt;Il s&amp;rsquo;agit d&amp;rsquo;une application pour Firefox OS, le nouvel OS mobile de Mozilla. RunRunRun vous permet d&amp;rsquo;enregistrer votre parcours lorsque vous sortez faire un footing ou du vélo. Les technologies employées sont HTML5, JavaScript et CSS. Cette application utilise IndexedDB et la géolocalisation avec les API HTML5.&lt;/p&gt;
 
 &lt;p&gt;Voir le dépôt GitHub de ce projet&lt;/p&gt;
@@ -393,10 +393,10 @@ Compétences : PHP5, Drupal 7, API, Symfony 2.6&lt;/p&gt;
     
     <item>
       <title>Licence MIAGE en apprentissage</title>
-      <link>http://www.simonblum.me/cv/formation/l3miage/</link>
+      <link>http://localhost:1313/cv/formation/l3miage/</link>
       <pubDate>Thu, 09 Apr 2015 13:55:54 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/formation/l3miage/</guid>
+      <guid>http://localhost:1313/cv/formation/l3miage/</guid>
       <description>&lt;p&gt;De septembre 2010 à septembre 2011 à l&amp;rsquo;Université d&amp;rsquo;Evry - Val d&amp;rsquo;Essonne (91)&lt;/p&gt;
 </description>
     </item>
