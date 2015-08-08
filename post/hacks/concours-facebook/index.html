@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>concours facebook - http://www.simonblum.me/</title>
+    <title>Concours Facebook - http://www.simonblum.me/</title>
       
              
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -59,7 +59,7 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h3>concours facebook<br> <small></small></h3>
+                    <h3>Concours Facebook<br> <small></small></h3>
                     <hr>
                      July 15, 2015
                       - <a href="/categories/hacks ">hacks</a> -
@@ -73,11 +73,11 @@
                     <hr>
                     
 
-<p>La page facebook d&rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&rsquo;étalait sur une semaine entière.</p>
+<p>La page Facebook d&rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&rsquo;étalait sur une semaine entière.</p>
 
-<p>Pourquoi avoir fait ce mini hack ? Tout simplement pour prouver que sur ce genre de concours il est idiot de proposer un système de participation de ce type sachant que des solutions commerciales permettant de tricher existent. je me suis donc lancé dans la réalisation d&rsquo;un outil avec pour objectif de remporter ce concours.</p>
+<p>Pourquoi avoir fait ce mini hack ? Tout simplement pour prouver que sur ce genre de concours il est dommage de proposer un système de participation de ce type sachant que des solutions commerciales permettant de tricher existent. Je me suis donc lancé dans la réalisation d&rsquo;un outil avec pour objectif de remporter ce concours.</p>
 
-<p>Dès le début le but est d&rsquo;automatiser tout le système afin de ne pas avoir à rafraichir sa page toutes les 10 secondes et faire l&rsquo;action de commenter. Pendant ce temps je peux vacquer sereinnement à mes occupations quotidiennes. L&rsquo;autre raison de l&rsquo;automatisation est que dans ce genre de concours en 10 secondes tu peux déjà être 15eme.</p>
+<p>Dès le début le but est d&rsquo;automatiser tout le système afin de ne pas avoir à rafraichir sa page toutes les 10 secondes et faire l&rsquo;action de commenter. Pendant ce temps je peux vaquer sereinement à mes occupations quotidiennes. L&rsquo;autre raison de l&rsquo;automatisation est que dans ce genre de concours en 10 secondes on peut déjà être 15ème.</p>
 
 <p>Avant de débuter il faut découper le problème en deux parties afin de travailler efficacement sur ces deux parties indépendantes :
 + détection du nouveau contenu
@@ -85,13 +85,13 @@
 
 <p>A moins d&rsquo;utiliser une base de mots clés ou un dictionnaire il est impossible d&rsquo;identifier à l&rsquo;avance le post à commenter. J&rsquo;ai donc décidé de commenter automatiquement tous les nouveaux postes publiés dans le créneau défini (13h - 17h): une unique fois lors de la détection.</p>
 
-<p>Tout est lié à Facebook : je vais donc utiliser leur SDK et leur API qui bien qu&rsquo;elle soit mal documentée restera plus efficace sans devoir ré-inventer la roue.</p>
+<p>Tout est lié à Facebook : je vais donc utiliser leur SDK et leur API qui bien qu&rsquo;elle soit mal documentée restera plus efficace sans devoir réinventer la roue.</p>
 
 <p>Afin de pouvoir utiliser ce SDK I il faut au préalable avoir un compte &ldquo;déveloper&rdquo; puis déclarer son application (nom, urls autorisées à appeler l&rsquo;API , droits nécessaires..). Dans un premier temps l&rsquo;application n&rsquo;est visible que par vous, afin de la rendre publique il faut la soumettre aux reviewers de Facebook. Dans mon cas il n&rsquo;était pas certain que l&rsquo;application soit autorisée de plus il fallait un temps certain que je n&rsquo;avais pas.</p>
 
 <h2 id="détection-de-nouveau-contenu:fb0b9121ebebb531d16fe01d8c71c3b0">Détection de nouveau contenu</h2>
 
-<p>Le principe de la détection de nouveau contenu est assez simple : récupérer le flux des posts, puis voir si le plus récent a changé. L&rsquo;API facebook retourne cela sous forme d&rsquo;un tableau d&rsquo;objet qui est déjà trié. Il suffit de stocker cet identifiant du contenu le plus récent en base de données ou fichier texte. Ensuite toutes les X secondes, dans mon cas paramètré à 4 secondes je requêtais l&rsquo;API Facebook grâce au SDK pour avoir les contenus de la page de la radio. J&rsquo;extrayais l&rsquo;identifiant du dernier post et le comparais avec celui enregistré dans mon fichier texte. Si celui-ci avait changé alors bingo je dois déclencher la publication du commentaire.</p>
+<p>Le principe de la détection de nouveau contenu est assez simple : récupérer le flux des posts, puis voir si le plus récent a changé. L&rsquo;API Facebook retourne cela sous forme d&rsquo;un tableau d&rsquo;objet qui est déjà trié. Il suffit de stocker cet identifiant du contenu le plus récent en base de données ou fichier texte. Ensuite toutes les X secondes, dans mon cas paramétré à 4 secondes je requêtais l&rsquo;API Facebook grâce au SDK pour avoir les contenus de la page de la radio. J&rsquo;extrayais l&rsquo;identifiant du dernier post et le comparais avec celui enregistré dans mon fichier texte. Si celui-ci avait changé alors bingo je pouvais déclencher la publication du commentaire.</p>
 
 <h2 id="publication-du-commentaire:fb0b9121ebebb531d16fe01d8c71c3b0">Publication du commentaire:</h2>
 
@@ -99,27 +99,27 @@
  Il s&rsquo;est avéré que cela était très compliqué probablement causé par la non-approbation de l&rsquo;application. En effet hormis pour le compte developper et certains droits chaque application doit être approuvée ce qui prend du temps.</p>
 
 <p>J&rsquo;ai donc abandonné la solution PHP pour publier le commentaire à travers l&rsquo;API Facebook.
- Dans un second temps comme la détection fonctionnait très bien l&rsquo;application affichait directement la publication il n&rsquo;y avait plus qu&rsquo;à commenter. J&rsquo;estimais toutefois que cela fut une perte de temps.</p>
+ Dans un second temps comme la détection fonctionnait très bien l&rsquo;application affichait directement la publication il n&rsquo;y avait plus qu&rsquo;à commenter. J&rsquo;estimais toutefois que c&rsquo;était une perte de temps.</p>
 
 <p>Enfin en désespoir de cause j&rsquo;ai observé la requête Ajax jouée dans le navigateur, n&rsquo;y croyant pas j&rsquo;ai fait rejouer cette requête. Quelle ne fut pas ma surprise quand j&rsquo;ai vu que ce replay avait permis de poster un nouveau commentaire.  Cette requête Ajax prenait en paramètre l&rsquo;id de la la publication à commenter, le commentaire, la date et un autre paramètre. Il y a un token qui est valide 24h dedans.</p>
 
-<p>J&rsquo;ai donc décidé d&rsquo;utiliser cette requête ajax pour publier le commentaire.</p>
+<p>J&rsquo;ai donc décidé d&rsquo;utiliser cette requête Ajax pour publier le commentaire.</p>
 
 <p>Voici ce que j&rsquo;ai décidé (qui va être l&rsquo;architecture finale) :
-Une extension chrome créée pour l&rsquo;occasion va appeller le script PHP de détection de nouveaux contenus. Si ce script retourne qu&rsquo;il a détecté un nouveau contenu alors l&rsquo;extension chrome va déclencher la requête AJAX.</p>
+Une extension chrome créée pour l&rsquo;occasion va appeler le script PHP de détection de nouveaux contenus. Si ce script retourne qu&rsquo;il a détecté un nouveau contenu alors l&rsquo;extension chrome va déclencher la requête AJAX.</p>
 
-<p>Je parle ici pour la premiere fois d&rsquo;extension Chrome, c&rsquo;est quelque chose de très simple à utiliser qui permet d&rsquo;injecter du Javascript sur une page.
-En terme de fichiers il s&rsquo;agit d&rsquo;un dossier avec un manifest et des scripts.</p>
+<p>Je parle ici pour la première fois d&rsquo;extension Chrome, c&rsquo;est quelque chose de très simple à utiliser qui permet d&rsquo;injecter du Javascript sur une page.
+En termes de fichiers il s&rsquo;agit d&rsquo;un dossier avec un manifest et des scripts.</p>
 
-<p>En quelques lignes de JavaScript j&rsquo;ai implémenté et mis en oeuvre la détection de nouveau contenu et la publication du commentaire.</p>
+<p>En quelques lignes de JavaScript j&rsquo;ai implémenté et mis en œuvre la détection de nouveau contenu et la publication du commentaire.</p>
 
-<p>Coté serveur : un petit script en local était chargé de détecter le nouveau contenu. Ce script PHP était appellé toutes les 4 secondes par l&rsquo;extension Chrome.</p>
+<p>Coté serveur : un petit script en local était chargé de détecter le nouveau contenu. Ce script PHP était appelé toutes les 4 secondes par l&rsquo;extension Chrome.</p>
 
-<p>Autre remarque : j&rsquo;ai dû paramètrer tout le projet local en HTTPS afin de pouvoir communiquer avec l&rsquo;API Facebook et notamment poster un commentaire.</p>
+<p>Autre remarque : j&rsquo;ai dû paramétrer tout le projet local en HTTPS afin de pouvoir communiquer avec l&rsquo;API Facebook et notamment poster un commentaire.</p>
 
 <h2 id="résultats:fb0b9121ebebb531d16fe01d8c71c3b0">Résultats</h2>
 
-<p>Ce projet n&rsquo;a été opérationnel qu&rsquo;à partir du jeudi, en effet les jours précèdents je me suis heurté à des soucis propres à la page Facebook : le contenu du jeu était créé chaque matin puis dépublié, le script n&rsquo;avait alors pas détecté la publication.
+<p>Ce projet n&rsquo;a été opérationnel qu&rsquo;à partir du jeudi, en effet les jours précédents je me suis heurté à des soucis propres à la page Facebook : le contenu du jeu était créé chaque matin puis dé-publié, le script n&rsquo;avait alors pas détecté la publication.
 Le jeudi quelqu&rsquo;un avait été plus rapide que moi, d&rsquo;où l&rsquo;importance des technologies.</p>
 
 <p>Un des premiers essais (non concluant)
@@ -168,9 +168,9 @@ Le jeudi quelqu&rsquo;un avait été plus rapide que moi, d&rsquo;où l&rsquo;im
                 <h5 class="white-text">Derniers contenus</h5>
                 <ul>
                   
-                     <li><a class="grey-text text-lighten-3" href="/post/hacks/concours-facebook/"><i class="mdi-navigation-chevron-right"></i>concours facebook</a></li>
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/concours-facebook/"><i class="mdi-navigation-chevron-right"></i>Concours Facebook</a></li>
                   
-                     <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/boostadopt/"><i class="mdi-navigation-chevron-right"></i>boostadopt</a></li>
+                     <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/boostadopt/"><i class="mdi-navigation-chevron-right"></i>Boostadopt</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/hors-sujets/stadedefrance/"><i class="mdi-navigation-chevron-right"></i>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</a></li>
                   
