@@ -6,7 +6,54 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Wed, 15 Jul 2015 13:55:17 CEST</updated>
+    <updated>Sat, 08 Aug 2015 13:57:26 CEST</updated>
+    
+    <item>
+      <title>MapBoostadopt</title>
+      <link>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</link>
+      <pubDate>Sat, 08 Aug 2015 13:57:26 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</guid>
+      <description>&lt;p&gt;Comme vous avez pu le &lt;a href=&#34;http://www.simonblum.me/post/retourdexperience/boostadopt/&#34; target=&#34;_blank&#34;&gt;lire précèdemment&lt;/a&gt; j&amp;rsquo;ai réalisé un projet de &amp;ldquo;booster&amp;rdquo; (permettant d&amp;rsquo;améliorer l&amp;rsquo;efficacité) pour le site de rencontre AdopteUnMec.com .&lt;/p&gt;
+
+&lt;p&gt;Lors de mes expérimentations (afin de trouver une solution viable) j&amp;rsquo;ai agrégé une masse conséquente de profils dans le but de les analyser et les exploiter dans le futur. En effet, le booster fonctionne en visitant un profil (donc en récupérant ses informations) autant enregistrer ce profil pour une utilisation ultérieure.&lt;/p&gt;
+
+&lt;p&gt;Etant fan des big data et de cartographie j&amp;rsquo;ai donc souhaité mettre en place une grande carte interactive des profils d&amp;rsquo;AdopteUnMec. Suite à une mise en demeure ce projet a été désactivé. Il n&amp;rsquo;est malheureusement plus possible de le visualiser. Ce projet se voulait comme un outil pour faire du &amp;ldquo;buzz&amp;rdquo; autour des aspects &amp;ldquo;données&amp;rdquo; et &amp;ldquo;cartographie&amp;rdquo; afin de communiquer sur BoostAdopt.&lt;/p&gt;
+
+&lt;p&gt;Voici une capture d&#39;écran du projet MapBoostAdopt.
+J&#39;ai souhaité mettre en place une interface légère avec comme fond (sur tout l&#39;écran) une carte interactive utilisant OpenStreetMap. Par dessus j&#39;ai rajouté un champ de recherche par ville et aussi 5 profils d&#39;invidus géographiquement présent sur la carte visible. Bien sûr si l&#39;on zoomait sur une zone ces résultats étaient mis à jour. Sur cette capture d&#39;écran on peut voir que des utilisateurs provenant de France, Suisse, Luxembourg, Belgique sont présents. Suite à l&#39;ouverture du site italien et du site allemand j&#39;ai aussi pu enregistrer des profils provenant de ces 2 nouveaux pays.  
+&lt;img src=&#34;http://www.simonblum.me/images/boostadopt.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h3&gt;Coin technique&lt;/h3&gt;
+ Les profils retournés par l&amp;rsquo;API sont des documents JSON ayant des formats variés, en effet un profil complet aura 100% des attributs remplis. Au contraire quelqu&amp;rsquo;un n&amp;rsquo;ayant rempli que le strict minimum n&amp;rsquo;aura que très peu d&amp;rsquo;attributs de retournés par l&amp;rsquo;API. Ce format étant varié j&amp;rsquo;ai donc choisi MongoDB qui est de type NoSQL pour gèrer le stockage de ces profils. Enfin MongoDB retourne directement un document JSON, je n&amp;rsquo;ai pas à demander à NodeJS de gèrer cela.&lt;/p&gt;
+
+&lt;p&gt;&lt;style type=&#34;text/css&#34;&gt;
+  .gist {width:500px !important;}
+  .gist-file
+  .gist-data {max-height: 500px;max-width: 500px;}
+&lt;/style&gt;
+&lt;p&gt;Exemple d&amp;rsquo;un JSON retourné par l&amp;rsquo;API d&amp;rsquo;AdopteUnMec.com&lt;/p&gt;
+ &lt;script src=&#34;https://gist.github.com/guizmo51/4095f94900b4918ec6f3.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Alors que l&amp;rsquo;agrégation des profils se faisait dans le projet &amp;ldquo;boostAdopt&amp;rdquo; en PHP, j&amp;rsquo;ai mis en place une API en utilisant ExpressJS (qui est un framework NodeJS)&lt;/p&gt;
+
+&lt;p&gt;Le front utilise jQuery, boostrap et pour le côté cartographie j&amp;rsquo;ai utilisé MapQuest fournissant une cartographie OpenStreetMap ou Google Maps au choix. MapQuest fournit également un accès à ses API pour, par exemple, obtenir les coordonnées GPS du centre d&amp;rsquo;une ville.&lt;/p&gt;
+
+&lt;p&gt;&lt;h3&gt;Législation&lt;/h3&gt;&lt;/p&gt;
+
+&lt;p&gt;Les données sont importantes celles qui sont personnelles ne peuvent être diffusées comme cela. J&amp;rsquo;ai donc analysé pendant plusieurs semaines les mentions légales, CGU et CGV du site AdopteUnMec.com. Les données personnelles (email, nom, prénom, etc) ne sont pas présentes dans les JSON générés par l&amp;rsquo;API AdopteUnmec. La seule contrainte est de s&amp;rsquo;assurer qu&amp;rsquo;uniquement des utilisateurs d&amp;rsquo;AdopteUnMec accèdent à ces données. J&amp;rsquo;ai donc mis en place une popin de confirmation (un peu comme celles demandant si un internaute est bien majeur sur certains sites). Chacun jugera de l&amp;rsquo;efficacité de ce système&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;h3&gt; Déroulement du projet&lt;/h3&gt;
+Initialement le projet n&amp;rsquo;enregistrait que la fiche d&amp;rsquo;un individu : la localisation ne correspondait qu&amp;rsquo;à un champs portant le nom de la ville du membre. En France plusieurs villes ont le même nom, de plus certans membres renseignaient des villes à l&amp;rsquo;orthographe incorrecte. J&amp;rsquo;ai dû revoir en partie l&amp;rsquo;agréagation des données afin de sauvegarder le pays, la région mais aussi le département du membre.&lt;/p&gt;
+
+&lt;p&gt;MapQuest fournissant des API retournant les coordonées GPS d&amp;rsquo;un point géographie comme une ville, j&amp;rsquo;ai ensuite associé chaque ville à des coordonnées GPS. Enfin il ne me restait plus qu&amp;rsquo;à associer la ville du profil à ce tableau de coordonnées.&lt;/p&gt;
+
+&lt;p&gt;Enfin pour l&amp;rsquo;affichage j&amp;rsquo;ai choisi la librairie leaflet permettant de représenter des clusters de marqueurs géographiques.
+Dans les faits je place plusieurs milliers de marqueurs sur ma carte OpenStreetMap mais afin de la rendre lisible leaflet les affiche sont forme de cluster en indiquant le nombre de marqueur que ça représente. C&amp;rsquo;est la représentation la plus lisible possible.&lt;/p&gt;
+
+&lt;p&gt;NodeJS : lors de la mise en production et des premiers tests de montée en charge je me suis rendu compte que &amp;ldquo;forever&amp;rdquo; de NodeJS se met parfois à &amp;ldquo;déconner&amp;rdquo;. Il fait monter la charge du serveur à 95 ou 98% de CPU &amp;hellip; ce bug était connu à l&amp;rsquo;époque.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Concours Facebook</title>
