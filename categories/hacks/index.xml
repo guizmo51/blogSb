@@ -22,7 +22,7 @@
 &lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;http://www.simonblum.me/js/airbnb.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt; La carte interactive suivante présente l&#39;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &#34;slider&#34; ou lancer l&#39;animation via le bouton &#34;Lancer l&#39;animation&#34;.&lt;/p&gt;
+&lt;p&gt; La carte interactive suivante présente l&#39;évolution des logements Airbnb sur Paris entre 2008 et 2015 sous forme de Heatmap. Afin de visualiser les données vous pouvez utiliser le &#34;slider&#34; ou lancer l&#39;animation via le bouton &#34;Lancer l&#39;animation&#34;.&lt;/p&gt;
    
 &lt;script 
         src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
