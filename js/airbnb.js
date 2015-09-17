@@ -110,6 +110,12 @@ function initMap() {
 }
 
 $( document ).ready(function() {
+
+
+$('head').append('<meta property="og:title" content="Evolution de l\'offre Airbnb à Paris entre 2008 et 2009." />');
+$('head').append('<meta property="og:url" content="http://www.simonblum.me/post/hacks/airbnb-paris/" />');
+$('head').append('<meta property="og:image" content="http://www.simonblum.me/images/airbnb.png" />');
+
   var rangeSlider = document.getElementById('slider');
 
   noUiSlider.create(rangeSlider, {

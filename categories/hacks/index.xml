@@ -14,10 +14,7 @@
       <pubDate>Wed, 02 Sep 2015 21:20:42 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/post/hacks/airbnb-paris/</guid>
-      <description>&lt;p&gt;&lt;meta property=&#34;og:title&#34; content=&#34;Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2009.&#34; /&gt;
-&lt;meta property=&#34;og:url&#34; content=&#34;http://www.simonblum.me/post/hacks/airbnb-paris/&#34; /&gt;
-&lt;meta property=&#34;og:image&#34; content=&#34;http://www.simonblum.me/images/airbnb.png&#34; /&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
 
 &lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
