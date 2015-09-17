@@ -1,22 +1,22 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Cvs - http://www.simonblum.me/</title>
+    <title>Cvs - http://localhost:1313/</title>
       
-             
+
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
 
       <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
-      <link href="http://www.simonblum.me/cv/index.xml" rel="alternate" type="application/rss+xml" title="Blog" />
+      <link href="http://localhost:1313/cv/index.xml" rel="alternate" type="application/rss+xml" title="Blog" />
       
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
       <meta charset="UTF-8" />
       <meta name="description" content="Simon BLUM, 27 ans, ingénieur Web utilisant les technologies PHP et NodeJS. " />
     </head>
-<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><body>
 <nav>
     <div class="nav-wrapper">
       <a href="http://www.simonblum.me" class="brand-logo">Simon Blum</a>
@@ -101,6 +101,29 @@
 </div>
 	<h2 style="text-align:center;" >Expériences</h2>
    <div class="section scrollspy" id="experiences">
+                    
+                        
+
+ <div class="col s12 m8 offset-m2 l6 offset-l3 ">
+  <div class="card-panel grey lighten-5 z-depth-1">
+  	<h3 class="featurette-heading">Service d&#39;information du Gouvernement</h3>
+          <div class="row valign-wrapper">
+          	
+            <div class="col s2">
+              <img src="/images/sig.jpg" alt="" class="responsive-img"> 
+            </div>
+            
+            <div class="col s10">
+              <span class="black-text">
+                <p>Depuis Juin 2015 j&rsquo;ai rejoint le <a target="_blank" href="http://www.gouvernement.fr/service-d-information-du-gouvernement-sig">Service d&rsquo;information du Gouvernement</a>. Au sein du département Digital SPM je m&rsquo;occupe de la maintenance et des évolutions du site <a href="http://www.gouvernement.fr">gouvernement.fr</a> ainsi que du développement de différents projets pour les Services du Premier Ministre (SPM).</p>
+
+<p>Compétences :  PHP5, Drupal 7, AngularJS, HTML5, CSS3, Accessibilité Web.</p>
+
+              </span>
+            </div>
+          </div>
+        </div>
+    </div>
                     
                         
 
@@ -454,6 +477,8 @@ Dans le cadre de ce travail j&rsquo;ai participé plusieurs conférences ou meet
                 <h5 class="white-text">Derniers contenus</h5>
                 <ul>
                   
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-paris/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</a></li>
+                  
                      <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/mapboostadopt/"><i class="mdi-navigation-chevron-right"></i>MapBoostadopt</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/hacks/concours-facebook/"><i class="mdi-navigation-chevron-right"></i>Concours Facebook</a></li>
@@ -461,8 +486,6 @@ Dans le cadre de ce travail j&rsquo;ai participé plusieurs conférences ou meet
                      <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/boostadopt/"><i class="mdi-navigation-chevron-right"></i>Boostadopt</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/hors-sujets/stadedefrance/"><i class="mdi-navigation-chevron-right"></i>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</a></li>
-                  
-                     <li><a class="grey-text text-lighten-3" href="/post/pourquoi-ce-blog/"><i class="mdi-navigation-chevron-right"></i>Pourquoi ce blog ?</a></li>
                   
                 </ul>
               </div>
@@ -484,7 +507,7 @@ Dans le cadre de ce travail j&rsquo;ai participé plusieurs conférences ou meet
           </div>
         </footer>
             
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
       <script type="text/javascript" src="/js/materialize.min.js"></script>
        <script type="text/javascript" src="/js/init.js"></script>
        <script>
@@ -497,7 +520,10 @@ Dans le cadre de ce travail j&rsquo;ai participé plusieurs conférences ou meet
   ga('send', 'pageview');
 
 </script>
-    </body>
+    <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
   </html>
 
 

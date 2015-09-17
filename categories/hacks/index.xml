@@ -2,18 +2,90 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Hacks on Blog </title>
-    <link>http://www.simonblum.me/categories/hacks/</link>
+    <link>http://localhost:1313/categories/hacks/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Wed, 15 Jul 2015 13:55:17 CEST</updated>
+    <updated>Wed, 02 Sep 2015 21:20:42 CEST</updated>
+    
+    <item>
+      <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</title>
+      <link>http://localhost:1313/post/hacks/airbnb-paris/</link>
+      <pubDate>Wed, 02 Sep 2015 21:20:42 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://localhost:1313/post/hacks/airbnb-paris/</guid>
+      <description>&lt;p&gt;&lt;meta property=&#34;og:title&#34; content=&#34;Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2009.&#34; /&gt;
+&lt;meta property=&#34;og:url&#34; content=&#34;http://www.simonblum.me/post/hacks/airbnb-paris/&#34; /&gt;
+&lt;meta property=&#34;og:image&#34; content=&#34;http://www.simonblum.me/images/airbnb.png&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/nouislider.min.css&#34;&gt;
+&lt;style&gt;
+#map {
+    padding-bottom: 25px;
+}
+#monthLabel {
+    font-weight: bold;
+    color: #881226;
+    font-size: large;
+}
+#slider {
+    margin-top: 8px;
+}
+&lt;/style&gt;
+&lt;script src=&#34;http://localhost:1313/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://localhost:1313/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://localhost:1313/js/airbnb.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt; La carte interactive suivante présente l&amp;rsquo;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &amp;ldquo;slider&amp;rdquo; ou lancer l&amp;rsquo;animation via le bouton &amp;ldquo;Lancer l&amp;rsquo;animation&amp;rdquo;.&lt;/p&gt;&lt;/p&gt;
+
+&lt;script 
+        src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
+    &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; offres&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;Manipulez le curseur afin de visualiser l&amp;rsquo;évolution&lt;/p&gt;
+ &lt;p&gt;&lt;div id=&#34;slider&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;fieldset&gt;&lt;legend&gt;Animation automatique&lt;/legend&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div  style=&#34;display:inline-block;&#34;&gt;
+   &lt;button class=&#34;btn waves-effect waves-light&#34; type=&#34;submit&#34; id=&#34;action&#34;&gt;Lancer l&amp;rsquo;animation&lt;/button&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Les données&lt;/span&gt; utilisées pour réaliser ce projet proviennent d&amp;rsquo;&lt;a href=&#34;http://insideairbnb.com/paris/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; et d&amp;rsquo;un robot fait par mes soins récupérant la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur.
+    Ces données s&amp;rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&amp;rsquo;utilisation commerciale).
+&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&amp;rsquo;affiche sur son site que la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur. c&amp;rsquo;est cette date qui a été utilisée pour déterminer l&amp;rsquo;ajout d&amp;rsquo;un logement sur Airbnb. Cette méthode est fiable si l&amp;rsquo;utilisateur ne propose qu&amp;rsquo;un logement. Si par contre l&amp;rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&amp;rsquo;inscription de l&amp;rsquo;utilisateur).
+Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&amp;rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &amp;ldquo;plus de données&amp;rdquo;).
+&lt;/p&gt;
+&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Plus de données : &lt;/span&gt;
+    Ce tableau présente le nombre d&amp;rsquo;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&amp;rsquo;un seul appartement. A l&amp;rsquo;opposé, 1 utilisateur en possède 169 et un autre 150.
+ &lt;ul class=&#34;collapsible&#34; data-collapsible=&#34;accordion&#34;&gt;
+    &lt;li&gt;
+      &lt;div class=&#34;collapsible-header&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;toc&lt;/i&gt;Voir le tableau de données&lt;/div&gt;
+      &lt;div class=&#34;collapsible-body&#34;&gt;&lt;table class=&#34;striped bordered centered responsive-table&#34; &gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th data-field=&#34;id&#34;&gt;Nombre de logements&lt;/th&gt;
+&lt;th data-field=&#34;name&#34;&gt;Occurence&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody id=&#34;tbody&#34;&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+    &lt;/li&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&#39;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Concours Facebook</title>
-      <link>http://www.simonblum.me/post/hacks/concours-facebook/</link>
+      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
       <pubDate>Wed, 15 Jul 2015 13:55:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/hacks/concours-facebook/</guid>
+      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
       <description>
 
 &lt;p&gt;La page Facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
@@ -66,7 +138,7 @@ En termes de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifes
 Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
 
 &lt;p&gt;Un des premiers essais (non concluant)
-&lt;img src=&#34;http://www.simonblum.me/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>

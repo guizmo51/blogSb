@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Concours Facebook - http://localhost:1313/</title>
+    <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015 - http://localhost:1313/</title>
       
 
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -59,11 +59,11 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h2>Concours Facebook<br> <small></small></h2>
+                    <h2>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015<br> <small></small></h2>
                     <hr>
-                     July 15, 2015
+                     September 2, 2015
                       - <a href="/categories/hacks ">hacks</a> -
-                     <div class="fb-share-button" data-href="http://localhost:1313/post/hacks/concours-facebook/" data-layout="icon_link"></div>
+                     <div class="fb-share-button" data-href="http://localhost:1313/post/hacks/airbnb-paris/" data-layout="icon_link"></div>
 
                       
 
@@ -71,60 +71,69 @@
 
                      <br>
                     <hr>
-                    
+                    <p><meta property="og:title" content="Evolution de l'offre Airbnb à Paris entre 2008 et 2009." />
+<meta property="og:url" content="http://www.simonblum.me/post/hacks/airbnb-paris/" />
+<meta property="og:image" content="http://www.simonblum.me/images/airbnb.png" />
+<link rel="stylesheet" href="/css/nouislider.min.css">
+<style>
+#map {
+    padding-bottom: 25px;
+}
+#monthLabel {
+    font-weight: bold;
+    color: #881226;
+    font-size: large;
+}
+#slider {
+    margin-top: 8px;
+}
+</style>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/nouislider.min.js"></script>
+<script src="/js/airbnb.js"></script>
+<p> La carte interactive suivante présente l&rsquo;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &ldquo;slider&rdquo; ou lancer l&rsquo;animation via le bouton &ldquo;Lancer l&rsquo;animation&rdquo;.</p></p>
 
-<p>La page Facebook d&rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&rsquo;étalait sur une semaine entière.</p>
+<script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
 
-<p>Pourquoi avoir fait ce mini hack ? Tout simplement pour prouver que sur ce genre de concours il est dommage de proposer un système de participation de ce type sachant que des solutions commerciales permettant de tricher existent. Je me suis donc lancé dans la réalisation d&rsquo;un outil avec pour objectif de remporter ce concours.</p>
+<p><div id="map" style="width: 800px; height: 650px;"></div>
+    <p id="monthLabel"><span id="moisSlider"></span> / <span id="totalOffer"></span> offres</p></p>
 
-<p>Dès le début le but est d&rsquo;automatiser tout le système afin de ne pas avoir à rafraichir sa page toutes les 10 secondes et faire l&rsquo;action de commenter. Pendant ce temps je peux vaquer sereinement à mes occupations quotidiennes. L&rsquo;autre raison de l&rsquo;automatisation est que dans ce genre de concours en 10 secondes on peut déjà être 15ème.</p>
+<p><p>Manipulez le curseur afin de visualiser l&rsquo;évolution</p>
+ <p><div id="slider"></div></p>
+    <fieldset><legend>Animation automatique</legend></p>
 
-<p>Avant de débuter il faut découper le problème en deux parties afin de travailler efficacement sur ces deux parties indépendantes :
-+ détection du nouveau contenu
-+ soumission du commentaire.</p>
-
-<p>A moins d&rsquo;utiliser une base de mots clés ou un dictionnaire il est impossible d&rsquo;identifier à l&rsquo;avance le post à commenter. J&rsquo;ai donc décidé de commenter automatiquement tous les nouveaux postes publiés dans le créneau défini (13h - 17h): une unique fois lors de la détection.</p>
-
-<p>Tout est lié à Facebook : je vais donc utiliser leur SDK et leur API qui bien qu&rsquo;elle soit mal documentée restera plus efficace sans devoir réinventer la roue.</p>
-
-<p>Afin de pouvoir utiliser ce SDK I il faut au préalable avoir un compte &ldquo;déveloper&rdquo; puis déclarer son application (nom, urls autorisées à appeler l&rsquo;API , droits nécessaires..). Dans un premier temps l&rsquo;application n&rsquo;est visible que par vous, afin de la rendre publique il faut la soumettre aux reviewers de Facebook. Dans mon cas il n&rsquo;était pas certain que l&rsquo;application soit autorisée de plus il fallait un temps certain que je n&rsquo;avais pas.</p>
-
-<h2 id="détection-de-nouveau-contenu:fb0b9121ebebb531d16fe01d8c71c3b0">Détection de nouveau contenu</h2>
-
-<p>Le principe de la détection de nouveau contenu est assez simple : récupérer le flux des posts, puis voir si le plus récent a changé. L&rsquo;API Facebook retourne cela sous forme d&rsquo;un tableau d&rsquo;objet qui est déjà trié. Il suffit de stocker cet identifiant du contenu le plus récent en base de données ou fichier texte. Ensuite toutes les X secondes, dans mon cas paramétré à 4 secondes je requêtais l&rsquo;API Facebook grâce au SDK pour avoir les contenus de la page de la radio. J&rsquo;extrayais l&rsquo;identifiant du dernier post et le comparais avec celui enregistré dans mon fichier texte. Si celui-ci avait changé alors bingo je pouvais déclencher la publication du commentaire.</p>
-
-<h2 id="publication-du-commentaire:fb0b9121ebebb531d16fe01d8c71c3b0">Publication du commentaire:</h2>
-
-<p>Pendant plusieurs heures j&rsquo;ai essayé d&rsquo;utiliser le SDK Facebook afin de publier le commentaire et tout garder en PHP dans un objectif d&rsquo;économie de temps.
- Il s&rsquo;est avéré que cela était très compliqué probablement causé par la non-approbation de l&rsquo;application. En effet hormis pour le compte developper et certains droits chaque application doit être approuvée ce qui prend du temps.</p>
-
-<p>J&rsquo;ai donc abandonné la solution PHP pour publier le commentaire à travers l&rsquo;API Facebook.
- Dans un second temps comme la détection fonctionnait très bien l&rsquo;application affichait directement la publication il n&rsquo;y avait plus qu&rsquo;à commenter. J&rsquo;estimais toutefois que c&rsquo;était une perte de temps.</p>
-
-<p>Enfin en désespoir de cause j&rsquo;ai observé la requête Ajax jouée dans le navigateur, n&rsquo;y croyant pas j&rsquo;ai fait rejouer cette requête. Quelle ne fut pas ma surprise quand j&rsquo;ai vu que ce replay avait permis de poster un nouveau commentaire.  Cette requête Ajax prenait en paramètre l&rsquo;id de la la publication à commenter, le commentaire, la date et un autre paramètre. Il y a un token qui est valide 24h dedans.</p>
-
-<p>J&rsquo;ai donc décidé d&rsquo;utiliser cette requête Ajax pour publier le commentaire.</p>
-
-<p>Voici ce que j&rsquo;ai décidé (qui va être l&rsquo;architecture finale) :
-Une extension chrome créée pour l&rsquo;occasion va appeler le script PHP de détection de nouveaux contenus. Si ce script retourne qu&rsquo;il a détecté un nouveau contenu alors l&rsquo;extension chrome va déclencher la requête AJAX.</p>
-
-<p>Je parle ici pour la première fois d&rsquo;extension Chrome, c&rsquo;est quelque chose de très simple à utiliser qui permet d&rsquo;injecter du Javascript sur une page.
-En termes de fichiers il s&rsquo;agit d&rsquo;un dossier avec un manifest et des scripts.</p>
-
-<p>En quelques lignes de JavaScript j&rsquo;ai implémenté et mis en œuvre la détection de nouveau contenu et la publication du commentaire.</p>
-
-<p>Coté serveur : un petit script en local était chargé de détecter le nouveau contenu. Ce script PHP était appelé toutes les 4 secondes par l&rsquo;extension Chrome.</p>
-
-<p>Autre remarque : j&rsquo;ai dû paramétrer tout le projet local en HTTPS afin de pouvoir communiquer avec l&rsquo;API Facebook et notamment poster un commentaire.</p>
-
-<h2 id="résultats:fb0b9121ebebb531d16fe01d8c71c3b0">Résultats</h2>
-
-<p>Ce projet n&rsquo;a été opérationnel qu&rsquo;à partir du jeudi, en effet les jours précédents je me suis heurté à des soucis propres à la page Facebook : le contenu du jeu était créé chaque matin puis dé-publié, le script n&rsquo;avait alors pas détecté la publication.
-Le jeudi quelqu&rsquo;un avait été plus rapide que moi, d&rsquo;où l&rsquo;importance des technologies.</p>
-
-<p>Un des premiers essais (non concluant)
-<img src="/images/facebook-concours.png" alt="try again" />
+<p><div  style="display:inline-block;">
+   <button class="btn waves-effect waves-light" type="submit" id="action">Lancer l&rsquo;animation</button>
+</div>
+</fieldset>
+<p><span style="font-weight:bold;">Les données</span> utilisées pour réaliser ce projet proviennent d&rsquo;<a href="http://insideairbnb.com/paris/" target="_blank">Inside Airbnb</a> et d&rsquo;un robot fait par mes soins récupérant la date d&rsquo;inscription d&rsquo;un utilisateur.
+    Ces données s&rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&rsquo;utilisation commerciale).
+<p> <span style="font-weight:bold;">Méthodologie : </span>Airbnb n&rsquo;affiche sur son site que la date d&rsquo;inscription d&rsquo;un utilisateur. c&rsquo;est cette date qui a été utilisée pour déterminer l&rsquo;ajout d&rsquo;un logement sur Airbnb. Cette méthode est fiable si l&rsquo;utilisateur ne propose qu&rsquo;un logement. Si par contre l&rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&rsquo;inscription de l&rsquo;utilisateur).
+Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &ldquo;plus de données&rdquo;).
 </p>
+<p> <span style="font-weight:bold;">Plus de données : </span>
+    Ce tableau présente le nombre d&rsquo;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&rsquo;un seul appartement. A l&rsquo;opposé, 1 utilisateur en possède 169 et un autre 150.
+ <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">toc</i>Voir le tableau de données</div>
+      <div class="collapsible-body"><table class="striped bordered centered responsive-table" >
+<thead>
+<tr>
+<th data-field="id">Nombre de logements</th>
+<th data-field="name">Occurence</th>
+</tr>
+</thead>
+<tbody id="tbody">
+</tbody>
+</table></div>
+    </li></p>
+
+<p></ul></p>
+
+<p></p></p>
+
+<p><span style="font-weight:bold;">Merci </span> à <a href="https://twitter.com/vivienwack">Vivien</a> pour ses blagues et son logo ainsi qu'à <a href="https://twitter.com/ytokan">Ytokan.</a></p>
 
             </div>
         </div>

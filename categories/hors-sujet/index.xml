@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Hors Sujet on Blog </title>
-    <link>http://www.simonblum.me/categories/hors-sujet/</link>
+    <link>http://localhost:1313/categories/hors-sujet/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</title>
-      <link>http://www.simonblum.me/post/hors-sujets/stadedefrance/</link>
+      <link>http://localhost:1313/post/hors-sujets/stadedefrance/</link>
       <pubDate>Wed, 01 Jul 2015 13:56:46 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/post/hors-sujets/stadedefrance/</guid>
+      <guid>http://localhost:1313/post/hors-sujets/stadedefrance/</guid>
       <description>&lt;p&gt;Non, ce titre n&amp;rsquo;est pas un canular : j&amp;rsquo;ai bel et bien couru au Stade de France ! Depuis que j&amp;rsquo;ai vécu cet évènement je souhaitais le relater afin de partager mon expérience.&lt;/p&gt;
 
 &lt;p&gt;Tout a commencé le 22 juin 2013 quand le &lt;a href=&#34;https://twitter.com/StadeFrance/status/348423820064997377&#34;&gt;compte Twitter du Stade de France&lt;/a&gt; a annoncé un concours pour courir un 100m au Stade de France pendant le Meeting Areva le 6 juillet 2013. Le meeting Areva fait partie d&amp;rsquo;une série d&amp;rsquo;évènements internationaux accueillant des épreuves internationales d&amp;rsquo;athlétisme. En préambule du meeting avait lieu une compétition régionale. En parallèle le Stade de France avait lancé un concours permettant d&amp;rsquo;assister au meeting dans une loge réservée (ainsi que d&amp;rsquo;autres surprises). Les conditions étaient simples : tweeter un message avec le hastag &amp;ldquo;#Jeveuxcourirle100maustadedefranceparceque&amp;rdquo;. Cela prend de place dans un tweet limité à 140 caractères il allait falloir être original.&lt;/p&gt;
