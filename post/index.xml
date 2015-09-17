@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Posts on Blog </title>
-    <link>http://localhost:1313/post/</link>
+    <link>http://www.simonblum.me/post/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,32 +10,20 @@
     
     <item>
       <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</title>
-      <link>http://localhost:1313/post/hacks/airbnb-paris/</link>
+      <link>http://www.simonblum.me/post/hacks/airbnb-paris/</link>
       <pubDate>Wed, 02 Sep 2015 21:20:42 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/hacks/airbnb-paris/</guid>
+      <guid>http://www.simonblum.me/post/hacks/airbnb-paris/</guid>
       <description>&lt;p&gt;&lt;meta property=&#34;og:title&#34; content=&#34;Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2009.&#34; /&gt;
 &lt;meta property=&#34;og:url&#34; content=&#34;http://www.simonblum.me/post/hacks/airbnb-paris/&#34; /&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;http://www.simonblum.me/images/airbnb.png&#34; /&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/nouislider.min.css&#34;&gt;
-&lt;style&gt;
-#map {
-    padding-bottom: 25px;
-}
-#monthLabel {
-    font-weight: bold;
-    color: #881226;
-    font-size: large;
-}
-#slider {
-    margin-top: 8px;
-}
-&lt;/style&gt;
-&lt;script src=&#34;http://localhost:1313/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://localhost:1313/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://localhost:1313/js/airbnb.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt; La carte interactive suivante présente l&amp;rsquo;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &amp;ldquo;slider&amp;rdquo; ou lancer l&amp;rsquo;animation via le bouton &amp;ldquo;Lancer l&amp;rsquo;animation&amp;rdquo;.&lt;/p&gt;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
 
+&lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/airbnb.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt; La carte interactive suivante présente l&#39;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &#34;slider&#34; ou lancer l&#39;animation via le bouton &#34;Lancer l&#39;animation&#34;.&lt;/p&gt;
+   
 &lt;script 
         src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
 
@@ -76,16 +64,29 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&#39;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&amp;rsquo;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;style&gt;
+#map {
+    padding-bottom: 25px;
+}
+#monthLabel {
+    font-weight: bold;
+    color: #881226;
+    font-size: large;
+}
+#slider {
+    margin-top: 8px;
+}
+&lt;/style&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>MapBoostadopt</title>
-      <link>http://localhost:1313/post/retourdexperience/mapboostadopt/</link>
+      <link>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</link>
       <pubDate>Sat, 08 Aug 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/retourdexperience/mapboostadopt/</guid>
+      <guid>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</guid>
       <description>&lt;p&gt;Comme vous avez pu le &lt;a href=&#34;http://www.simonblum.me/post/retourdexperience/boostadopt/&#34; target=&#34;_blank&#34;&gt;lire précèdemment&lt;/a&gt; j&amp;rsquo;ai réalisé un projet de &amp;ldquo;booster&amp;rdquo; (permettant d&amp;rsquo;améliorer l&amp;rsquo;efficacité) pour le site de rencontre AdopteUnMec.com .&lt;/p&gt;
 
 &lt;p&gt;Lors de mes expérimentations (afin de trouver une solution viable) j&amp;rsquo;ai agrégé une masse conséquente de profils dans le but de les analyser et les exploiter dans le futur. En effet, le booster fonctionne en visitant un profil (donc en récupérant ses informations) autant enregistrer ce profil pour une utilisation ultérieure.&lt;/p&gt;
@@ -94,7 +95,7 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 
 &lt;p&gt;Voici une capture d&#39;écran du projet MapBoostAdopt.
 J&#39;ai souhaité mettre en place une interface légère avec comme fond (sur tout l&#39;écran) une carte interactive utilisant OpenStreetMap. Par dessus j&#39;ai rajouté un champ de recherche par ville et aussi 5 profils d&#39;invidus géographiquement présent sur la carte visible. Bien sûr si l&#39;on zoomait sur une zone ces résultats étaient mis à jour. Sur cette capture d&#39;écran on peut voir que des utilisateurs provenant de France, Suisse, Luxembourg, Belgique sont présents. Suite à l&#39;ouverture du site italien et du site allemand j&#39;ai aussi pu enregistrer des profils provenant de ces 2 nouveaux pays.  
-&lt;img src=&#34;http://localhost:1313/images/boostadopt.png&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://www.simonblum.me/images/boostadopt.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;h3&gt;Coin technique&lt;/h3&gt;
  Les profils retournés par l&amp;rsquo;API sont des documents JSON ayant des formats variés, en effet un profil complet aura 100% des attributs remplis. Au contraire quelqu&amp;rsquo;un n&amp;rsquo;ayant rempli que le strict minimum n&amp;rsquo;aura que très peu d&amp;rsquo;attributs de retournés par l&amp;rsquo;API. Ce format étant varié j&amp;rsquo;ai donc choisi MongoDB qui est de type NoSQL pour gèrer le stockage de ces profils. Enfin MongoDB retourne directement un document JSON, je n&amp;rsquo;ai pas à demander à NodeJS de gèrer cela.&lt;/p&gt;
@@ -129,10 +130,10 @@ Dans les faits je place plusieurs milliers de marqueurs sur ma carte OpenStreetM
     
     <item>
       <title>Concours Facebook</title>
-      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
+      <link>http://www.simonblum.me/post/hacks/concours-facebook/</link>
       <pubDate>Wed, 15 Jul 2015 13:55:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
+      <guid>http://www.simonblum.me/post/hacks/concours-facebook/</guid>
       <description>
 
 &lt;p&gt;La page Facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
@@ -185,20 +186,20 @@ En termes de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifes
 Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
 
 &lt;p&gt;Un des premiers essais (non concluant)
-&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;img src=&#34;http://www.simonblum.me/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Boostadopt</title>
-      <link>http://localhost:1313/post/retourdexperience/boostadopt/</link>
+      <link>http://www.simonblum.me/post/retourdexperience/boostadopt/</link>
       <pubDate>Sun, 05 Jul 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/retourdexperience/boostadopt/</guid>
+      <guid>http://www.simonblum.me/post/retourdexperience/boostadopt/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.simonblum.me/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
 
 Tout ce projet est visible sur &lt;a href=&#34;https://github.com/guizmo51/boostadopt&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 
@@ -287,10 +288,10 @@ Afin de diminuer ces craintes j&amp;rsquo;ai réalisé une vidéo expliquant le 
     
     <item>
       <title>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</title>
-      <link>http://localhost:1313/post/hors-sujets/stadedefrance/</link>
+      <link>http://www.simonblum.me/post/hors-sujets/stadedefrance/</link>
       <pubDate>Wed, 01 Jul 2015 13:56:46 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/hors-sujets/stadedefrance/</guid>
+      <guid>http://www.simonblum.me/post/hors-sujets/stadedefrance/</guid>
       <description>&lt;p&gt;Non, ce titre n&amp;rsquo;est pas un canular : j&amp;rsquo;ai bel et bien couru au Stade de France ! Depuis que j&amp;rsquo;ai vécu cet évènement je souhaitais le relater afin de partager mon expérience.&lt;/p&gt;
 
 &lt;p&gt;Tout a commencé le 22 juin 2013 quand le &lt;a href=&#34;https://twitter.com/StadeFrance/status/348423820064997377&#34;&gt;compte Twitter du Stade de France&lt;/a&gt; a annoncé un concours pour courir un 100m au Stade de France pendant le Meeting Areva le 6 juillet 2013. Le meeting Areva fait partie d&amp;rsquo;une série d&amp;rsquo;évènements internationaux accueillant des épreuves internationales d&amp;rsquo;athlétisme. En préambule du meeting avait lieu une compétition régionale. En parallèle le Stade de France avait lancé un concours permettant d&amp;rsquo;assister au meeting dans une loge réservée (ainsi que d&amp;rsquo;autres surprises). Les conditions étaient simples : tweeter un message avec le hastag &amp;ldquo;#Jeveuxcourirle100maustadedefranceparceque&amp;rdquo;. Cela prend de place dans un tweet limité à 140 caractères il allait falloir être original.&lt;/p&gt;
@@ -347,10 +348,10 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     
     <item>
       <title>Pourquoi ce blog ?</title>
-      <link>http://localhost:1313/post/pourquoi-ce-blog/</link>
+      <link>http://www.simonblum.me/post/pourquoi-ce-blog/</link>
       <pubDate>Sun, 15 Mar 2015 13:56:46 &#43;0200</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/pourquoi-ce-blog/</guid>
+      <guid>http://www.simonblum.me/post/pourquoi-ce-blog/</guid>
       <description>&lt;p&gt;Je ne suis pas un expert, mais je suis simplement passionné par le Web et je souhaite partager mes expériences. Pourquoi cela ?  Difficile d&amp;rsquo;expliquer comment cela m&amp;rsquo;est venu : mon expérience avec FirefoxOS et le partage des connaissances ont sans doute joué un rôle. Je pense aussi que certains blogs techniques sur des langages comme PHP ou NodeJS m&amp;rsquo;ont aidé à débloquer des problèmes sur des applications. A travers ce blog je souhaite partager mes expériences et mes projets web.&lt;/p&gt;
 
 &lt;p&gt;Sur ce blog vous trouverez donc plusieurs sections :
@@ -366,16 +367,16 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     
     <item>
       <title>Qui suis-je ?</title>
-      <link>http://localhost:1313/post/qui-suis-je/</link>
+      <link>http://www.simonblum.me/post/qui-suis-je/</link>
       <pubDate>Sun, 15 Feb 2015 13:56:46 &#43;0200</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/qui-suis-je/</guid>
+      <guid>http://www.simonblum.me/post/qui-suis-je/</guid>
       <description>&lt;p&gt;Je m&amp;rsquo;appelle Simon j&amp;rsquo;ai 27 ans, j&amp;rsquo;habite à Paris et suis originaire de Reims (51). Je suis passionné de développement Web et j&amp;rsquo;en ai fait ma profession.
 J&amp;rsquo;utilise surtout PHP (avec ou sans framework) et NodeJS. Je peux très bien bricoler sur mes RasperryPi (j&amp;rsquo;en ferai un billet). J&amp;rsquo;aime aussi tout ce qui parle d&amp;rsquo;infrastructure Web ou de big data.&lt;/p&gt;
 
 &lt;p&gt;Je suis de nature curieuse sur plein de sujets qu&amp;rsquo;ils soient liés à l&amp;rsquo;informatique ou non (la communication, la politique, le marketing, la géopolitique, la défense, etc). Je suis également plutôt sportif !&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/cv/&#34;&gt;Mon CV&lt;/a&gt; résume mon parcours étudiant et professionnel. N&amp;rsquo;hésitez pas à me contacter si vous avez des questions !&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.simonblum.me/cv/&#34;&gt;Mon CV&lt;/a&gt; résume mon parcours étudiant et professionnel. N&amp;rsquo;hésitez pas à me contacter si vous avez des questions !&lt;/p&gt;
 </description>
     </item>
     

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Retour Dexperience on Blog </title>
-    <link>http://localhost:1313/categories/retour-dexperience/</link>
+    <link>http://www.simonblum.me/categories/retour-dexperience/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,10 +10,10 @@
     
     <item>
       <title>MapBoostadopt</title>
-      <link>http://localhost:1313/post/retourdexperience/mapboostadopt/</link>
+      <link>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</link>
       <pubDate>Sat, 08 Aug 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/retourdexperience/mapboostadopt/</guid>
+      <guid>http://www.simonblum.me/post/retourdexperience/mapboostadopt/</guid>
       <description>&lt;p&gt;Comme vous avez pu le &lt;a href=&#34;http://www.simonblum.me/post/retourdexperience/boostadopt/&#34; target=&#34;_blank&#34;&gt;lire précèdemment&lt;/a&gt; j&amp;rsquo;ai réalisé un projet de &amp;ldquo;booster&amp;rdquo; (permettant d&amp;rsquo;améliorer l&amp;rsquo;efficacité) pour le site de rencontre AdopteUnMec.com .&lt;/p&gt;
 
 &lt;p&gt;Lors de mes expérimentations (afin de trouver une solution viable) j&amp;rsquo;ai agrégé une masse conséquente de profils dans le but de les analyser et les exploiter dans le futur. En effet, le booster fonctionne en visitant un profil (donc en récupérant ses informations) autant enregistrer ce profil pour une utilisation ultérieure.&lt;/p&gt;
@@ -22,7 +22,7 @@
 
 &lt;p&gt;Voici une capture d&#39;écran du projet MapBoostAdopt.
 J&#39;ai souhaité mettre en place une interface légère avec comme fond (sur tout l&#39;écran) une carte interactive utilisant OpenStreetMap. Par dessus j&#39;ai rajouté un champ de recherche par ville et aussi 5 profils d&#39;invidus géographiquement présent sur la carte visible. Bien sûr si l&#39;on zoomait sur une zone ces résultats étaient mis à jour. Sur cette capture d&#39;écran on peut voir que des utilisateurs provenant de France, Suisse, Luxembourg, Belgique sont présents. Suite à l&#39;ouverture du site italien et du site allemand j&#39;ai aussi pu enregistrer des profils provenant de ces 2 nouveaux pays.  
-&lt;img src=&#34;http://localhost:1313/images/boostadopt.png&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://www.simonblum.me/images/boostadopt.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;h3&gt;Coin technique&lt;/h3&gt;
  Les profils retournés par l&amp;rsquo;API sont des documents JSON ayant des formats variés, en effet un profil complet aura 100% des attributs remplis. Au contraire quelqu&amp;rsquo;un n&amp;rsquo;ayant rempli que le strict minimum n&amp;rsquo;aura que très peu d&amp;rsquo;attributs de retournés par l&amp;rsquo;API. Ce format étant varié j&amp;rsquo;ai donc choisi MongoDB qui est de type NoSQL pour gèrer le stockage de ces profils. Enfin MongoDB retourne directement un document JSON, je n&amp;rsquo;ai pas à demander à NodeJS de gèrer cela.&lt;/p&gt;
@@ -57,13 +57,13 @@ Dans les faits je place plusieurs milliers de marqueurs sur ma carte OpenStreetM
     
     <item>
       <title>Boostadopt</title>
-      <link>http://localhost:1313/post/retourdexperience/boostadopt/</link>
+      <link>http://www.simonblum.me/post/retourdexperience/boostadopt/</link>
       <pubDate>Sun, 05 Jul 2015 13:57:26 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/retourdexperience/boostadopt/</guid>
+      <guid>http://www.simonblum.me/post/retourdexperience/boostadopt/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.simonblum.me/images/logo-adopte-un-mec.jpg&#34; alt=&#34;logo AdopteUnMec&#34; /&gt;
 
 Tout ce projet est visible sur &lt;a href=&#34;https://github.com/guizmo51/boostadopt&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Hacks on Blog </title>
-    <link>http://localhost:1313/categories/hacks/</link>
+    <link>http://www.simonblum.me/categories/hacks/</link>
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
@@ -10,32 +10,20 @@
     
     <item>
       <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</title>
-      <link>http://localhost:1313/post/hacks/airbnb-paris/</link>
+      <link>http://www.simonblum.me/post/hacks/airbnb-paris/</link>
       <pubDate>Wed, 02 Sep 2015 21:20:42 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/hacks/airbnb-paris/</guid>
+      <guid>http://www.simonblum.me/post/hacks/airbnb-paris/</guid>
       <description>&lt;p&gt;&lt;meta property=&#34;og:title&#34; content=&#34;Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2009.&#34; /&gt;
 &lt;meta property=&#34;og:url&#34; content=&#34;http://www.simonblum.me/post/hacks/airbnb-paris/&#34; /&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;http://www.simonblum.me/images/airbnb.png&#34; /&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/nouislider.min.css&#34;&gt;
-&lt;style&gt;
-#map {
-    padding-bottom: 25px;
-}
-#monthLabel {
-    font-weight: bold;
-    color: #881226;
-    font-size: large;
-}
-#slider {
-    margin-top: 8px;
-}
-&lt;/style&gt;
-&lt;script src=&#34;http://localhost:1313/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://localhost:1313/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://localhost:1313/js/airbnb.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt; La carte interactive suivante présente l&amp;rsquo;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &amp;ldquo;slider&amp;rdquo; ou lancer l&amp;rsquo;animation via le bouton &amp;ldquo;Lancer l&amp;rsquo;animation&amp;rdquo;.&lt;/p&gt;&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
 
+&lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/airbnb.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt; La carte interactive suivante présente l&#39;évolution des logements Airbnb sur Paris entre 2008 et 2015. Afin de visualiser les données vous pouvez utiliser le &#34;slider&#34; ou lancer l&#39;animation via le bouton &#34;Lancer l&#39;animation&#34;.&lt;/p&gt;
+   
 &lt;script 
         src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
 
@@ -76,16 +64,29 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&#39;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&amp;rsquo;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;style&gt;
+#map {
+    padding-bottom: 25px;
+}
+#monthLabel {
+    font-weight: bold;
+    color: #881226;
+    font-size: large;
+}
+#slider {
+    margin-top: 8px;
+}
+&lt;/style&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Concours Facebook</title>
-      <link>http://localhost:1313/post/hacks/concours-facebook/</link>
+      <link>http://www.simonblum.me/post/hacks/concours-facebook/</link>
       <pubDate>Wed, 15 Jul 2015 13:55:17 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://localhost:1313/post/hacks/concours-facebook/</guid>
+      <guid>http://www.simonblum.me/post/hacks/concours-facebook/</guid>
       <description>
 
 &lt;p&gt;La page Facebook d&amp;rsquo;une radio organisait un concours, le principe est simple : être le premier à commenter une publication spécifique entre 13h et 17h. Le 1er utilisateur à avoir répondu gagne le lot du concours. Ce dernier s&amp;rsquo;étalait sur une semaine entière.&lt;/p&gt;
@@ -138,7 +139,7 @@ En termes de fichiers il s&amp;rsquo;agit d&amp;rsquo;un dossier avec un manifes
 Le jeudi quelqu&amp;rsquo;un avait été plus rapide que moi, d&amp;rsquo;où l&amp;rsquo;importance des technologies.&lt;/p&gt;
 
 &lt;p&gt;Un des premiers essais (non concluant)
-&lt;img src=&#34;http://localhost:1313/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
+&lt;img src=&#34;http://www.simonblum.me/images/facebook-concours.png&#34; alt=&#34;try again&#34; /&gt;
 &lt;/p&gt;
 </description>
     </item>
