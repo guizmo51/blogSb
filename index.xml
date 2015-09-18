@@ -37,7 +37,7 @@
 &lt;/fieldset&gt;
 &lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Les données&lt;/span&gt; utilisées pour réaliser ce projet proviennent d&amp;rsquo;&lt;a href=&#34;http://insideairbnb.com/paris/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; et d&amp;rsquo;un robot fait par mes soins récupérant la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur.
     Ces données s&amp;rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&amp;rsquo;utilisation commerciale).
-&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&amp;rsquo;affiche sur son site que la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur. c&amp;rsquo;est cette date qui a été utilisée pour déterminer l&amp;rsquo;ajout d&amp;rsquo;un logement sur Airbnb. Cette méthode est fiable si l&amp;rsquo;utilisateur ne propose qu&amp;rsquo;un logement. Si par contre l&amp;rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&amp;rsquo;inscription de l&amp;rsquo;utilisateur).
+&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&amp;rsquo;affiche sur son site que la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur. C&amp;rsquo;est cette date qui a été utilisée pour déterminer l&amp;rsquo;ajout d&amp;rsquo;un logement sur Airbnb. Cette méthode est fiable si l&amp;rsquo;utilisateur ne propose qu&amp;rsquo;un logement. Si par contre l&amp;rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&amp;rsquo;inscription de l&amp;rsquo;utilisateur).
 Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&amp;rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &amp;ldquo;plus de données&amp;rdquo;).
 &lt;/p&gt;
 &lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Plus de données : &lt;/span&gt;
@@ -344,6 +344,16 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     </item>
     
     <item>
+      <title>Formation et diplomes</title>
+      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
+      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Expériences professionelles</title>
       <link>http://www.simonblum.me/cv/slider/experiencespro/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
@@ -360,16 +370,6 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/cv/slider/projets/</guid>
       <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Formation et diplomes</title>
-      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
-      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
 </description>
     </item>
     
