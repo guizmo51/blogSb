@@ -35,9 +35,9 @@
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;
  &lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
-    &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; offres&lt;/p&gt;&lt;/p&gt;
+    &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; offres&lt;/p&gt;
+    &lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;p&gt;Manipulez le curseur afin de visualiser l&amp;rsquo;évolution&lt;/p&gt;
  &lt;p&gt;&lt;div id=&#34;slider&#34;&gt;&lt;/div&gt;&lt;/p&gt;
