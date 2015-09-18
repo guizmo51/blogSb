@@ -136,6 +136,7 @@ rangeSlider.noUiSlider.on('change', function(){
 });
 
   $.getJSON("/js/final.json", function( data ) {
+
       source = data;
       $.each(source, function(key,val){
         
@@ -148,6 +149,9 @@ rangeSlider.noUiSlider.on('change', function(){
       });
       corresSorted.sort();
       update(0);
+      $('#loaderAnim').hide();
+      $('#waitLoadArea').show();
+
 });
 $.getJSON("/js/dataairbnb.json", function( data ) {
        var dataAirbnb = data.FIELD1;

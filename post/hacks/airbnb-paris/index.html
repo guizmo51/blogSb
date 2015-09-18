@@ -81,7 +81,19 @@
 <script 
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
 
-<p><div id="map" style="width: 800px; height: 650px;"></div>
+<p><div id="loaderAnim" class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<div id="waitLoadArea" style="display:none;">
+ <div id="map" style="width: 800px; height: 650px;"></div>
     <p id="monthLabel"><span id="moisSlider"></span> / <span id="totalOffer"></span> offres</p></p>
 
 <p><p>Manipulez le curseur afin de visualiser l&rsquo;évolution</p>
@@ -92,6 +104,7 @@
    <button class="btn waves-effect waves-light" type="submit" id="action">Lancer l&rsquo;animation</button>
 </div>
 </fieldset>
+</div>
 <p><span style="font-weight:bold;">Les données</span> utilisées pour réaliser ce projet proviennent d&rsquo;<a href="http://insideairbnb.com/paris/" target="_blank">Inside Airbnb</a> et d&rsquo;un robot fait par mes soins récupérant la date d&rsquo;inscription d&rsquo;un utilisateur.
     Ces données s&rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&rsquo;utilisation commerciale).
 <p> <span style="font-weight:bold;">Méthodologie : </span>Airbnb n&rsquo;affiche sur son site que la date d&rsquo;inscription d&rsquo;un utilisateur. C&rsquo;est cette date qui a été utilisée pour déterminer l&rsquo;ajout d&rsquo;un logement sur Airbnb. Cette méthode est fiable si l&rsquo;utilisateur ne propose qu&rsquo;un logement. Si par contre l&rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&rsquo;inscription de l&rsquo;utilisateur).

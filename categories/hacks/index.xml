@@ -24,7 +24,19 @@
 &lt;script 
         src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
+&lt;p&gt;&lt;div id=&#34;loaderAnim&#34; class=&#34;preloader-wrapper big active&#34;&gt;
+    &lt;div class=&#34;spinner-layer spinner-blue-only&#34;&gt;
+      &lt;div class=&#34;circle-clipper left&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;div class=&#34;gap-patch&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;div class=&#34;circle-clipper right&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;
+ &lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
     &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; offres&lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;p&gt;Manipulez le curseur afin de visualiser l&amp;rsquo;évolution&lt;/p&gt;
@@ -35,6 +47,7 @@
    &lt;button class=&#34;btn waves-effect waves-light&#34; type=&#34;submit&#34; id=&#34;action&#34;&gt;Lancer l&amp;rsquo;animation&lt;/button&gt;
 &lt;/div&gt;
 &lt;/fieldset&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Les données&lt;/span&gt; utilisées pour réaliser ce projet proviennent d&amp;rsquo;&lt;a href=&#34;http://insideairbnb.com/paris/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; et d&amp;rsquo;un robot fait par mes soins récupérant la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur.
     Ces données s&amp;rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&amp;rsquo;utilisation commerciale).
 &lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&amp;rsquo;affiche sur son site que la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur. C&amp;rsquo;est cette date qui a été utilisée pour déterminer l&amp;rsquo;ajout d&amp;rsquo;un logement sur Airbnb. Cette méthode est fiable si l&amp;rsquo;utilisateur ne propose qu&amp;rsquo;un logement. Si par contre l&amp;rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&amp;rsquo;inscription de l&amp;rsquo;utilisateur).
