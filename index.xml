@@ -6,12 +6,12 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Wed, 02 Sep 2015 21:20:42 CEST</updated>
+    <updated>Thu, 17 Sep 2015 21:20:42 CEST</updated>
     
     <item>
       <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</title>
       <link>http://www.simonblum.me/post/hacks/airbnb-paris/</link>
-      <pubDate>Wed, 02 Sep 2015 21:20:42 CEST</pubDate>
+      <pubDate>Thu, 17 Sep 2015 21:20:42 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/post/hacks/airbnb-paris/</guid>
       <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
@@ -354,22 +354,22 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     </item>
     
     <item>
-      <title>Formation et diplomes</title>
-      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
-      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>projets</title>
       <link>http://www.simonblum.me/cv/slider/projets/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/cv/slider/projets/</guid>
       <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Formation et diplomes</title>
+      <link>http://www.simonblum.me/cv/slider/formationsdiplomes/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/cv/slider/formationsdiplomes/</guid>
+      <description>&lt;p&gt;Constituant un socle de connaissances important ma formation est spécialisée dans l&amp;rsquo;informatique. Je suis diplômé d&amp;rsquo;un Master MIAGE réalisé en apprentissage (alternance).&lt;/p&gt;
 </description>
     </item>
     
