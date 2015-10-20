@@ -1,0 +1,94 @@
+{"questions":
+	[	{"id": "10",
+		"question":"  quelle est la particularité de l’église où sera célébré le mariage de Mathilde et Sébastien",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":" elle est composée d’une église romane du XIIe et d’une église Gothique du XVe"},{"id":"B","int":" il n’y pas de cloche dans son clocher"},{"id":"C","int":"elle n'a pas de clocher"}],
+		"rep":{"id":"A","detail":""}
+		},
+		
+			{"id": "1",
+		"question":"au 9 rue Carnot, derrière l’église se trouve un cabinet médical. Quelle profession n’est pas proposée dans ce cabinet ?",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"infirmière"},{"id":"B","int":"kinésithérapeute"},{"id":"C","int":"dentiste"}],
+		"rep":{"id":"C","detail":""}
+		},
+		{"id": "2",
+		"question":" à proximité de la Mairie se trouve un monument aux Morts, quelle est la période mentionnée sur sa face avant",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"1939-1945"},{"id":"B","int":"1914-1918"},{"id":"C","int":"1870 - 1871"}],
+		"rep":{"id":"B","detail":""}
+		},
+		{"id": "3",
+		"question":" combien de contreforts de l’église sont présents sur le côté latéral gauche ? (côté voie piétonne) ",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"5"},{"id":"B","int":"3"},{"id":"C","int":"6"}],
+		"rep":{"id":"A","detail":""}
+		},
+		{"id": "4",
+		"question":" combien d’arbres longent le cimetière dans la rue du chemin de ronde ?",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"8"},{"id":"B","int":"6"},{"id":"C","int":"10"}],
+		"rep":{"id":"C","detail":""}
+		},
+		{"id": "5",
+		"question":"combien d’arbres sont présents dans la cour de la Mairie ?",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"5"},{"id":"B","int":"4"},{"id":"C","int":"6"}],
+		"rep":{"id":"B","detail":""}
+		},
+		{"id": "6",
+		"question":"anciennement la Mairie abritait un autre bâtiment, quel était-il ?",
+		"image":"",
+		"tip":"",
+		"typeImage":false,
+		"props":[{"id":"A","int":"un bureau de poste"},{"id":"B","int":"un cabinet médical"},{"id":"C","int":"une école communale"}],
+		"rep":{"id":"C","detail":""}
+		},{"id": "8",
+		"question":"Quel est le blason de la Chapelle-la-Reine ?",
+		"image":"",
+		"tip":"celui est visible à proximité de l’intersection des 2 rues principales de la commune (place de la république).",
+		"typeImage":true,
+		"props":[{"id":"A","int":"Blason_lclr.jpg"},{"id":"B","int":"blason1.png"},{"id":"C","int":"blason2.png"}],
+		"rep":{"id":"A","detail":""}
+		},
+		{"id": "9",
+		"question":" la Chapelle la Reine  possède une salle des fêtes, quel est son nom ?",
+		"image":"",
+		"tip":"informations visibles à proximité de la place de la République",
+		"typeImage":false,
+		"props":[{"id":"A","int":"La salle Haupette"},{"id":"B","int":"L’espace la Chapelle"},{"id":"C","int":"La villa Capella"}],
+		"rep":{"id":"C","detail":""}
+		},
+		{"id": "7",
+		"question":"<a href=\"images/agneaupascal.png\" target=\"_blank\"><img class=\"img-circle\" height=\"35px\" src=\"images/agneaupascal.png\" /></a> un agneau pascal est présent sur la façade d’une maison de la rue du Général de Gaulle (qui débute place de la république, intersection D16/D152). A la porte de cette maison se trouve une sonnette mais où se situe t-elle (la sonnette)?",
+		"image":"",
+		"tip":"",
+		"modal":true,
+		"typeImage":false,
+		"props":[{"id":"A","int":"A gauche de la porte"},{"id":"B","int":"Il n'y en a pas"},{"id":"C","int":"A droite de la porte"}],
+		"rep":{"id":"C","detail":""}
+		},
+		{"id": "11",
+		"question":"Que fut anciennement l'habitation qui abrite aujourd'hui un gite et un camping ?",
+		"image":"",
+		"tip":"Vers la place de la République",
+		"typeImage":false,
+		"props":[{"id":"A","int":"la maison des frères"},{"id":"B","int":"la maison des soeurs"},{"id":"C","int":"la maison des cousins"}],
+		"rep":{"id":"B","detail":""}
+		}
+
+	]
+}
+	

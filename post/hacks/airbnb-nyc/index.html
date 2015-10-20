@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015 - http://www.simonblum.me/</title>
+    <title>Evolution de l&#39;offre Airbnb à NYC - http://www.simonblum.me/</title>
       
 
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -59,11 +59,11 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h2>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015<br> <small></small></h2>
+                    <h2>Evolution de l&#39;offre Airbnb à NYC<br> <small></small></h2>
                     <hr>
-                     September 17, 2015
+                     October 17, 2015
                       - <a href="/categories/hacks ">hacks</a> -
-                     <div class="fb-share-button" data-href="http://www.simonblum.me/post/hacks/airbnb-paris/" data-layout="icon_link"></div>
+                     <div class="fb-share-button" data-href="http://www.simonblum.me/post/hacks/airbnb-nyc/" data-layout="icon_link"></div>
 
                       
 
@@ -71,17 +71,17 @@
 
                      <br>
                     <hr>
-                    <p><link rel="stylesheet" href="/css/nouislider.min.css">
-<script src="https://www.google.com/jsapi"></script></p>
+                    <p><link rel="stylesheet" href="/css/nouislider.min.css"></p>
 
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/nouislider.min.js"></script>
-<script src="/js/airbnb.js"></script>
+<script src="/js/airbnbNYC.js"></script>
 <p> La carte interactive suivante présente l'évolution des logements Airbnb sur Paris entre 2008 et 2015 sous forme de Heatmap. Afin de visualiser les données vous pouvez utiliser le "slider" ou lancer l'animation via le bouton "Lancer l'animation".</p>
    
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_xRjpcxcd2GT2bIYpVfiJ7qgiV9aBQYQ&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
 
-
-<div id="loaderAnim" class="preloader-wrapper big active">
+<p><div id="loaderAnim" class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -94,24 +94,24 @@
   </div>
  <div id="map" style="width: 800px; height: 650px;"></div>
     <p id="monthLabel"><span id="moisSlider"></span> / <span id="totalOffer"></span> offres</p>
-    <div id="waitLoadArea" style="display:none;">
+    <div id="waitLoadArea" style="display:none;"></p>
 
- <p>Manipulez le curseur afin de visualiser l'évolution</p>
+<p><p>Manipulez le curseur afin de visualiser l&rsquo;évolution</p>
  <p><div id="slider"></div></p>
-    <fieldset><legend>Animation automatique</legend>
-      
-<div  style="display:inline-block;">
-   <button class="btn waves-effect waves-light" type="submit" id="action">Lancer l'animation</button>
+    <fieldset><legend>Animation automatique</legend></p>
+
+<p><div  style="display:inline-block;">
+   <button class="btn waves-effect waves-light" type="submit" id="action">Lancer l&rsquo;animation</button>
 </div>
 </fieldset>
 </div>
-<p><span style="font-weight:bold;">Les données</span> utilisées pour réaliser ce projet proviennent d'<a href="http://insideairbnb.com/paris/" target="_blank">Inside Airbnb</a> et d'un robot fait par mes soins récupérant la date d'inscription d'un utilisateur.
-    Ces données s'étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d'utilisation commerciale).
-<p> <span style="font-weight:bold;">Méthodologie : </span>Airbnb n'affiche sur son site que la date d'inscription d'un utilisateur. C'est cette date qui a été utilisée pour déterminer l'ajout d'un logement sur Airbnb. Cette méthode est fiable si l'utilisateur ne propose qu'un logement. Si par contre l'utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d'inscription de l'utilisateur).
-Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n'est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique "plus de données").
+<p><span style="font-weight:bold;">Les données</span> utilisées pour réaliser ce projet proviennent d&rsquo;<a href="http://insideairbnb.com/paris/" target="_blank">Inside Airbnb</a> et d&rsquo;un robot fait par mes soins récupérant la date d&rsquo;inscription d&rsquo;un utilisateur.
+    Ces données s&rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&rsquo;utilisation commerciale).
+<p> <span style="font-weight:bold;">Méthodologie : </span>Airbnb n&rsquo;affiche sur son site que la date d&rsquo;inscription d&rsquo;un utilisateur. C&rsquo;est cette date qui a été utilisée pour déterminer l&rsquo;ajout d&rsquo;un logement sur Airbnb. Cette méthode est fiable si l&rsquo;utilisateur ne propose qu&rsquo;un logement. Si par contre l&rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&rsquo;inscription de l&rsquo;utilisateur).
+Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &ldquo;plus de données&rdquo;).
 </p>
 <p> <span style="font-weight:bold;">Plus de données : </span>
-    Ce tableau présente le nombre d'occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu'un seul appartement. A l'opposé, 1 utilisateur en possède 169 et un autre 150.
+    Ce tableau présente le nombre d&rsquo;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&rsquo;un seul appartement. A l&rsquo;opposé, 1 utilisateur en possède 169 et un autre 150.
  <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">toc</i>Voir le tableau de données</div>
@@ -125,14 +125,13 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 <tbody id="tbody">
 </tbody>
 </table></div>
-    </li>
-   
-  </ul>
+    </li></p>
 
-</p>
+<p></ul></p>
 
+<p></p></p>
 
-<p><span style="font-weight:bold;">Merci </span> à <a href="https://twitter.com/vivienwack">Vivien</a> pour ses blagues et son logo ainsi qu'à <a href="https://twitter.com/ytokan">Ytokan.</a></p>
+<p><p><span style="font-weight:bold;">Merci </span> à <a href="https://twitter.com/vivienwack">Vivien</a> pour ses blagues et son logo ainsi qu&rsquo;à <a href="https://twitter.com/ytokan">Ytokan.</a></p>
 <style>
 #map {
     padding-bottom: 25px;
@@ -145,9 +144,7 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 #slider {
     margin-top: 8px;
 }
-</style>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
+</style></p>
 
             </div>
         </div>
@@ -191,6 +188,8 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
                 <h5 class="white-text">Derniers contenus</h5>
                 <ul>
                   
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-nyc/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à NYC</a></li>
+                  
                      <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-paris/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/mapboostadopt/"><i class="mdi-navigation-chevron-right"></i>MapBoostadopt</a></li>
@@ -198,8 +197,6 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
                      <li><a class="grey-text text-lighten-3" href="/post/hacks/concours-facebook/"><i class="mdi-navigation-chevron-right"></i>Concours Facebook</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/boostadopt/"><i class="mdi-navigation-chevron-right"></i>Boostadopt</a></li>
-                  
-                     <li><a class="grey-text text-lighten-3" href="/post/hors-sujets/stadedefrance/"><i class="mdi-navigation-chevron-right"></i>J&#39;ai couru un 100m au Stade de France devant 50.000 spectateurs</a></li>
                   
                 </ul>
               </div>

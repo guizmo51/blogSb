@@ -14,17 +14,17 @@
       <pubDate>Thu, 17 Sep 2015 21:20:42 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/post/hacks/airbnb-paris/</guid>
-      <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;
+&lt;script src=&#34;https://www.google.com/jsapi&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
 &lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;http://www.simonblum.me/js/airbnb.js&#34;&gt;&lt;/script&gt;
 &lt;p&gt; La carte interactive suivante présente l&#39;évolution des logements Airbnb sur Paris entre 2008 et 2015 sous forme de Heatmap. Afin de visualiser les données vous pouvez utiliser le &#34;slider&#34; ou lancer l&#39;animation via le bouton &#34;Lancer l&#39;animation&#34;.&lt;/p&gt;
    
-&lt;script 
-        src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;div id=&#34;loaderAnim&#34; class=&#34;preloader-wrapper big active&#34;&gt;
+
+&lt;div id=&#34;loaderAnim&#34; class=&#34;preloader-wrapper big active&#34;&gt;
     &lt;div class=&#34;spinner-layer spinner-blue-only&#34;&gt;
       &lt;div class=&#34;circle-clipper left&#34;&gt;
         &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
@@ -37,24 +37,24 @@
   &lt;/div&gt;
  &lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
     &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; offres&lt;/p&gt;
-    &lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;&lt;/p&gt;
+    &lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;
 
-&lt;p&gt;&lt;p&gt;Manipulez le curseur afin de visualiser l&amp;rsquo;évolution&lt;/p&gt;
+ &lt;p&gt;Manipulez le curseur afin de visualiser l&#39;évolution&lt;/p&gt;
  &lt;p&gt;&lt;div id=&#34;slider&#34;&gt;&lt;/div&gt;&lt;/p&gt;
-    &lt;fieldset&gt;&lt;legend&gt;Animation automatique&lt;/legend&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div  style=&#34;display:inline-block;&#34;&gt;
-   &lt;button class=&#34;btn waves-effect waves-light&#34; type=&#34;submit&#34; id=&#34;action&#34;&gt;Lancer l&amp;rsquo;animation&lt;/button&gt;
+    &lt;fieldset&gt;&lt;legend&gt;Animation automatique&lt;/legend&gt;
+      
+&lt;div  style=&#34;display:inline-block;&#34;&gt;
+   &lt;button class=&#34;btn waves-effect waves-light&#34; type=&#34;submit&#34; id=&#34;action&#34;&gt;Lancer l&#39;animation&lt;/button&gt;
 &lt;/div&gt;
 &lt;/fieldset&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Les données&lt;/span&gt; utilisées pour réaliser ce projet proviennent d&amp;rsquo;&lt;a href=&#34;http://insideairbnb.com/paris/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; et d&amp;rsquo;un robot fait par mes soins récupérant la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur.
-    Ces données s&amp;rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&amp;rsquo;utilisation commerciale).
-&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&amp;rsquo;affiche sur son site que la date d&amp;rsquo;inscription d&amp;rsquo;un utilisateur. C&amp;rsquo;est cette date qui a été utilisée pour déterminer l&amp;rsquo;ajout d&amp;rsquo;un logement sur Airbnb. Cette méthode est fiable si l&amp;rsquo;utilisateur ne propose qu&amp;rsquo;un logement. Si par contre l&amp;rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&amp;rsquo;inscription de l&amp;rsquo;utilisateur).
-Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&amp;rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &amp;ldquo;plus de données&amp;rdquo;).
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Les données&lt;/span&gt; utilisées pour réaliser ce projet proviennent d&#39;&lt;a href=&#34;http://insideairbnb.com/paris/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; et d&#39;un robot fait par mes soins récupérant la date d&#39;inscription d&#39;un utilisateur.
+    Ces données s&#39;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&#39;utilisation commerciale).
+&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Méthodologie : &lt;/span&gt;Airbnb n&#39;affiche sur son site que la date d&#39;inscription d&#39;un utilisateur. C&#39;est cette date qui a été utilisée pour déterminer l&#39;ajout d&#39;un logement sur Airbnb. Cette méthode est fiable si l&#39;utilisateur ne propose qu&#39;un logement. Si par contre l&#39;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&#39;inscription de l&#39;utilisateur).
+Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&#39;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &#34;plus de données&#34;).
 &lt;/p&gt;
 &lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Plus de données : &lt;/span&gt;
-    Ce tableau présente le nombre d&amp;rsquo;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&amp;rsquo;un seul appartement. A l&amp;rsquo;opposé, 1 utilisateur en possède 169 et un autre 150.
+    Ce tableau présente le nombre d&#39;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&#39;un seul appartement. A l&#39;opposé, 1 utilisateur en possède 169 et un autre 150.
  &lt;ul class=&#34;collapsible&#34; data-collapsible=&#34;accordion&#34;&gt;
     &lt;li&gt;
       &lt;div class=&#34;collapsible-header&#34;&gt;&lt;i class=&#34;material-icons&#34;&gt;toc&lt;/i&gt;Voir le tableau de données&lt;/div&gt;
@@ -68,13 +68,14 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 &lt;tbody id=&#34;tbody&#34;&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;&lt;/div&gt;
-    &lt;/li&gt;&lt;/p&gt;
+    &lt;/li&gt;
+   
+  &lt;/ul&gt;
 
-&lt;p&gt;&lt;/ul&gt;&lt;/p&gt;
+&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&amp;rsquo;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Merci &lt;/span&gt; à &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; pour ses blagues et son logo ainsi qu&#39;à &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
 &lt;style&gt;
 #map {
     padding-bottom: 25px;
@@ -87,7 +88,9 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
 #slider {
     margin-top: 8px;
 }
-&lt;/style&gt;&lt;/p&gt;
+&lt;/style&gt;
+&lt;script
+        src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
 </description>
     </item>
     

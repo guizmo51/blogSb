@@ -136,7 +136,7 @@ rangeSlider.noUiSlider.on('change', function(){
     update(parseInt(rangeSlider.noUiSlider.get()));
 });
 $.ajaxSetup({cache: true});
-  $.getJSON("/js/finalParis.json", function( data ) {
+  $.getJSON("/js/final.json", function( data ) {
 
       source = data;
       $.each(source, function(key,val){

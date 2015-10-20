@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mariage M&S</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
+    <link href="css/onepage-scroll.css" rel="stylesheet">
+
+
+    <style type="text/css">
+    body { 
+        padding-top: 5px; 
+        padding-left: 5px;
+        font-family:sans-serif;
+    }
+    .btn-responsive {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+.img-responsive-height
+{
+  display: block;
+  width: auto;
+  max-height: 100%
+}
+
+
+.modal { 
+    position: absolute; 
+    top: -51%; 
+    right: 3%; 
+    left: 3%; 
+    width: auto; 
+    margin: 0; 
+}
+.modal-body { 
+    height: 60%; 
+}
+
+.modal-backdrop{
+    position: relative;
+}
+
+.new-board-btn {
+    white-space: normal;
+    
+}
+.next {
+  position: absolute;
+    bottom: 20px;
+    margin-left: 5px;
+width: 97%;}
+
+h2 {
+  margin-top: -5px;
+}
+
+.btn-prop {
+  margin: 6px;
+}
+
+.btn-indice {
+  float: left;
+}
+.indice {
+  margin-left: 10px;
+}
+
+
+    </style>
+    <script>
+Array.prototype.shuffle = function() {
+  var i = this.length, j, temp;
+  if ( i == 0 ) return this;
+  while ( --i ) {
+     j = Math.floor( Math.random() * ( i + 1 ) );
+     temp = this[i];
+     this[i] = this[j];
+     this[j] = temp;
+  }
+  return this;
+}
+    </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+   
+   <div class="questions">
+
+    <section>
+      <h2>Mariage de Mathilde & Sébastien </h2>
+      <p>Bienvenue sur ce quizz d'entre-deux pour le mariage de Mathilde et Sébastien. </p>
+      <p>Merci de rester fair-play, l'usage d'internet est interdit.</p>
+      <p>Soyez prudents vis à vis de la circulation routière. Les enfants doivent être accompagnés.</p>
+      <p>Ne loupez pas le début de la cérémonie ! </p>
+      <button type="button" class="btn btn-primary btn-lg btn-block next">Suite</button>
+    </section>
+     <section>
+      <div class="form-group">
+  <h2>Nom (d'équipe) : </h2>
+  <input type="text" class="form-control input-lg" id="usr">
+</div>
+<button type="button" class="btn btn-primary btn-lg btn-block next">On commence !</button>
+    </section>
+ 
+   </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.easing.min.js"></script>
+      <script src="js/jquery.onepage-scroll.min.js"></script>
+      <script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+   
+
+   <script>
+   var bonnesReponses = [];
+   var questions;
+    var str ='';
+var solution = [];
+   function f(){
+    console.log("over");
+   }
+   var reponses = [];
+    $( document ).ready(function() {
+
+    
+  
+
+      $.getJSON( "question.json", function( data ) {
+   
+    questions = data.questions;
+    questions.shuffle();
+    var cpt = 1;
+    var color = ['btn-info','btn-success','btn-warning'];
+    var idLast = questions[questions.length-1].id;
+    
+    $.each(questions, function(key, value){
+
+      var propsHtml = '';
+      var cptColor = 0;
+
+      if(value.id == idLast) {
+         var labelSuite = 'Terminer';
+         var classEnd = 'endButton';
+      } else {
+        var labelSuite = 'Question suivante';
+         var classEnd = '';
+      }
+        if (value.typeImage) {
+          propsHtml+='<div class="row">';
+        }
+        $.each(value.props, function(key2, value2){
+        
+
+        if (value.typeImage) {
+          propsHtml+='  <div class="col-xs-4"><img  height="100px" class="img-radio" src="images/'+value2.int+'" /><button type="button" class="btn btn-primary btn-radio">'+value2.id+'</button><input type="radio"  name="'+value.id+'" autocomplete="off" value="'+value2.id+'"  id="left-item" class="hidden"></div>';
+        } else {
+        
+
+            propsHtml+='<label class="btn-prop btn btn-primary btn-responsive btn-group-justified btn-lg '+color[cptColor]+' "><input autocomplete="off" name="'+value.id+'" value="'+value2.id+'" type="radio" /><span>'+value2.int+'</span></label>';
+        }
+
+
+
+        //propsHtml+='<p><input class="rep" type="radio" name="'+value.id+'" value="'+value2.id+'"> '+value2.int+'</p>';
+        cptColor++;
+      });
+  if (value.typeImage) {
+          propsHtml+='</div>';
+        }
+        
+      if (value.tip.length > 0){
+ $('.questions').append('<section><h2>Question '+cpt+'</h2><div class="alert alert-info" role="alert">'+value.question+'</div><p><button type="button" class="btn btn-default btn-lg btn-responsive btn-indice"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Indice</button><div class="indice">'+value.tip+'</div></p><div class="btn-group" data-toggle="buttons">'+propsHtml+'</div><button type="button" class="btn btn-primary btn-lg btn-block next '+classEnd+'">'+labelSuite+'</button></section>'); 
+      } else {
+            $('.questions').append('<section id="question-'+value.id+'"class="questionSection"><h2>Question '+cpt+'</h2><div class="alert alert-info" role="alert">'+value.question+'</div><div class="btn-group" data-toggle="buttons">'+propsHtml+'</div><button type="button" class="btn btn-primary btn-lg btn-block next '+classEnd+'">'+labelSuite+'</button></section>'); 
+      }
+  
+
+      cpt++;
+      solution[value.id] = value.rep.id;
+    });
+$('.questions').append('<section><h1>Bravo ! Vous avez terminé ce quizz avec un score de <span id="resultat"></span> bonne(s) réponse(s). Pensez à revenir vers l\'église maintenant !</h2></section>');
+
+
+$('input[type=radio]').click(function() {
+    if($(this).is(':checked')) {
+        console.log('click');
+    } else {
+       console.log('unclick');
+    }
+});
+
+
+$('label').one('click',function(){
+   $(this).find('input').prop('checked', true);
+});
+  $('.indice').hide();
+   
+    $('.btn-indice').click(function(){
+      var button = $(this).parent().parent().find('.indice');
+      if ($(button).hasClass('button-opened')){
+          $(button).removeClass('button-opened');
+           $(button).hide();
+      } else {
+         $(this).parent().parent().find('.indice').show();
+          $(button).addClass('button-opened');
+      }
+     
+
+     
+
+    });
+    $(".questions").onepage_scroll();
+
+    $('#clickModal').click(function(){
+      console.log("click");
+      $('#myModal').modal('show');
+    });
+
+    $('.next').click(function(){
+$(".questions").moveDown();
+      if($(this).hasClass('endButton')){
+        // Clic sur terminer
+        // Correction
+
+
+        $.when( $('body input:checked').each(function(idx,val){
+          
+  
+  reponses[$(this).attr('name')] = $(this).attr('value');
+  
+}) ).done(function(reponses) {
+         
+    $.when($.each(reponses, function(index,value){
+      str+='/'+value.name+':'+value.value;
+      if (value.value==solution[value.name]) {
+        
+        bonnesReponses.push(value.name);
+      }
+    
+    })).done(function(){
+      
+$('#resultat').html(bonnesReponses.length);
+$('section:not(:last-child)').remove();
+console.log($('body').find('section'));
+        $.ajax({
+                url: "https://docs.google.com/forms/d/1cCmjx_C6_2ZlvMzdr2yU1G-E36oYejIFEb5HvbqIaj8/formResponse",
+                data: {"entry.1700599517" : $('#usr').val(), "entry.2018355513" : str, "entry.1911787988": navigator.userAgent, "entry.1722272935": bonnesReponses.length},
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function (){
+ 
+                        console.log("okkk");
+                        //Success message
+                    },
+                    200: function (){
+                        console.log("okkk2");
+                        //Success Message
+                    }
+                }
+            });
+
+
+    });
+   
+  });
+       
+        
+
+
+      }
+       $('.btn-radio').click(function(e) {
+        $('.btn-radio').not(this).removeClass('active')
+        .siblings('input').prop('checked',false)
+            .siblings('.img-radio').css('opacity','0.5');
+      $(this).addClass('active')
+            .siblings('input').prop('checked',true)
+        .siblings('.img-radio').css('opacity','1');
+    });
+
+
+    });
+      });
+    });
+    </script>
+   
+  </body>
+</html>
