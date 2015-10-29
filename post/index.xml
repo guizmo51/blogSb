@@ -6,7 +6,74 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Thu, 17 Sep 2015 21:20:42 CEST</updated>
+    <updated>Sat, 17 Oct 2015 21:20:42 CEST</updated>
+    
+    <item>
+      <title>Airbnb&#39;s evolution from 2008 in New-York City</title>
+      <link>http://www.simonblum.me/post/hacks/airbnb-nyc/</link>
+      <pubDate>Sat, 17 Oct 2015 21:20:42 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/post/hacks/airbnb-nyc/</guid>
+      <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;
+&lt;script src=&#34;https://www.google.com/jsapi&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/nouislider.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/airbnbNYC.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt; The following map displays the evolution of Airbnb accomodations in New-York City since 2008 until 2015. You can play with this map by using the slider located under the GoogleMaps.&lt;/p&gt;
+
+
+
+&lt;div id=&#34;loaderAnim&#34; class=&#34;preloader-wrapper big active&#34;&gt;
+    &lt;div class=&#34;spinner-layer spinner-blue-only&#34;&gt;
+      &lt;div class=&#34;circle-clipper left&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;div class=&#34;gap-patch&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;div class=&#34;circle-clipper right&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;div id=&#34;map&#34; style=&#34;width: 800px; height: 650px;&#34;&gt;&lt;/div&gt;
+    &lt;p id=&#34;monthLabel&#34;&gt;&lt;span id=&#34;moisSlider&#34;&gt;&lt;/span&gt; / &lt;span id=&#34;totalOffer&#34;&gt;&lt;/span&gt; accomodations&lt;/p&gt;
+    &lt;div id=&#34;waitLoadArea&#34; style=&#34;display:none;&#34;&gt;
+
+ &lt;p&gt;Use this slider &lt;/p&gt;
+ &lt;p&gt;&lt;div id=&#34;slider&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;fieldset&gt;&lt;legend&gt;Automatic visualization&lt;/legend&gt;
+      
+&lt;div  style=&#34;display:inline-block;&#34;&gt;
+   &lt;button class=&#34;btn waves-effect waves-light&#34; type=&#34;submit&#34; id=&#34;action&#34;&gt;Launch the animation&lt;/button&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Data&lt;/span&gt; used in this project come from &lt;a href=&#34;http://insideairbnb.com/new-york-city/&#34; target=&#34;_blank&#34;&gt;Inside Airbnb&lt;/a&gt; and a specific crawler developped by myself. It parsed the registration date located on user&#39;s profiles. Data is available under &#34;Any commercial use licence CC BY-NC&#34;&lt;/p&gt;
+&lt;p&gt; &lt;span style=&#34;font-weight:bold;&#34;&gt;Methodology :&lt;/span&gt;Airbnb displays  only the registration date of users. The creation date of an offer is not available. I used this registration date as creation date for the accomodation.
+  It&#39;s not 100% accurate but it&#39;s the only way to display the information. Per example if John registered in January 2008, add 1 accomodation in the same time and add 4 accomodations in Septembre 2013, the five offers will use &#34;january 2008&#34; as creation date instead of september for the last 4. After data analysis only few users have several accomodations.
+&lt;/p&gt;
+
+
+
+
+&lt;p&gt;&lt;span style=&#34;font-weight:bold;&#34;&gt;Thanks&lt;/span&gt; to &lt;a href=&#34;https://twitter.com/vivienwack&#34;&gt;Vivien&lt;/a&gt; for his jokes and  &lt;a href=&#34;https://twitter.com/ytokan&#34;&gt;Ytokan.&lt;/a&gt;&lt;/p&gt;
+&lt;style&gt;
+#map {
+  padding-bottom: 25px;
+}
+#monthLabel {
+  font-weight: bold;
+  color: #881226;
+  font-size: large;
+}
+#slider {
+  margin-top: 8px;
+}
+&lt;/style&gt;
+&lt;script
+        src=&#34;https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&amp;v=3.exp&amp;signed_in=true&amp;callback=initMap&amp;libraries=visualization&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</title>

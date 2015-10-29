@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Evolution de l&#39;offre Airbnb à NYC - http://www.simonblum.me/</title>
+    <title>Airbnb&#39;s evolution from 2008 in New-York City - http://www.simonblum.me/</title>
       
 
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -59,7 +59,7 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h2>Evolution de l&#39;offre Airbnb à NYC<br> <small></small></h2>
+                    <h2>Airbnb&#39;s evolution from 2008 in New-York City<br> <small></small></h2>
                     <hr>
                      October 17, 2015
                       - <a href="/categories/hacks ">hacks</a> -
@@ -71,17 +71,17 @@
 
                      <br>
                     <hr>
-                    <p><link rel="stylesheet" href="/css/nouislider.min.css"></p>
+                    <p><link rel="stylesheet" href="/css/nouislider.min.css">
+<script src="https://www.google.com/jsapi"></script></p>
 
 <script src="/js/jquery-1.10.2.min.js"></script>
 <script src="/js/nouislider.min.js"></script>
 <script src="/js/airbnbNYC.js"></script>
-<p> La carte interactive suivante présente l'évolution des logements Airbnb sur Paris entre 2008 et 2015 sous forme de Heatmap. Afin de visualiser les données vous pouvez utiliser le "slider" ou lancer l'animation via le bouton "Lancer l'animation".</p>
-   
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_xRjpcxcd2GT2bIYpVfiJ7qgiV9aBQYQ&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
+<p> The following map displays the evolution of Airbnb accomodations in New-York City since 2008 until 2015. You can play with this map by using the slider located under the GoogleMaps.</p>
 
-<p><div id="loaderAnim" class="preloader-wrapper big active">
+
+
+<div id="loaderAnim" class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
@@ -93,58 +93,42 @@
     </div>
   </div>
  <div id="map" style="width: 800px; height: 650px;"></div>
-    <p id="monthLabel"><span id="moisSlider"></span> / <span id="totalOffer"></span> offres</p>
-    <div id="waitLoadArea" style="display:none;"></p>
+    <p id="monthLabel"><span id="moisSlider"></span> / <span id="totalOffer"></span> accomodations</p>
+    <div id="waitLoadArea" style="display:none;">
 
-<p><p>Manipulez le curseur afin de visualiser l&rsquo;évolution</p>
+ <p>Use this slider </p>
  <p><div id="slider"></div></p>
-    <fieldset><legend>Animation automatique</legend></p>
-
-<p><div  style="display:inline-block;">
-   <button class="btn waves-effect waves-light" type="submit" id="action">Lancer l&rsquo;animation</button>
+    <fieldset><legend>Automatic visualization</legend>
+      
+<div  style="display:inline-block;">
+   <button class="btn waves-effect waves-light" type="submit" id="action">Launch the animation</button>
 </div>
 </fieldset>
 </div>
-<p><span style="font-weight:bold;">Les données</span> utilisées pour réaliser ce projet proviennent d&rsquo;<a href="http://insideairbnb.com/paris/" target="_blank">Inside Airbnb</a> et d&rsquo;un robot fait par mes soins récupérant la date d&rsquo;inscription d&rsquo;un utilisateur.
-    Ces données s&rsquo;étendent de septembre 2008 à mai 2015. Les données JSON provenant de mon propre travail sont réutilisables (licence : Attribution / Pas d&rsquo;utilisation commerciale).
-<p> <span style="font-weight:bold;">Méthodologie : </span>Airbnb n&rsquo;affiche sur son site que la date d&rsquo;inscription d&rsquo;un utilisateur. C&rsquo;est cette date qui a été utilisée pour déterminer l&rsquo;ajout d&rsquo;un logement sur Airbnb. Cette méthode est fiable si l&rsquo;utilisateur ne propose qu&rsquo;un logement. Si par contre l&rsquo;utilisateur propose 1 logement en décembre 2008 puis 5 autres en avril 2012, les 6 appartements se verront affectés à décembre 2008 (ce qui correspond à la date d&rsquo;inscription de l&rsquo;utilisateur).
-Bien que cela ne soit pas strictement conforme à la réalité, cette dernière n&rsquo;est que très peu erronée compte-tenu des statistiques sur le nombre de logement moyen proposés par un utilisateur (voir rubrique &ldquo;plus de données&rdquo;).
+<p><span style="font-weight:bold;">Data</span> used in this project come from <a href="http://insideairbnb.com/new-york-city/" target="_blank">Inside Airbnb</a> and a specific crawler developped by myself. It parsed the registration date located on user's profiles. Data is available under "Any commercial use licence CC BY-NC"</p>
+<p> <span style="font-weight:bold;">Methodology :</span>Airbnb displays  only the registration date of users. The creation date of an offer is not available. I used this registration date as creation date for the accomodation.
+  It's not 100% accurate but it's the only way to display the information. Per example if John registered in January 2008, add 1 accomodation in the same time and add 4 accomodations in Septembre 2013, the five offers will use "january 2008" as creation date instead of september for the last 4. After data analysis only few users have several accomodations.
 </p>
-<p> <span style="font-weight:bold;">Plus de données : </span>
-    Ce tableau présente le nombre d&rsquo;occurences pour chaque valeur. Exemple pour la 1ere ligne: 22670 utilisateurs ne possèdent qu&rsquo;un seul appartement. A l&rsquo;opposé, 1 utilisateur en possède 169 et un autre 150.
- <ul class="collapsible" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">toc</i>Voir le tableau de données</div>
-      <div class="collapsible-body"><table class="striped bordered centered responsive-table" >
-<thead>
-<tr>
-<th data-field="id">Nombre de logements</th>
-<th data-field="name">Occurence</th>
-</tr>
-</thead>
-<tbody id="tbody">
-</tbody>
-</table></div>
-    </li></p>
 
-<p></ul></p>
 
-<p></p></p>
 
-<p><p><span style="font-weight:bold;">Merci </span> à <a href="https://twitter.com/vivienwack">Vivien</a> pour ses blagues et son logo ainsi qu&rsquo;à <a href="https://twitter.com/ytokan">Ytokan.</a></p>
+
+<p><span style="font-weight:bold;">Thanks</span> to <a href="https://twitter.com/vivienwack">Vivien</a> for his jokes and  <a href="https://twitter.com/ytokan">Ytokan.</a></p>
 <style>
 #map {
-    padding-bottom: 25px;
+  padding-bottom: 25px;
 }
 #monthLabel {
-    font-weight: bold;
-    color: #881226;
-    font-size: large;
+  font-weight: bold;
+  color: #881226;
+  font-size: large;
 }
 #slider {
-    margin-top: 8px;
+  margin-top: 8px;
 }
-</style></p>
+</style>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUQOQnq1kt0h-Nh83XX1dPmjGSF343LHs&v=3.exp&signed_in=true&callback=initMap&libraries=visualization"></script>
 
             </div>
         </div>
@@ -188,7 +172,7 @@ Bien que cela ne soit pas strictement conforme à la réalité, cette dernière 
                 <h5 class="white-text">Derniers contenus</h5>
                 <ul>
                   
-                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-nyc/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à NYC</a></li>
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-nyc/"><i class="mdi-navigation-chevron-right"></i>Airbnb&#39;s evolution from 2008 in New-York City</a></li>
                   
                      <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-paris/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</a></li>
                   

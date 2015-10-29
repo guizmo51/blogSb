@@ -10,7 +10,7 @@ Array.prototype.frequencies  = function () {
     );
     return freqs;
   }
-
+var transDate = ['','january','february','march','april','may','june','july','august','september','october','november','december'];
 var months = ['','janvier', 'février', 'mars', 'avril', 'mai', 'juin','juillet','août', 'septembre','octobre','novembre','décembre'];
 var source = null;
 var corresSorted = [];
@@ -20,6 +20,16 @@ var histoInsert  = [];
 var data = [];
 var total = 0;
 var pointArray = null;
+
+function dateTranslate(val){
+  var val = String(val);
+
+  var an = val.substr(0, 4);
+  var month = val.substr(4,2);
+  
+
+  return transDate[parseInt(month)]+" "+an;
+}
 function initMap() {
   var circle ={
     path: google.maps.SymbolPath.CIRCLE,
@@ -33,7 +43,7 @@ function initMap() {
   pointArray =  new google.maps.MVCArray([]);
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
-    center: {lat: 48.859747, lng:  2.341887},
+    center: {lat: 40.749182, lng:  -73.987358},
     zoomControl: true
   });
   
@@ -47,7 +57,8 @@ function initMap() {
   heatmap.setMap(map);
 }
   function update(id){
-    $("#moisSlider").html(corres[corresSorted[id]]);
+   ;
+    $("#moisSlider").html( dateTranslate(corresSorted[id]));
     
     if(id >= oldState){
       if((id-oldState)==1 || oldState == null){
@@ -55,15 +66,20 @@ function initMap() {
         total +=source[corres[corresSorted[id]]].length;
 
         $.each(source[corres[corresSorted[id]]], function(key,val){
+          
+          if(val.lat!=null && val.lon!=null){
           if(val.lat.length == 0 || val.lon.length == 0) { /* lat/lng valued are missing? */
             console.log('Incorect lat/lon: (' + val.lat + ',' + val.lon + ')');
           }
           else {
+           
             var curLat = Number(val.lat);
             var curLng = Number(val.lon);
+           
             var retour = pointArray.push(new google.maps.LatLng(curLat, curLng));   
             provId.push(retour);
           }
+        }
         });
         histoInsert[id] = provId;
         
@@ -73,15 +89,20 @@ function initMap() {
           var provId = [];
 
           $.each(source[corres[corresSorted[x]]], function(key,val){
+            
+            if(val.lat!=null && val.lon!=null){
+
             if(val.lat.length == 0 || val.lon.length == 0) { /* lat/lng valued are missing? */
               console.log('Incorect lat/lon: (' + val.lat + ',' + val.lon + ')');
             }
             else {
               var curLat = Number(val.lat);
               var curLng = Number(val.lon);
+
               var retour = pointArray.push(new google.maps.LatLng(curLat, curLng)); 
               provId.push(retour);
             }
+          }
           });
          
           histoInsert[x] = provId;
@@ -124,7 +145,7 @@ $('head').append('<meta property="og:image" content="http://www.simonblum.me/ima
     step: 1,
     range: {
         'min': [ 0 ],
-        'max': [ 79 ]
+        'max': [ 86 ]
     }
   });
 
@@ -136,7 +157,7 @@ rangeSlider.noUiSlider.on('change', function(){
     update(parseInt(rangeSlider.noUiSlider.get()));
 });
 $.ajaxSetup({cache: true});
-  $.getJSON("/js/final.json", function( data ) {
+  $.getJSON("/js/finalNYC.json", function( data ) {
 
       source = data;
       $.each(source, function(key,val){
@@ -149,6 +170,8 @@ $.ajaxSetup({cache: true});
 
       });
       corresSorted.sort();
+
+      
       update(0);
       $('#loaderAnim').hide();
       $('#waitLoadArea').show();
@@ -174,7 +197,7 @@ $("#action").click(function(){
 
   setInterval(function() {
 
-    if (x < 79) {
+    if (x < 87) {
       update(x);
       rangeSlider.noUiSlider.set(x);  
     }
