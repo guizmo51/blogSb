@@ -6,12 +6,12 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Sat, 17 Oct 2015 21:20:42 CEST</updated>
+    <updated>Thu, 29 Oct 2015 21:20:42 &#43;0200</updated>
     
     <item>
       <title>Airbnb&#39;s evolution from 2008 in New-York City</title>
       <link>http://www.simonblum.me/post/hacks/airbnb-nyc/</link>
-      <pubDate>Sat, 17 Oct 2015 21:20:42 CEST</pubDate>
+      <pubDate>Thu, 29 Oct 2015 21:20:42 &#43;0200</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/post/hacks/airbnb-nyc/</guid>
       <description>&lt;p&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.simonblum.me/css/nouislider.min.css&#34;&gt;
@@ -437,22 +437,22 @@ Je ne suis pas dans le secret des dieux et cela semblait être un échange plut�
     </item>
     
     <item>
-      <title>Expériences professionelles</title>
-      <link>http://www.simonblum.me/cv/slider/experiencespro/</link>
-      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/slider/experiencespro/</guid>
-      <description>&lt;p&gt;Convaincu que l&amp;rsquo;expérience est essentielle j&amp;rsquo;ai décidé de suivre ma formation en apprentissage. J&amp;rsquo;ai été en alternance pendant 3 ans jusqu&amp;rsquo;en septembre 2013.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>projets</title>
       <link>http://www.simonblum.me/cv/slider/projets/</link>
       <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
       <author>Enthusiastic Hugo User</author>
       <guid>http://www.simonblum.me/cv/slider/projets/</guid>
       <description>&lt;p&gt;Qu&amp;rsquo;ils soient universitaires ou réalisés sur mon temps libre je produis de nombreux projets, tous orientés Web. Parmi eux : RunRunRun, BoostAdopt, Aymasi et bien d&amp;rsquo;autres&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Expériences professionelles</title>
+      <link>http://www.simonblum.me/cv/slider/experiencespro/</link>
+      <pubDate>Fri, 10 Apr 2015 13:48:20 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/cv/slider/experiencespro/</guid>
+      <description>&lt;p&gt;Convaincu que l&amp;rsquo;expérience est essentielle j&amp;rsquo;ai décidé de suivre ma formation en apprentissage. J&amp;rsquo;ai été en alternance pendant 3 ans jusqu&amp;rsquo;en septembre 2013.&lt;/p&gt;
 </description>
     </item>
     
@@ -513,6 +513,22 @@ J&amp;rsquo;utilise surtout PHP (avec ou sans framework) et NodeJS. Je peux trè
     </item>
     
     <item>
+      <title>Projet BetterCallUber</title>
+      <link>http://www.simonblum.me/cv/projets/bettercalluber/</link>
+      <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/cv/projets/bettercalluber/</guid>
+      <description>&lt;p&gt;BetterCallUber est le résultat de ma participation à un hackathon organisé par le service de VTC Uber.
+Ce projet est une application web permettant de réserver instantanément ou de manière programmée un VTC.
+D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le déclenchemnt d&amp;rsquo;une course à l&amp;rsquo;aterrisage d&amp;rsquo;un avion ou train.&lt;/p&gt;
+
+&lt;p&gt;Ce projet sera prochainement détaillé sur ce blog.&lt;/p&gt;
+
+&lt;p&gt;Technologies : PHP5, Symfony 2.6, AngularJS, Bootstrap, consommation &amp;amp; réalisation d&amp;rsquo;API, HTTPS/SSL, JsonWebToken,&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Travail de mémoire sur les BIG DATA</title>
       <link>http://www.simonblum.me/cv/projets/bigdata/</link>
       <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
@@ -530,22 +546,6 @@ Dans le cadre de ce travail j&amp;rsquo;ai participé plusieurs conférences ou 
 &lt;/ul&gt;
 
 &lt;p&gt;J&amp;rsquo;ai aussi interviewé plusieurs experts dans le domaine du marketing et des études afin de réaliser ce mémoire.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Projet BetterCallUber</title>
-      <link>http://www.simonblum.me/cv/projets/bettercalluber/</link>
-      <pubDate>Thu, 09 Apr 2015 14:01:54 CEST</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://www.simonblum.me/cv/projets/bettercalluber/</guid>
-      <description>&lt;p&gt;BetterCallUber est le résultat de ma participation à un hackathon organisé par le service de VTC Uber.
-Ce projet est une application web permettant de réserver instantanément ou de manière programmée un VTC.
-D&amp;rsquo;autres fonctionnalités sont en cours de développement comme le déclenchemnt d&amp;rsquo;une course à l&amp;rsquo;aterrisage d&amp;rsquo;un avion ou train.&lt;/p&gt;
-
-&lt;p&gt;Ce projet sera prochainement détaillé sur ce blog.&lt;/p&gt;
-
-&lt;p&gt;Technologies : PHP5, Symfony 2.6, AngularJS, Bootstrap, consommation &amp;amp; réalisation d&amp;rsquo;API, HTTPS/SSL, JsonWebToken,&lt;/p&gt;
 </description>
     </item>
     
