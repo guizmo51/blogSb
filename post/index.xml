@@ -6,7 +6,38 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Thu, 29 Oct 2015 21:20:42 &#43;0200</updated>
+    <updated>Mon, 04 Jan 2016 21:20:42 &#43;0200</updated>
+    
+    <item>
+      <title>Evolution des colis suspects sur le RER A</title>
+      <link>http://www.simonblum.me/post/hacks/evolution-colis-rera/</link>
+      <pubDate>Mon, 04 Jan 2016 21:20:42 &#43;0200</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.simonblum.me/post/hacks/evolution-colis-rera/</guid>
+      <description>&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js
+&#34;&gt;&lt;/script&gt;
+
+&lt;script src=&#34;http://www.simonblum.me/js/jquery-1.10.2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://www.simonblum.me/js/rera.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Faute d&amp;rsquo;open-data mis à disposition par la RATP &amp;amp; la SNCF (pour le RER A) j&amp;rsquo;ai souhaité utiliser les tweets émis par le compte Twitter du RER A afin d&amp;rsquo;avoir une vue d&amp;rsquo;ensemble des colis suspects sur cette ligne. Le compte RER_A via des tweets (automatisés ?) informe les usagers de la présence d&amp;rsquo;un colis suspect. Parfois il y avait plus d&amp;rsquo;un colis suspect par jour. Le nombre de jours où il y a eu au moins 1 colis suspect par jour est donc la plus fiable.&lt;/p&gt;
+
+&lt;p&gt;Attention ce micro-projet n&amp;rsquo;a aucunement le but de remettre en question des &amp;ldquo;colis suspects&amp;rdquo;, ils affectent tout le monde et les conséquences (ralentissements, interruptions), certes très gênantes, sont là pour nous protéger.&lt;/p&gt;
+
+&lt;p&gt;Ce graphique présente le nombre de jours par mois où il y a eu au moins 1 tweet concernant un colis suspect.
+&lt;canvas id=&#34;myChart&#34; width=&#34;700&#34; &gt;&lt;/canvas&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h2&gt;Méthodologie&lt;/h2&gt;
+Analyse des tweets du compte Twitter &lt;a href=&#34;https://twitter.com/rera_ratp&#34; target=&#34;_blank&#34;&gt;RER A&lt;/a&gt; écrit entre le 12/02/2013 &amp;amp; le 31/12/2015. Cette analyse porte sur tous les tweets comportant les termes &amp;ldquo;colis suspects&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;h2&gt;Technique&lt;/h2&gt;
+Les tweets de Juillet 2015 à Décembre 2015 ont été obtenu par la réalisation d&amp;rsquo;un script NodeJS utilisant l&amp;rsquo;API Twitter.
+La limite temporelle de cette dernière m&amp;rsquo;ont obligé à réaliser un autre script nodeJS crawlant directement Twitter.&lt;/p&gt;
+
+&lt;p&gt;&lt;h2&gt;Données&lt;/h2&gt;
+Les données issues de ces crawls sont disponibles sur &lt;a target=&#34;_blank&#34; href=&#34;https://gist.github.com/guizmo51/6f45655e3afda2ed3559&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Airbnb&#39;s evolution from 2008 in New-York City</title>

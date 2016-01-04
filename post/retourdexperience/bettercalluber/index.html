@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <title>BetterCallUber - hackathon par Uber - http://localhost:1313/</title>
+      
+
+      <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
+
+      <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+      <meta name="description" content="Simon BLUM, 27 ans, ingénieur Web utilisant les technologies PHP et NodeJS. " />
+    </head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav>
+    <div class="nav-wrapper">
+      <a href="http://www.simonblum.me" class="brand-logo">Simon Blum</a>
+       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+     	<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+	
+	 <li><a href="http://localhost:1313//post/qui-suis-je/">Qui suis-je ?</a></li>
+       <li><a href="http://localhost:1313//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
+                    <li><a href="http://localhost:1313//categories/retour-dexperience/">Retour d'expérience</a></li>
+                    <li><a href="http://localhost:1313//categories/hacks/">Hacks</a></li>
+                    <li><a href="http://localhost:1313//categories/hors-sujet/">Hors-sujet..</a></li>
+                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="http://localhost:1313//cv">mon CV</a></li>
+</ul>
+<ul class="side-nav" id="mobile-demo">
+      <li><a href="http://localhost:1313//post/qui-suis-je/">Qui suis-je ?</a></li>
+       <li><a href="http://localhost:1313//post/pourquoi-ce-blog/">Pourquoi ce blog ?</a></li>
+                    <li><a href="http://localhost:1313//categories/retour-dexperience/">Retour d'expérience</a></li>
+                    <li><a href="http://localhost:1313//categories/hacks/">Hacks</a></li>
+                    <li><a href="http://localhost:1313//categories/hors-sujet/">Hors-sujet..</a></li>
+                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="http://localhost:1313//cv">mon CV</a></li>
+		</ul>
+    
+    </div>
+  </nav>
+       
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="well well-sm">
+                    <h2>BetterCallUber - hackathon par Uber<br> <small></small></h2>
+                    <hr>
+                     January 1, 2016
+                      - <a href="/categories/retour-dexperience ">retour d&#39;experience</a> -
+                     <div class="fb-share-button" data-href="http://localhost:1313/post/retourdexperience/bettercalluber/" data-layout="icon_link"></div>
+
+                      
+
+
+
+                     <br>
+                    <hr>
+                    <p>Cet article va résumer ma participation à un hackation proposé par Uber</p>
+
+<p>Qu&rsquo;est ce qu&rsquo;Uber
+Uber est un service de VTC Américain et présent dans différentes villes du monde (dont plusieurs en France). Il est révolutionnaire (en tous cas au début car imité depuis) dans le sens où tout est centré sur une application qui permet de commander instantanément une voiture avec chauffeur. Pour un prix similaire, parfois supérieur ou inférieur vous avez un service excellent (et le chauffeur ne va pas vous refuser car vous souhaitez dépasser le périphérique ou parce que vous comptez payer par carte bancaire). Comme partout que ça soit chez les artisans taxi ou les VTC il y a en a des très bons et des très mauvais mais un cumul de très mauvaises expériences m&rsquo;a persuadé de ne plus prendre de taxis.</p>
+
+<p>Le hackathon</p>
+
+<p>A début de l&rsquo;année 2015 Uber a lancé un hackathon virtuel. Mais qu&rsquo;est ce qu&rsquo;un hackathon ? Il s&rsquo;agit d&rsquo;un rassemblement dans un temps limité (1 nuit, 1 week-end), sous forme d&rsquo;un challenge en général où des développeurs, des webdesigners, des chefs de projet, des marketeux travaillent autour d&rsquo;un projet commun de manière intensive. En général plusieurs projets se confrontent autour d&rsquo;un thème (par exemple: big data, byod, beacons, l&rsquo;alerte en cas d&rsquo;attentat etc). Dans mon cas c&rsquo;est Uber qui a lancé ce hackathon de manière virtuelle. En effet ils ont décidé d&rsquo;étaler la participation sur plusieurs mois, de plus il était ouvert à tout le monde. J&rsquo;ai décidé de participer à ce hackathon pour réaliser un projet innovant dans un environnement challengeant. Je passe le débat sur le hackathon, chacun y trouve ce qu&rsquo;il veut, les gens sont libres d&rsquo;y participer. Tant mieux si tout le monde est content.</p>
+
+<p>Toujours me concernant, quelques mois avant ce hackathon se posait le problème de la législation à propos de la géolocalisation des véhicules. Suite à ça, cette géolocalisation n&rsquo;étant pas proposée dans l&rsquo;application j&rsquo;avais tenté un système de triangulation des véhicules Uber. A partir d&rsquo;un point central et de 4 points équidistants de ce centre je demandais le temps d&rsquo;attente, du véhicule. Si l&rsquo;identifiant du véhicule était le même je le conservais, ensuite grâce à n système de coefficient j&rsquo;obtenais un périmètre de localisation du véhicule. Enfin l&rsquo;intersection de tous les périmètres pour un mêm véhicule indiquait la localisation. Cette localisation est tout à fait arbitraire car si le temps d&rsquo;attente en zone urbaine est de 5min le véhicule doit être à maximum 1km alors qe sur autoroute il sera à plus de 5 kilomètres.</p>
+
+<p>Ce hackathon m&rsquo;offrait donc la possibilité de faire une application innovante à l&rsquo;aide de leur APIs. Cette dernière avait été lancée quelques mois auparavant, Uber grâce à ce hackathon en profitait pour la mettre en avant. Le thème proposé par Uber était très large : une application innovante sur la plate-forme de son choix.</p>
+
+<p>Mon projet</p>
+
+<p>Après une réflexion de plusieurs jours je suis parti sur idée simple mais innovante : pouvoir réserver un véhicule Uber. En effet l&rsquo;idée innovante d&rsquo;Uber est de povoir faire la demande instantanément. Le service américain ne propose pas de réservation car son concept joue sur l&rsquo;immédiateté. Mon projet est donc de proposer une application permettant de commander un Uber immédiatement ou pour une date future. Pour la plate-forme j&rsquo;ai choisi de faire une application web n&rsquo;étant que très peu expérimenté sur le devéloppement iOs ou Android.</p>
+
+<p>Le nom : je suis un fan de séries et à cette période là je regardais Better Call Saul, j&rsquo;ai donc choisi d&rsquo;appeler mon application BetterCallUber. Bien sûr auparavant je me suis assuré de la disponibilité d&rsquo;un nom de domaine en &ldquo;.net&rdquo; ou &ldquo;.com&rdquo; tous étaient disponibles. Une promotion sur le &ldquo;.net&rdquo; m&rsquo;a fait opter pour le choix &ldquo;www.BetterCallUber.net&rdquo;.</p>
+
+<p>Le logo : le nom de l&rsquo;application étant choisi j&rsquo;ai donc réalisé un logo reprenant le nom d&rsquo;Uber. Mes qualités en webdesigns étant limité j&rsquo;ai réalisé un logo tout simple mais visuellement joli.</p>
+
+<p>Au préalable j&rsquo;avais bien pris connaissances du règlement du hackathon qui stipulait que ré-utiliser le logo Uber ainsi que le nom n&rsquo;était pas conseillé. Dès le départ je savias que je ne respectais pas le règlement sur ces points.</p>
+
+<p>Serveur : afin de pouvoir héberger ce projet en production j&rsquo;ai choisi un VPS chez OVH. Outre le prix très corect cela m&rsquo;a permis de sélectionner une localisation au Canada et donc de bénéficier d&rsquo;un serveur proche du jury (situé aux Etats-Unis, majoritairement sur la côte Ouest). Autant optimiser l&rsquo;application et ses chances en choisissant une localisation adaptée (dans mon cas au jury et utilisateurs américains, un peu moins aux Européens).</p>
+
+<p>Le concept : comme indiqué plus haut l&rsquo;idée est de proposer aux utilisateurs la possibilité de réserver immédiatement ou dans le futur. Pour une réservation immédiate celà est implémenté de base dans le système d&rsquo;information d&rsquo;Uber et proposé par l&rsquo;API. Pour la réservation future la solution est simple : sauvegarder le choix de l&rsquo;utilisateur (lieu, date, type de véhocule) puis au moment voulu à l&rsquo;aide de cron (tâches pouvant s&rsquo;executer toutes les minutes, heures, jours voulus) j&rsquo;appelle toutes les minutes un script qui va vérifier s&rsquo;il y a des demandes de VTC à effectuer. Du point de vue d&rsquo;Uber ça ne change rien, c&rsquo;est le serveur qui va lancer l&rsquo;appel au moment voulu à la place de l&rsquo;utilisateur.</p>
+
+<p>Contraintes. Cette réservation future apporte quand même des difficultés qu&rsquo;il faut anticiper :
+- l&rsquo;application a pour but d&rsquo;être utilisée sur toute la planète (ou tout du moins là où Uber est disponible) , le temps est un élément important car un utilisateur se trouvant à Paris doit pouvoir réserver son Uber à l&rsquo;aterrisage à New-York. La difficulté ici est de bien maîtriser les fuseaux horaires. D&rsquo;un point de vue satisfaction client, BetterCallUber ne peut pas se permettre d&rsquo;envoyer un Uber trop tardivement ou trop tôt car les fuseaux ont été mal gérés. La solution est tout simple, gérer toutes les dates en UTC (Temps universel coordonné) c&rsquo;est l&rsquo;heure à Londres ou GMT 0. Le serveur étant localisé au Canada celui-ci a été configuré pour être en heure UTC. Enfin au moment de la réservation les fuseaux du point de départ et du point d&rsquo;arrivée étaient déterminés grâce à un webservice de Google. Par sécurité ceux-ci étaient affichés sur la version bêta afin que l&rsquo;utilisateur confirme ces fuseaux. Enfin de nombreux tests ont été effectués en ce sens. La qualité ne se néglige pas.</p>
+
+<ul>
+<li>l&rsquo;autre contrainte est l&rsquo;authentification. En effet l&rsquo;API d&rsquo;Uber utilise un système de jeton d&rsquo;authentification ainsi qu&rsquo;un jeton de renouvellement pour authentifier l&rsquo;utilisation. Le jeton de renouvellement permet de renouveller le 1er jeton quand celui-ci a expiré. L&rsquo;utilisation de ces jetons est primordiale car c&rsquo;est le serveur qui fait la requête qui est censé s&rsquo;authentifier en tant que l&rsquo;utilisateur X. L&rsquo;application perdrait tout son intérêt si au moment de la requête cette authentification ne fonctionnait pas et obligerait l&rsquo;utilisateur à s&rsquo;authentifier. C&rsquo;est une étape supplémentaire et dans ce cas l&rsquo;utilisateur favoriserait l&rsquo;utilisation de l&rsquo;application officielle Uber afin de faire la réservation.</li>
+</ul>
+
+<p>Business : à l&rsquo;heure où était développé cette application Uber ne rémunérait que les nouvelles inscriptions à travers des crédits d&rsquo;tilisation. Sur le long-terme cela n&rsquo;est pas viable. Une solution aurait été de faire payer à l&rsquo;acte mais cela implique une gestion des paiements.</p>
+
+<p>Choix techniques :
+D&rsquo;un point de vue technique je suis donc parti sur les choix suivants :</p>
+
+<ul>
+<li><p>back-end : utilisation de Symfony 2.6 avec l&rsquo;utilisation d&rsquo;une bibliothèque implémentant déjà les appels à l&rsquo;API d&rsquo;Uber. Toutefois pendant le hackathon les équipes techniques d&rsquo;Uber ont fait des mises à jour de leur API, j&rsquo;ai donc modifié cette bibliotèheques. J&rsquo;ai conçu ce back-end sous forme d&rsquo;API Rest, j&rsquo;ai donc choisi d&rsquo;utiliser FOSRestBundle.
+la page d&rsquo;authentification d&rsquo;Uber devait être présente sur une URL en HTTPS. Pour ce projet j&rsquo;ai donc dû installer un certificat SSL en local et aussi sur le serveur virtuel (utilisation de startSSL qui propose un certificat gratuit pendant 1 an). Désormais avec &ldquo;Let&rsquo;s encrypt&rdquo; des certificats gratuits peuvent être installés aidés par des scripts d&rsquo;automatisation.</p>
+
+<ul>
+<li>front-end : l&rsquo;interface devait être intuitive et la réservation suivait un tunnel avec la notion suivante : Quand (maintenant ou à un date &amp; heure future), Où , Comment (quel type de véhicule : uberPool, UberX, Limousine,Van) . L&rsquo;application respectait précisément cet ordre car tous les types de véhicules ne sont pas disponibles partout. Il fallait donc savoir d&rsquo;où souhaitait partir l&rsquo;utilisateur avant de lui proposer de choisir son véhicule.
+Afin de gérer l&rsquo;authentification une solution utilisant le principe du JsonWebToken a été mise en place. Cela a été assez complexe et a nécessité plusieurs heures et de nombreux tests afin de le mettre en place. Bien sûr un bundle spécifique est en place sur le back-end pour gérer ce JWT.</li>
+</ul></li>
+</ul>
+
+<p>Résultats :
+ Au terme de la deadline le projet était fonctionnel il permettait à la fois de réserver un Uber immédiatement mais aussi de le réserver dans le futur. Cette dernière était essentielle car c&rsquo;est la fonctionnalité déterminante</p>
+
+            </div>
+        </div>
+    </div>
+ <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'simonb';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        <footer>
+            <div class="row">
+                <hr>
+                <div class="col-sm-12">
+                    <p>&copy; Simon Blum 2015<br>
+                    Built with <a href="https://github.com/spf13/hugo">Hugo</a></p>
+                </div>
+            </div>
+        </footer>
+</div>
+       <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 s4">
+                <h5 class="white-text">SimonBlum.me</h5>
+                <p class="grey-text text-lighten-4"></p>
+              </div>
+              <div class="col l4  s4">
+                <h5 class="white-text">Derniers contenus</h5>
+                <ul>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/evolution-colis-rera/"><i class="mdi-navigation-chevron-right"></i>Evolution des colis suspects sur le RER A</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/bettercalluber/"><i class="mdi-navigation-chevron-right"></i>BetterCallUber - hackathon par Uber</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-nyc/"><i class="mdi-navigation-chevron-right"></i>Airbnb&#39;s evolution from 2008 in New-York City</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/hacks/airbnb-paris/"><i class="mdi-navigation-chevron-right"></i>Evolution de l&#39;offre Airbnb à Paris entre 2008 et 2015</a></li>
+                  
+                     <li><a class="grey-text text-lighten-3" href="/post/retourdexperience/mapboostadopt/"><i class="mdi-navigation-chevron-right"></i>MapBoostadopt</a></li>
+                  
+                </ul>
+              </div>
+              <div class="col l4 s4">
+                <h5 class="white-text" id="contact">Contact</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="mailto:contact@simonblum.me">Email</a></li>
+                     <li><a class="grey-text text-lighten-3" href="http://www.twitter.com/sim51100">Twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://fr.linkedin.com/pub/simon-blum/6b/39b/355">LinkedIn</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Simon Blum
+
+            </div>
+          </div>
+        </footer>
+            
+      
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+       <script type="text/javascript" src="/js/init.js"></script>
+       <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65523215-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+  </html>
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-    <title>Pourquoi ce blog ? - http://www.simonblum.me/</title>
+    <title>Evolution des colis suspects sur le RER A - http://www.simonblum.me/</title>
       
 
       <link type="text/css" rel="stylesheet" href="/css/style.css"  media="screen,projection"/>
@@ -59,25 +59,40 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h2>Pourquoi ce blog ?<br> <small></small></h2>
+                    <h2>Evolution des colis suspects sur le RER A<br> <small></small></h2>
                     <hr>
-                     March 15, 2015
+                     January 4, 2016
+                      - <a href="/categories/hacks ">hacks</a> -
+                     <div class="fb-share-button" data-href="http://www.simonblum.me/post/hacks/evolution-colis-rera/" data-layout="icon_link"></div>
+
                       
 
 
 
                      <br>
                     <hr>
-                    <p>Je ne suis pas un expert, mais je suis simplement passionné par le Web et je souhaite partager mes expériences. Pourquoi cela ?  Difficile d&rsquo;expliquer comment cela m&rsquo;est venu : mon expérience avec FirefoxOS et le partage des connaissances ont sans doute joué un rôle. Je pense aussi que certains blogs techniques sur des langages comme PHP ou NodeJS m&rsquo;ont aidé à débloquer des problèmes sur des applications. A travers ce blog je souhaite partager mes expériences et mes projets web.</p>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js
+"></script>
 
-<p>Sur ce blog vous trouverez donc plusieurs sections :
-<ul class="collection">
-    <li class="collection-item"><h5>hacks </h5> attention il ne s&rsquo;agit pas de hacks au sens premier mais plus d&rsquo;expériences où le code permet de simplifier la vie ou une simple tâche !</li>
-<li class="collection-item"><h5>retour d&rsquo;experience </h5> j&rsquo;y partage des retours d&rsquo;expériences sur des projets, des technologies, etc. Ca peut traiter de développement mais aussi de &ldquo;comm&rsquo;&rdquo; ou de divers autres thèmes.</li>
-<li class="collection-item"><h5>hors-sujet </h5> pour y mettre ce qui ne rentre pas dans les autres rubriques : du sport, des découvertes, ..</li>
-</ul></p>
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/rera.js"></script>
 
-<p>Ce blog est propulsé par Hugo qui est un outil assez puissant écrit en Go. Il permet de générer des fichiers statiques afin d&rsquo;alimenter un site ou un blog. Bien sûr il compte de nombreuses fonctionnalités que je détaillerai dans un prochain billet.</p>
+<p>Faute d&rsquo;open-data mis à disposition par la RATP &amp; la SNCF (pour le RER A) j&rsquo;ai souhaité utiliser les tweets émis par le compte Twitter du RER A afin d&rsquo;avoir une vue d&rsquo;ensemble des colis suspects sur cette ligne. Le compte RER_A via des tweets (automatisés ?) informe les usagers de la présence d&rsquo;un colis suspect. Parfois il y avait plus d&rsquo;un colis suspect par jour. Le nombre de jours où il y a eu au moins 1 colis suspect par jour est donc la plus fiable.</p>
+
+<p>Attention ce micro-projet n&rsquo;a aucunement le but de remettre en question des &ldquo;colis suspects&rdquo;, ils affectent tout le monde et les conséquences (ralentissements, interruptions), certes très gênantes, sont là pour nous protéger.</p>
+
+<p>Ce graphique présente le nombre de jours par mois où il y a eu au moins 1 tweet concernant un colis suspect.
+<canvas id="myChart" width="700" ></canvas></p>
+
+<p><h2>Méthodologie</h2>
+Analyse des tweets du compte Twitter <a href="https://twitter.com/rera_ratp" target="_blank">RER A</a> écrit entre le 12/02/2013 &amp; le 31/12/2015. Cette analyse porte sur tous les tweets comportant les termes &ldquo;colis suspects&rdquo;.</p>
+
+<p><h2>Technique</h2>
+Les tweets de Juillet 2015 à Décembre 2015 ont été obtenu par la réalisation d&rsquo;un script NodeJS utilisant l&rsquo;API Twitter.
+La limite temporelle de cette dernière m&rsquo;ont obligé à réaliser un autre script nodeJS crawlant directement Twitter.</p>
+
+<p><h2>Données</h2>
+Les données issues de ces crawls sont disponibles sur <a target="_blank" href="https://gist.github.com/guizmo51/6f45655e3afda2ed3559">Github</a></p>
 
             </div>
         </div>
